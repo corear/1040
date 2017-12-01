@@ -1,0 +1,128 @@
+ <style>
+     	 input[type=radio]:checked + label, input[type=checkbox]:checked + label{
+		   background-color:#f5f5f5;
+		border:2px solid #6d6d6d;
+		border-left:5px solid #6d6d6d;
+			color:#6d6d6d;
+	}
+ </style>
+ 
+ <%= render '/layouts/nav' %>
+    <div class="container" style="margin-top:10px;width:60%;margin-left:20%;padding-bottom:100px;">
+
+<% if ((current_user.progress+1) < @lesson.order) %>
+           
+           <div style="margin-top:20px">
+               <center>
+                    <ptag style="text-align:right;">QUIZ <%= @lesson.order %></ptag>
+                    
+                    
+       
+        <div class="panel" style="padding:50px;padding-bottom:75px;margin-top:50px;">
+            <h1>Uh oh!</h1>
+           <h2 style="margin-bottom:50px;">You must complete Quiz <%= (current_user.progress+1) %> before you can do take this one!</h2>
+        <a class="btn-lg btn-primary" style="width:100%;margin:20px;" href="/lesson/<%= Lesson.find_by_order(current_user.progress+1).id %>">GO TO THE LESSON <span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+           </center>
+           </div>
+           <% else %>
+           
+           <% for @q in @questions %>
+               <% if @possibleAnswers.find_by_question_id(@q.id) == nil %>
+                   <% @completed = "false" %>
+               <% end %>
+           <% end %>
+           
+           <% if @completed == "true" %>
+               <% if @lesson.order > current_user.progress %>
+                   <% current_user.progress = @lesson.order %>
+                   <% current_user.save %>
+               <% end %>
+               <% for @q in @questions do %>
+                   <% @resp = @possibleAnswers.find_by_question_id(@q.id) %>
+                   <% if @resp.content == @q.correct %>
+                       <% @corr += 1 %>
+                   <% end %>
+               <% end %>
+           
+           
+               <center><qtag style="font-size:3em;color:#6d6d6d;background:none;position:relative;top:30px;margin-bottom:30px;">QUIZ <%= @lesson.order %> RESULTS</qtag></center>
+               <div class="progress" style="position:relative;top:30px;">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="min-width: 5em; width:<%= (@corr.to_f / @questions.count.to_f)*100 %>%">
+                    <h3 style="color:white;line-height:0;margin-top:15px;font-size:2em"><%= ((@corr.to_f / @questions.count.to_f)*100).ceil %>% Correct</h3>
+                  </div>
+                </div>
+                
+                <% for @q in @questions do %>
+                    <% @response = @possibleAnswers.find_by_question_id(@q.id) %>
+                    <div class="panel halfraised" style="position:relative;top:40px;">
+                        <h4 style="font-size:2em;margin:20px;line-height:40px"><%= @q.content %></h4>
+                        <% for @ans in Answer.all.where('question_id = ?', @q.id) %>
+                            <% if @response.content == @ans.content and @q.correct == @response.content %>
+                                <div class="answer" style="background-color:#7acc80;">
+                                    <h4 style="color:white"><%= @ans.content %></h4>
+                                </div>
+                            <% elsif @response.content == @ans.content and @q.correct != @response.content %>
+                                <div class="answer" style="background-color:#ff6463;">
+                                    <h4 style="color:white;"><%= @ans.content %></h4>
+                                </div>
+                            <% elsif @response.content != @ans.content and @q.correct == @ans.content %>
+                                <div class="answer" style="background-color:#f5f5f5;border-left:5px solid #7acc80">
+                                    <h4><%= @ans.content %></h4>
+                                </div>
+                            <% else %>
+                                <div class="answer" style="background-color:#f5f5f5;">
+                                    <h4><%= @ans.content %></h4>
+                                </div>
+                            <% end %>
+                        <% end %>
+                    </div>
+                <% end %>
+                <center>
+                    <a href="/home" class="btn-lg btn-primary" style="position:relative;top:70px;">GO TO THE DASHBOARD  <span class="glyphicon glyphicon-chevron-right"></span></a>
+                </center>
+           <% else %>
+                                       <center><qtag style="background:none;color:#333;font-size:3em;position:relative;top:50px;">QUIZ <%= @lesson.order %></qtag></center>
+                        <div class="row" style="margin-top:100px;">
+                          <div class="col-md-2"></div>
+                                
+                          <div class="col-md-8 panel halfraised" style="border-left:5px solid rgb(245, 88, 88)">
+                            <% for @q in @questions %>
+                                <% if @possibleAnswers.find_by_question_id(@q.id) == nil %>
+                                    <h2 style="padding-left:40px;padding-right:40px;padding-bottom:30px;line-height:1.4;letter-spacing:2px;"><%= @q.content %></h2>
+                                      <div style="margin:30px;width:80%;margin-left:10%;">
+                                                
+                                                 
+                                     <%= form_for @respond do |f| %>
+                                     <%= f.text_field :question_id, value: @q.id, :style => "position:absolute;left:3000px;" %>
+                                     <%= f.text_field :user_id, value: current_user.id, :style => "position:absolute;left:3000px;" %>
+                                     <% for @ans in Answer.all.where('question_id = ?', @q.id) %>
+                                     <%= f.radio_button :content, @ans.content, :type => "radio", :id => "radio#{@ans.id}"%>
+                               <label for="radio<%= @ans.id %>" class="btn-lg btn-secondary btn-option" style="width:100%;background-color:#f5f5f5;margin-bottom:20px;"><%= @ans.content %></label>
+                         <% end %>
+                                      <div class="actions">
+                            <%= f.submit "NEXT", :class => "btn-lg btn-primary", :style => "width:100%;margin-top:20px;margin-bottom:20px;" %>
+                                 </div>
+                                 <% end %>
+                                      </div>
+                                      
+                                <% break %>
+                                <% end %>
+                                
+                                <% end %>
+                                
+                                </div>
+                        <div class="col-md-2"></div>
+                        </div>
+           <% end %>
+           
+           
+
+<% end %>
+</div>
+
+<script>
+    document.title="Quiz <%= @lesson.order %> | 10/40 Entrepreneurship Academy"
+    
+    
+</script>

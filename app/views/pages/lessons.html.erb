@@ -1,0 +1,96 @@
+<style>
+    p{
+        margin-top:20px;
+    }
+</style>
+
+<%= render '/layouts/nav' %>
+        <div class="wrapper">
+    <div class="container" style="margin-top:30px;">
+
+
+           <% if ((current_user.progress+1) < @lesson.order) %>
+           
+           <div style="margin-top:20px">
+               <center>
+               <h1 style="margin:20px;"><%= @lesson.title.html_safe %></h1>
+                    <ptag style="text-align:right;">Lesson <%= @lesson.order %></ptag>
+                    
+                    
+       
+        <div class="panel" style="padding:50px;padding-bottom:75px;margin-top:50px;">
+            <h1>Uh oh!</h1>
+           <h2 style="margin-bottom:50px;">You must complete Quiz <%= (current_user.progress+1) %> before you can do this lesson!</h2>
+        <a class="btn-lg btn-primary" style="width:100%;margin:20px;" href="/lesson/<%= Lesson.find_by_order(current_user.progress+1).id %>">GO TO THE LESSON <span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+           </center>
+           </div>
+           <% else %>
+           
+            <center>
+                
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <% if (@lesson.order-1) > 0 %>
+                                <a style="color:#a7a7a7;font-size:3em;line-height:4;" href="/lesson/<%= (Lesson.find_by_order(@lesson.order-1)).id %>"><span class="glyphicon glyphicon-chevron-left" style="background: #e8e8e8;border-radius: 50%;padding: 15px;"></span></a>
+                                <% end %>
+                            </div>
+                            <div class="col-sm-8">
+                                <h1 style="margin:20px;"><%= @lesson.title.html_safe %></h1>
+                    <ptag style="text-align:right;">Lesson <%= @lesson.order %></ptag>
+                    <% if current_user.progress %>
+                        <% if (current_user.progress >= @lesson.order) %>
+                    <div class="gtag"><h3 style="color:white;font-size:28px;line-height:1.9">✓</h3></div>
+                    <% end %>
+                    <% end %>
+                    
+            <% if current_user.id == 1 %>
+            <br>
+        <a class="btn-lg btn-secondary raised" style="width:100%;position:relative;top:30px;" href="/lessons/<%= @lesson.id %>/edit"><span class="glyphicon glyphicon-edit"></span>  EDIT THIS LESSON</a>
+            <% end %>
+                            </div>
+                            <div class="col-sm-2">
+                                <% if (Lesson.find_by_order(@lesson.order+1)) %>
+                                <a style="color:#a7a7a7;font-size:3em;line-height:4;" href="/lesson/<%= (Lesson.find_by_order(@lesson.order+1)).id %>"><span class="glyphicon glyphicon-chevron-right" style="background: #e8e8e8;border-radius: 50%;padding: 15px;"></span></a>
+                                <% end %>
+                            </div>
+                        </div>
+<iframe width="100%" height="550" style="border-radius:10px;margin-top:20px;" src="https://www.youtube-nocookie.com/embed/<%= @lesson.video %>?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
+            </center>
+            
+<div class="panel">
+    <center><h1>DESCRIPTION</h1></center>
+            
+<h3 style="margin:30px;margin-left:100px;margin-right:100px"><%= simple_format(@lesson.description, :style => "line-height:30px;") %></h3>
+</div>
+    
+    <center>
+        <div class="row" style="position:relative;top:30px;">
+        <div class="col-sm-4" style="background:none">
+    </div>
+        <div class="col-sm-4" style="background:none">
+            <% if current_user.progress >= @lesson.order %>
+        <a class="btn-lg btn-primary" style="width:100%;margin:20px;" href="/quiz/<%= @lesson.id %>">QUIZ RESULTS <span class="glyphicon glyphicon-chevron-right"></span></a>
+            <% else %>
+        <a class="btn-lg btn-primary" style="width:100%;margin:20px;" href="/quiz/<%= @lesson.id %>">TAKE THE QUIZ <span class="glyphicon glyphicon-chevron-right"></span></a>
+        <% end %>
+    </div>
+        <div class="col-sm-4" style="background:none">
+    </div>
+            
+        </div>
+    </center>
+    <div style="height:50px;">
+        
+    </div>
+    <% end %>
+    
+
+
+    </div>
+</div>
+
+<script>
+    document.title = "<%= @lesson.title.html_safe %> | 10/40 Entrepreneurship Academy (Lesson <%= @lesson.order  %>)"
+</script>

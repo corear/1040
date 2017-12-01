@@ -1,0 +1,129 @@
+<style>
+    h4{
+        margin-top:20px;
+        margin-bottom:0px;
+    }
+    
+    	 input[type=radio]:checked + label, input[type=checkbox]:checked + label{
+		   background-color:white;
+		border:2px solid rgb(245, 88, 88);
+			color:rgb(245, 88, 88);
+	}
+	
+	
+</style>
+
+<%= render '/layouts/nav' %>
+        <div class="wrapper">
+    <div class="container">
+        <% if (current_user.id != 1) %>
+            <center>
+                <div class="panel" style="padding:50px;padding-bottom:75px;margin-top:50px;">
+            <h1>Uh oh!</h1>
+           <h2 style="margin-bottom:50px;">You're not allowed in here!</h2>
+           <% if (Lesson.find_by_order(current_user.progress+1)) %>
+        <a class="btn-lg btn-primary" style="width:100%;margin:20px;" href="/lesson/<%= Lesson.find_by_order(current_user.progress+1).id %>">GO TO LESSON <%= (current_user.progress+1) %><span class="glyphicon glyphicon-chevron-right"></span></a>
+           <% end %>
+    </div>
+            </center>
+            
+        <% else %>
+        
+        <center>
+          <qtag style="position:relative;top:20px;font-size:3em">Edit Lesson <%= @lesson.order %></qtag><br><br>
+                <img style="height:420px;width:758px;border-radius:20px;margin-top:50px;" class='raised' src="http://img.youtube.com/vi/<%= @lesson.video %>/maxresdefault.jpg" />
+                <img style="height:300px;width:540px;border-radius:20px;margin-top:50px;margin-left:-300px" class='raised' src="<%= @lesson.cover %>" /></center>
+        <div class="row" style="margin-top:-370px;">
+  <div class="col-md-2"></div>
+  <div class="col-md-8 raised" style="margin-top: 200px;margin-bottom: 200px;border-radius: 10px;background-color: #fff;padding: 0px;padding-left:20px;padding-right:20px;opacity:1;">
+    <%= form_for @lesson do |f| %>
+            <%= f.text_field :title, autofocus: true, :class => "inputField", :style =>"background:none; font-size:3em; color:#f55958;margin-top:30px;" %>
+            <h2 style="color:#f55958">Description</h2>
+            <%= f.text_area :description, autofocus: true, :class => "inputField", :style => "resize:none;height:200px;" %>
+            <h2 style="color:#f55958">Cover Photo Link</h2>
+            <%= f.text_field :cover, autofocus: true, :class => "inputField" %>
+            <h2 style="color:#f55958">YouTube Video ID</h2>
+            <%= f.text_field :video, autofocus: true, :class => "inputField" %>
+            <h2 style="color:#f55958">Lesson Order</h2>
+            <%= f.text_field :order, autofocus: true, :class => "inputField" %>
+            
+            <div class="actions">
+    <%= f.submit "Update", :class => "btn-lg btn-primary", :style => "width:100%;margin-top:20px;margin-bottom:20px;" %>
+  </div>
+            
+        <% end %>
+        
+        </div>
+<div class="col-md-2"></div>
+</div>
+
+
+<div style="width:70%;margin-left:15%;position:relative;top:-100px;">
+    <center><qtag style="margin-bottom:30px;font-size:3em">Edit Quiz <%= @lesson.order %></qtag></center>
+    <div class="panel halfraised" style="position:relative;top:50px;">
+        <center><h3>Add a new question</h3></center>
+        <%= form_for @newQuestion, {:id=>@lesson.id} do |f| %>
+            <%= f.text_field :content, autofocus: true, :class => "inputField" %>
+            
+            <div class="actions">
+    <%= f.submit "Add Question", :class => "btn-lg btn-primary", :style => "width:100%;margin-top:20px;margin-bottom:20px;" %>
+  </div>
+            
+        <% end %>
+    </div>
+    
+    
+    
+    <% for @q in @questions %>
+    <div class="panel halfraised" style="position:relative;top:40px;">
+        <span><%= link_to "", {:controller=>:questions,:action=>:destroy, :id3=>@q}, :method=>:delete, :class =>"glyphicon glyphicon-trash btn btn-primary", :style => "color:white;margin:20px;border-radius: 50%;width: 50px;height: 50px;padding: 10px;line-height: 2;" %></span> 
+            <h2 style="line-height:40px;padding-left:90px;margin-top:-65px;"><%= @q.content %></h2>
+              <div style="margin:30px;width:100%;margin-left:100px;margin-right:100px;">
+                  <% if Answer.all.where('question_id = ?', @q.id).count == 0 %>
+                      <qtag>NO ANSWERS YET</qtag>
+                  <% else %>
+                  <% for @ans in Answer.all.where('question_id = ?', @q.id) %>
+                  <% if @ans.correct == true %>
+                 
+                  <div style="background-color:#7acc80; width:70%;margin:10px;border-radius:10px;">
+                     <h4 style="color:white"><span><%= link_to "", {:controller=>:answers,:action=>:destroy, :id3=>@ans}, :method=>:delete, :class =>"glyphicon glyphicon-trash btn btn-secondary", :style => "color:#7b7b7b;margin:20px;margin-right:30px;border-radius: 50%;width: 50px;height: 50px;padding: 10px;line-height: 2;" %> </span><%= @ans.content %></h4>
+              </div>
+                  <% else %>
+                     <div style="background-color:#f5f5f5; width:70%;margin:10px;border-radius:10px;">
+                     <h4><span><%= link_to "", {:controller=>:answers,:action=>:destroy, :id3=>@ans}, :method=>:delete, :class =>"glyphicon glyphicon-trash btn btn-primary", :style => "color:white;margin:20px;margin-right:30px;border-radius: 50%;width: 50px;height: 50px;padding: 10px;line-height: 2;" %> </span><%= @ans.content %></h4>
+              </div>
+              <% end %>
+            <% end %>
+            <% end %>
+         
+         <div style="width:70%;margin-left:10px;margin-top:50px;border-top:2px solid #eaeaea;padding-top:50px;">
+             <%= form_for @newAnswer do |f| %>
+            <%= f.hidden_field :question_id, :value => @q.id %>
+            <%= f.hidden_field :lesson, :value => @lesson.id %>
+            <%= f.text_field :content, autofocus: true, :class => "inputField", placeholder: "Type a possible answer here..." %>
+            <%= f.check_box :correct, :class => "inputField", :id => "check#{@q.id}" %>
+           <label for="check<%= @q.id %>" class="btn" style="background-color:#f5f5f5;margin-top:10px;width:100%;">Correct Answer?</label>
+            
+            <div class="actions">
+    <%= f.submit "Add Answer", :class => "btn-lg btn-primary", :style => "width:100%;margin-top:20px;margin-bottom:20px;" %>
+         </div>
+  </div>
+            
+        <% end %>
+              </div>
+              
+           </div>   
+        <% end %>
+        
+        
+</div>
+
+        <% end %>
+</div>
+        </div>
+        
+        
+        
+
+<%= render '/components/footer' %>
+nub c:

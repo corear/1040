@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  resources :lessons
+  resources :questions
+  resources :answers
+  resources :responses
+  devise_for :users
+  root 'pages#index'
+
+  get 'home' => "pages#home"
+  get 'lesson/:id' => "pages#lessons"
+
+  get 'admin' => "pages#admin"
+  
+  get '/quiz/:id' => "pages#quiz"
+  get '/answers' => 'answers#check'
+  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

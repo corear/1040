@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>K1040</title>
+  <title>10/40 Entrepreneurship Academy</title>
+  <link rel=icon href="/256_White_Badge.png"/>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body style="background-color:#f7f7f7;">
 
+<% if (request.original_fullpath != "/") and (request.original_fullpath != "/users/sign_up") and (request.original_fullpath != "/users/sign_in") and (request.original_fullpath != "/users/password/new") and (request.original_fullpath != "/users/password")  %>
+  <% if !current_user %>
+    <script>
+      window.location = "/"
+    </script>
+  <% end %>
+  
+  <% else %>
+  
+  <% if current_user %>
+    <script>
+      window.location = "/home"
+    </script>
+  <% end %>
+<% end %>
+
+ 
+       
 <%= yield %>
 
+<span class="notice"><%= notice %></span>
+       <span class="alert"><%= alert %></span>
 </body>
 </html>

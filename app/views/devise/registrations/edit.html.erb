@@ -1,0 +1,53 @@
+<%= render '/layouts/nav' %>
+        <div class="wrapper">
+    <div class="container" style="margin-top:0px;">
+
+<center>
+
+<div class='raised' style="border-radius: 10px;background-color: #fff;padding: 50px;padding-left:50px;padding-right:50px;opacity:0.9;width:50%;">
+  <h1>Edit User</h1>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field" style="margin-top:40px;">
+    <h3>Email</h3>
+    <%= f.email_field :email, autofocus: true, :class => "inputField" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field" style="margin-top:40px;">
+    <h3>Password</h3><i> (leave blank if you don't want to change it)</i></h3>
+    <%= f.password_field :password, autocomplete: "off", :class => "inputField" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+  </div>
+
+  <div class="field" style="margin-top:40px;">
+    <h3>Confirm Password</h3>
+    <%= f.password_field :password_confirmation, autocomplete: "off", :class => "inputField" %>
+  </div>
+
+  <div class="field" style="margin-top:40px;">
+    <h3>Current Password</h3><i> (we need your current password to confirm your changes)</i></h3>
+    <%= f.password_field :current_password, autocomplete: "off", :class => "inputField" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update", :class => "btn-primary btn-lg", :style=>"margin-top:40px" %>
+  </div>
+<% end %>
+</div>
+
+</center>
+<p style="display:none">Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :style=>"display:none" %></p>
+
+    
+
+
+    </div>
+</div>
