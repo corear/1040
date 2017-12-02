@@ -40064,3 +40064,2017 @@ Processing by PagesController#home as HTML
   [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
   Rendered pages/home.html.erb within layouts/application (2.8ms)
 Completed 200 OK in 48ms (Views: 45.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/lesson/1" for 184.45.37.242 at 2017-12-01 22:57:26 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#lessons as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mLesson Load (0.3ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav.html.erb (1.2ms)
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 2]]
+  Rendered pages/lessons.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 46ms (Views: 42.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 184.45.37.242 at 2017-12-02 15:08:16 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#index as HTML
+  Rendered components/_footer.html.erb (0.3ms)
+  Rendered pages/index.html.erb within layouts/application (7.6ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 547ms (Views: 529.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:08:17 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (1.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.3ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 127ms (Views: 114.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:08:17 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 61ms (Views: 57.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:12:16 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 66ms (Views: 60.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:12:16 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 58ms (Views: 54.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:12:56 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 60ms (Views: 56.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:12:57 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 71ms (Views: 68.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:13:30 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 65ms (Views: 61.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:13:30 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 58ms (Views: 54.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:15:05 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 75ms (Views: 69.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:15:06 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 53ms (Views: 50.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/256_white.png" for 184.45.37.242 at 2017-12-02 15:18:11 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/256_white.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (60.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (125.1ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:28:15 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 2155ms (Views: 2146.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.self-10bdd7bce870d3396d684ae19146c54439b45f1bc3453bf73febddae7aa1fd76.css?body=1" for 184.45.37.242 at 2017-12-02 15:28:18 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:29:17 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 72ms (Views: 67.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.self-10bdd7bce870d3396d684ae19146c54439b45f1bc3453bf73febddae7aa1fd76.css?body=1" for 184.45.37.242 at 2017-12-02 15:29:17 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:29:18 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 72ms (Views: 68.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/lesson/1" for 184.45.37.242 at 2017-12-02 15:29:33 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#lessons as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mLesson Load (0.4ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav.html.erb (2.7ms)
+  [1m[35mLesson Load (0.4ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 2]]
+  Rendered pages/lessons.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 126ms (Views: 117.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:30:24 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.5ms)
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 2291ms (Views: 2284.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.self-04a417e162b517cd3d3df0767d60c29325753f121ddab9f41feb9356a588251f.css?body=1" for 184.45.37.242 at 2017-12-02 15:30:27 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:30:27 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 87ms (Views: 83.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:30:42 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 2212ms (Views: 2208.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-e51eb5b6fe4d9497efd0e77c347680b24e967313e9bf6d3bd61fbf08e1f3ef0c.css?body=1" for 184.45.37.242 at 2017-12-02 15:30:44 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:30:48 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 78ms (Views: 74.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:32:26 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 2167ms (Views: 2160.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.self-4f8bd3b5a5be36bc628f9f624f9ef4d1736edc571cc63a463a3fa787315c0d47.css?body=1" for 184.45.37.242 at 2017-12-02 15:32:28 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:32:29 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 57ms (Views: 54.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:33:37 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 1794ms (Views: 1789.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-40fcb4244472dbbd1e34f76945ada3cb6bcef486d129644b60ddd9b94f914a63.css?body=1" for 184.45.37.242 at 2017-12-02 15:33:39 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:33:40 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.2ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 59ms (Views: 55.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:33:54 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.3ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 2339ms (Views: 2333.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.self-1ecc9ed337d4b0f30963b697d444d92a15617b90a669a712f18f8454e9531b7f.css?body=1" for 184.45.37.242 at 2017-12-02 15:33:57 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:33:58 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.2ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 57ms (Views: 53.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:34:48 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 2067ms (Views: 2062.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.self-21c4759e9b67b83806a838cba12b14ff3d6d250c8e0888baf2853b7351957436.css?body=1" for 184.45.37.242 at 2017-12-02 15:34:50 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:34:53 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 54ms (Views: 50.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:35:39 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (1.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 1890ms (Views: 1886.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-81a57cfcfee0b38f4f0f9aba013ca7cca90304b213e6bbd56596f2efb2c53792.css?body=1" for 184.45.37.242 at 2017-12-02 15:35:41 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:35:47 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 59ms (Views: 56.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:36:34 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 2348ms (Views: 2342.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.self-86e3cbe5c0d7a51af9d18facc2b578c8a4bec0ad63407d6656582b5fc5ef493e.css?body=1" for 184.45.37.242 at 2017-12-02 15:36:36 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:36:38 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 86ms (Views: 82.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:37:50 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 2146ms (Views: 2142.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-9bcabc413603ea7477b3729f1446dbd1873318c27bdd5758583ef4082abbfa91.css?body=1" for 184.45.37.242 at 2017-12-02 15:37:53 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:37:54 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 53ms (Views: 50.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:41:28 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.3ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 2377ms (Views: 2370.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.self-d453329924331b01abda43db4a72a6cea99aee1e9d8e465027cad51a9eb5851c.css?body=1" for 184.45.37.242 at 2017-12-02 15:41:31 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:41:32 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 67ms (Views: 63.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:41:54 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 2550ms (Views: 2546.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-4f56d2901469ba18cad5cf0ba31a85d5245bbe4a9a5919bba4849073cf40d507.css?body=1" for 184.45.37.242 at 2017-12-02 15:41:57 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:42:00 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 52ms (Views: 48.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:43:16 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 1907ms (Views: 1901.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.self-2f2de7b40bcaffa63c0f60a39aed78b2abb033e82edf02fb391153d9c86da7a4.css?body=1" for 184.45.37.242 at 2017-12-02 15:43:19 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:43:20 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 49ms (Views: 46.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:43:50 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 1985ms (Views: 1980.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-65827b61a5ca1012b1d30d837d684cca9099de0831d75ecea9ce4b0fe075ff86.css?body=1" for 184.45.37.242 at 2017-12-02 15:43:53 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:43:54 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 52ms (Views: 48.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:44:13 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 2163ms (Views: 2158.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.self-bb230e8e7b6752e198355e02d2ed2c770406645ad696c65c123e99a9b87654b6.css?body=1" for 184.45.37.242 at 2017-12-02 15:44:15 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:44:17 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 56ms (Views: 52.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:44:55 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 2020ms (Views: 2015.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.self-0d7ed7d6b9bcbe1c07e0dd45713d9cb6db24cd0b0492b0b6da2c76c2cf8e112e.css?body=1" for 184.45.37.242 at 2017-12-02 15:44:57 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:44:59 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 60ms (Views: 56.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:45:17 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 61ms (Views: 57.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:45:17 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 56ms (Views: 52.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:45:46 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 1981ms (Views: 1977.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-4ebadadefbe3587924b425bbb101e6226f91a7414707001a6bc792d03ab5f8cd.css?body=1" for 184.45.37.242 at 2017-12-02 15:45:48 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:45:51 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 63ms (Views: 59.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:46:09 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 71ms (Views: 66.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:46:09 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.2ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (96.4ms)
+Completed 200 OK in 158ms (Views: 154.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:46:52 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.3ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 2239ms (Views: 2233.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.self-51110277936c3810a7af630ca78308a2123a680253624551395f225412879f89.css?body=1" for 184.45.37.242 at 2017-12-02 15:46:54 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:46:55 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.2ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 58ms (Views: 55.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:48:34 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 2286ms (Views: 2279.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.self-67e195dfb252595602e7b9f2dce72a3ba9796ea253a42bed268370c98e180506.css?body=1" for 184.45.37.242 at 2017-12-02 15:48:36 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:48:37 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 61ms (Views: 57.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:49:37 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 2215ms (Views: 2211.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-55a994e7481110eaa777387dd3e11c936ee788e1bc39ffbcaa115e3eaa640e07.css?body=1" for 184.45.37.242 at 2017-12-02 15:49:39 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:49:41 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 58ms (Views: 55.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:52:46 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.5ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 2302ms (Views: 2290.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.self-59c71fa2c1a9dfed9e67972e17a5ca7ed7b29531cfb1020186b9541118d40827.css?body=1" for 184.45.37.242 at 2017-12-02 15:52:48 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:52:52 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 64ms (Views: 60.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:53:07 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 2281ms (Views: 2277.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-9ef30a303794de9574a95bff7c8c5a72f90823b2d09c3e852caefc5e78cc258e.css?body=1" for 184.45.37.242 at 2017-12-02 15:53:10 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:53:11 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 61ms (Views: 57.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:53:30 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 2096ms (Views: 2092.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-1f764c32da2e9326c5e171ce81a2260e395d1af4c4bcb408cd0d4d3c2301dc76.css?body=1" for 184.45.37.242 at 2017-12-02 15:53:32 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:53:34 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 56ms (Views: 52.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:54:35 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 2152ms (Views: 2146.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.self-fada89d534b5da46f53ab9d7b057727ce0cee921626e53b4e71bb2d93526bcfc.css?body=1" for 184.45.37.242 at 2017-12-02 15:54:37 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:54:39 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 54ms (Views: 50.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:56:34 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (2.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 89ms (Views: 82.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:56:34 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 61ms (Views: 57.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:57:24 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 1894ms (Views: 1891.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-ef932c83bb4976d5852f32f7762e8b6a84b2ccdb164ba0326a5727c007d5c075.css?body=1" for 184.45.37.242 at 2017-12-02 15:57:26 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 15:57:27 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 52ms (Views: 49.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 16:36:53 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 149ms (Views: 140.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 16:36:54 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 187ms (Views: 182.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/256_White_Badge.png" for 184.45.37.242 at 2017-12-02 16:36:54 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/256_White_Badge.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (50.0ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 16:37:11 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 151ms (Views: 146.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 16:37:11 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.2ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 64ms (Views: 60.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 16:37:44 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (1.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.3ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 583ms (Views: 530.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 16:37:45 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 102ms (Views: 96.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 16:37:49 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 54ms (Views: 50.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 16:37:49 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 51ms (Views: 48.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 16:38:01 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 57ms (Views: 53.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 16:38:33 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 71ms (Views: 65.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 16:38:34 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 81ms (Views: 77.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/lesson/1" for 184.45.37.242 at 2017-12-02 16:39:56 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#lessons as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLesson Load (0.5ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav.html.erb (2.1ms)
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 2]]
+  Rendered pages/lessons.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 81ms (Views: 73.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 16:40:58 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.2ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 2253ms (Views: 2246.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.self-f963873d05c31f7bd09fa1b30727f98bd40ec2d41d29f116511f0a8646b28e47.css?body=1" for 184.45.37.242 at 2017-12-02 16:41:00 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 16:41:00 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 67ms (Views: 62.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin" for 184.45.37.242 at 2017-12-02 16:41:04 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#admin as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[36mLesson Load (0.4ms)[0m  [1mSELECT "lessons".* FROM "lessons"  ORDER BY created_at DESC[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered pages/admin.html.erb within layouts/application (33.9ms)
+Completed 200 OK in 99ms (Views: 96.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin" for 184.45.37.242 at 2017-12-02 16:42:01 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#admin as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.4ms)
+  [1m[35mLesson Load (0.3ms)[0m  SELECT "lessons".* FROM "lessons"  ORDER BY created_at DESC
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered pages/admin.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 2103ms (Views: 2101.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.self-b17510373af0a4e595adbd3f4f4d89065ef8fd9f4336e3cb45d9807062676cea.css?body=1" for 184.45.37.242 at 2017-12-02 16:42:03 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 16:42:07 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.2ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 56ms (Views: 52.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 16:42:08 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 70ms (Views: 67.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/lesson/1" for 184.45.37.242 at 2017-12-02 16:42:12 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#lessons as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mLesson Load (0.2ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav.html.erb (1.9ms)
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 2]]
+  Rendered pages/lessons.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 59ms (Views: 56.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/lesson/1" for 184.45.37.242 at 2017-12-02 16:43:07 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#lessons as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLesson Load (0.3ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav.html.erb (1.8ms)
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 2]]
+  Rendered pages/lessons.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 2200ms (Views: 2197.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-29b2847f5ab01c2de22bac6614c71f46cdb24f1c7e1d7a72de3b8b7446c69cd3.css?body=1" for 184.45.37.242 at 2017-12-02 16:43:10 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/lesson/1" for 184.45.37.242 at 2017-12-02 16:44:45 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#lessons as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mLesson Load (0.4ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav.html.erb (2.8ms)
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 2]]
+  Rendered pages/lessons.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 2134ms (Views: 2130.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-0b94ba26e63578a2fa3c35f41ce4b3bb881086a395ba09cb305eb089d4a1f3fd.css?body=1" for 184.45.37.242 at 2017-12-02 16:44:47 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/lesson/1" for 184.45.37.242 at 2017-12-02 16:48:01 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#lessons as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLesson Load (0.4ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav.html.erb (3.0ms)
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 2]]
+  Rendered pages/lessons.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 2308ms (Views: 2304.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-5bf2532ec807af7cc763d87c95e73550010891aa5136d456ae0bd7db3032044a.css?body=1" for 184.45.37.242 at 2017-12-02 16:48:04 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 16:53:44 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.2ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 2043ms (Views: 2035.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.self-d5904c6ec95f872626b18eb9709bffa0c05a99a830409caa221e8dd411c7696a.css?body=1" for 184.45.37.242 at 2017-12-02 16:53:47 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 16:53:47 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 57ms (Views: 53.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 16:54:17 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.2ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 178ms (Views: 172.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 16:54:17 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 72ms (Views: 68.1ms | ActiveRecord: 0.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddValuestoUsers (20171202165444)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD "first_name" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "last_name" varchar
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD "street" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "city" varchar
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "state" varchar[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "zip" varchar
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD "school" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "referral" varchar
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD "age" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20171202165444"]]
+  [1m[36m (10.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 17:03:08 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.4ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 2199ms (Views: 2141.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.self-f4928f0d5caacc58fe1f3be1e0fbcc5d785eced7fcea125856515489c1f36858.css?body=1" for 184.45.37.242 at 2017-12-02 17:03:11 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 17:03:13 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 50ms (Views: 46.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 17:03:40 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 2017ms (Views: 2012.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-022cdc9d6c5e2d34c14c516c2d59da8b8d458c5d6a62d4dd98fba25d19eacd66.css?body=1" for 184.45.37.242 at 2017-12-02 17:03:42 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 17:03:44 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.2ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 65ms (Views: 61.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:04:58 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 105ms (Views: 96.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:05:37 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.6ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 74ms (Views: 70.5ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/users" for 184.45.37.242 at 2017-12-02 17:05:46 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mP7pjyJHEjFqR22n2MQotmEciREhkd68KZadNMN8+APOM5r9b2X6e80Uf0pAN4l39IbOIyUxBoKxEcIXoHnRvQ==", "user"=>{"first_name"=>"Collin", "last_name"=>"O'Rear", "email"=>"c_orear@icloud.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "users" SET "first_name" = ?, "last_name" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["first_name", "Collin"], ["last_name", "O'Rear"], ["updated_at", "2017-12-02 17:05:47.099298"], ["id", 1]]
+  [1m[36m (10.3ms)[0m  [1mcommit transaction[0m
+Redirected to https://k1040-corear.c9users.io/
+Completed 302 Found in 195ms (ActiveRecord: 11.9ms)
+
+
+Started GET "/" for 184.45.37.242 at 2017-12-02 17:05:47 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#index as HTML
+  Rendered components/_footer.html.erb (0.4ms)
+  Rendered pages/index.html.erb within layouts/application (2.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 62ms (Views: 60.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 17:05:47 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 59ms (Views: 55.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 17:05:47 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 58ms (Views: 54.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:05:52 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 83ms (Views: 80.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:06:18 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.5ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 69ms (Views: 65.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:07:53 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.4ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 2247ms (Views: 2243.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-12aa3e8961730a89b83678b12d3044bc633ae621d776ee346acbc4adbb801cc7.css?body=1" for 184.45.37.242 at 2017-12-02 17:07:56 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:09:21 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav.html.erb (2.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 81ms (Views: 75.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:10:36 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav.html.erb (2.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 83ms (Views: 77.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:13:56 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.6ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 90ms (Views: 85.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:14:13 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav.html.erb (1.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 80ms (Views: 75.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:14:16 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.4ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 61ms (Views: 58.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:14:41 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.6ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 73ms (Views: 69.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:15:12 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.4ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 67ms (Views: 64.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:15:41 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.5ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 64ms (Views: 60.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:16:23 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 77ms (Views: 72.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:16:45 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.5ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 72ms (Views: 68.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:17:11 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.4ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 86ms (Views: 83.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:18:11 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.6ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 86ms (Views: 82.1ms | ActiveRecord: 0.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to Phone (20171202171851)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD "phone" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20171202171851"]]
+  [1m[36m (11.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:20:24 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.5ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (39.5ms)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 1.1ms)
+
+ActionView::Template::Error (undefined method `tel_field' for #<ActionView::Helpers::FormBuilder:0x007f6911525018>
+Did you mean?  text_field
+               date_field
+               telephone_field
+               url_field):
+    46:   
+    47:    <div class="field" style="margin-top:40px;">
+    48:     <h3>Phone Number</h3>
+    49:     <%= f.tel_field :email, autofocus: true, :class => "inputField" %>
+    50:   </div>
+    51: 
+    52:   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+  app/views/devise/registrations/edit.html.erb:49:in `block in _app_views_devise_registrations_edit_html_erb___1813518731665759307_70044618856880'
+  app/views/devise/registrations/edit.html.erb:9:in `_app_views_devise_registrations_edit_html_erb___1813518731665759307_70044618856880'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (37.6ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:20:36 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.4ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 71ms (Views: 67.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:21:08 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.4ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 82ms (Views: 58.2ms | ActiveRecord: 1.4ms)
+
+
+Started PUT "/users" for 184.45.37.242 at 2017-12-02 17:21:32 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gE+A78nYON8dpbgTk+c8ZBXMeja/QZQ/VG9t5hBGm5DWgvOdhPrQlbr2qv4LFJ2lgFY9BLvhTAHM6DLFc0OyLg==", "user"=>{"first_name"=>"Collin", "last_name"=>"O'Rear", "email"=>"c_orear@icloud.com", "street"=>"4810 Dunbar Valley Rd", "city"=>"Fisherville", "state"=>"KY", "zip"=>"40023", "phone"=>"5023220623", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "street" = ?, "city" = ?, "state" = ?, "zip" = ?, "phone" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["street", "4810 Dunbar Valley Rd"], ["city", "Fisherville"], ["state", "KY"], ["zip", "40023"], ["phone", "5023220623"], ["updated_at", "2017-12-02 17:21:32.612996"], ["id", 1]]
+  [1m[35m (10.6ms)[0m  commit transaction
+Redirected to https://k1040-corear.c9users.io/
+Completed 302 Found in 161ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/" for 184.45.37.242 at 2017-12-02 17:21:32 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#index as HTML
+  Rendered components/_footer.html.erb (0.1ms)
+  Rendered pages/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 94ms (Views: 92.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 17:21:33 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.2ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 75ms (Views: 68.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 17:21:33 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 78ms (Views: 74.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:21:36 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.4ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 75ms (Views: 71.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:22:16 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 2385ms (Views: 2379.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-f7808c3b41de56ad25e13bca2c0ae87ce4459bf0d64433a1cb55574ed9c1218f.css?body=1" for 184.45.37.242 at 2017-12-02 17:22:19 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:22:50 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.5ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 1972ms (Views: 1968.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-d639494fe9524fe8ec659ed28c055a9c5128ed5b418aacd1533c131130754c51.css?body=1" for 184.45.37.242 at 2017-12-02 17:22:52 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:23:02 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.4ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 71ms (Views: 69.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:26:02 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 100ms (Views: 94.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:28:23 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.4ms)
+
+SyntaxError (/home/ubuntu/workspace/app/views/devise/registrations/edit.html.erb:54: syntax error, unexpected =>, expecting &. or :: or '[' or '.'
+...ppend=( f.text_field, :class => "inputField" );@output_buffe...
+...                               ^):
+  app/views/devise/registrations/edit.html.erb:54: syntax error, unexpected =>, expecting &. or :: or '[' or '.'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.6ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:28:37 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 81ms (Views: 78.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:30:02 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.5ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 69ms (Views: 65.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:30:55 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.5ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 80ms (Views: 76.1ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/users" for 184.45.37.242 at 2017-12-02 17:31:16 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t/VeeAI+/8/O5YArOm2FDnoxXnq2XOnUWZEjfDSscNHhOC0KTxwXhWm2ksainiTP76sZSLL8MerBFnxfV6lZbw==", "user"=>{"first_name"=>"Collin", "last_name"=>"O'Rear", "email"=>"c_orear@icloud.com", "age"=>"16-20", "street"=>"4810 Dunbar Valley Rd", "city"=>"Fisherville", "state"=>"KY", "zip"=>"40023", "phone"=>"5023220623", "referral"=>"Christopher O'Rear", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "referral" = ?, "age" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["referral", "Christopher O'Rear"], ["age", "16-20"], ["updated_at", "2017-12-02 17:31:16.618271"], ["id", 1]]
+  [1m[36m (10.5ms)[0m  [1mcommit transaction[0m
+Redirected to https://k1040-corear.c9users.io/
+Completed 302 Found in 161ms (ActiveRecord: 11.7ms)
+
+
+Started GET "/" for 184.45.37.242 at 2017-12-02 17:31:16 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#index as HTML
+  Rendered components/_footer.html.erb (0.1ms)
+  Rendered pages/index.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 69ms (Views: 67.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 17:31:17 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lessons"
+  Rendered layouts/_nav.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1[0m  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 59ms (Views: 55.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/home" for 184.45.37.242 at 2017-12-02 17:31:17 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  Rendered layouts/_nav.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "lessons"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "lessons"[0m
+  [1m[35mLesson Load (0.2ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
+  Rendered pages/home.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 61ms (Views: 57.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 17:31:44 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav.html.erb (0.5ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 79ms (Views: 75.8ms | ActiveRecord: 0.2ms)

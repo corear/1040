@@ -10,9 +10,56 @@
   <%= devise_error_messages! %>
 
   <div class="field" style="margin-top:40px;">
+    <h3>First Name</h3>
+    <%= f.text_field :first_name, autofocus: true, :class => "inputField" %>
+  </div>
+  
+  <div class="field" style="margin-top:40px;">
+    <h3>Last Name</h3>
+    <%= f.text_field :last_name, autofocus: true, :class => "inputField" %>
+  </div>
+  
+  <div class="field" style="margin-top:40px;">
     <h3>Email</h3>
     <%= f.email_field :email, autofocus: true, :class => "inputField" %>
   </div>
+  
+  <div class="field" style="margin-top:40px;">
+    <h3>Age</h3>
+    <%= f.select :age, ['10-15','16-20','21+'], :class => "inputField" %>
+  </div>
+  
+  <div class="field" style="margin-top:40px;">
+    <h3>Address</h3>
+    <div class="row" style="margin:-15px">
+      <div class="col-md-12">
+        <%= f.text_field :street, autofocus: true, :class => "inputField" %>
+      </div>
+    </div>
+    <div class="row" style="margin:-15px">
+      <div class="col-md-7">
+        <%= f.text_field :city, autofocus: true, :class => "inputField" %>
+      </div>
+      <div class="col-md-2">
+        <%= f.text_field :state, autofocus: true, :class => "inputField" %>
+      </div>
+      <div class="col-md-3">
+        <%= f.number_field :zip, autofocus: true, :class => "inputField" %>
+      </div>
+    </div>
+  </div>
+  
+   <div class="field" style="margin-top:40px;">
+    <h3>Phone Number</h3>
+    <%= f.telephone_field :phone, autofocus: true, :class => "inputField" %>
+  </div>
+  
+  <div class="field" style="margin-top:40px;">
+    <h3>How did you hear of us? (Name of referral, if possible)</h3>
+    <%= f.text_field :referral, :class => "inputField" %>
+  </div>
+  
+  
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
@@ -32,7 +79,7 @@
     <%= f.password_field :password_confirmation, autocomplete: "off", :class => "inputField" %>
   </div>
 
-  <div class="field" style="margin-top:40px;">
+  <div class="field" style="margin-top:40px;border-top:1px solid #f55858">
     <h3>Current Password</h3><i> (we need your current password to confirm your changes)</i></h3>
     <%= f.password_field :current_password, autocomplete: "off", :class => "inputField" %>
   </div>
