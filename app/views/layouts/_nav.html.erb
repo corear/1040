@@ -22,7 +22,7 @@
         <li><a href="/admin" style="margin-right:0;"><span class="glyphicon glyphicon-th-list" style="top:2px;margin-right:10px;"></span>ADMIN PANEL</a></li>
         <% end %>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="padding:0;padding-left:20px;"><img src="<%= current_user.image.url(:thumb) %>" style="border-radius:50%;width:45px;height:45px;" /> &nbsp;<b><%= current_user.first_name %></b> &nbsp; <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="padding:0;padding-left:20px;"><img class="halfraised" src="<%= current_user.image.url(:thumb) %>" style="border-radius:50%;width:45px;height:45px;" /> &nbsp;<b><%= current_user.first_name %></b> &nbsp; <span class="caret"></span></a>
           <ul class="dropdown-menu halfraised">
             <li style="background-color:#f55a58;height:80px;text-align:center;line-height:30px;color:white;margin-bottom:10px;padding-top:10px;"><b><%= current_user.first_name %> <%= current_user.last_name %></b><br><%= current_user.email %></li>
             <li><a href="/users/edit">Settings</a></li>

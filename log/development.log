@@ -42584,3 +42584,111 @@ Processing by PagesController#home as HTML
   [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."order" = ? LIMIT 1  [["order", 1]]
   Rendered pages/home.html.erb within layouts/application (3.6ms)
 Completed 200 OK in 57ms (Views: 53.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 18:56:37 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav.html.erb (1.5ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 81ms (Views: 75.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 18:57:51 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav.html.erb (1.2ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 76ms (Views: 73.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 18:58:22 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav.html.erb (1.6ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 119ms (Views: 114.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 18:59:41 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav.html.erb (1.4ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 193ms (Views: 189.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 18:59:58 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav.html.erb (1.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 101ms (Views: 97.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 19:00:10 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav.html.erb (2.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 111ms (Views: 106.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 19:00:25 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav.html.erb (2.4ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 130ms (Views: 125.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 19:00:43 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav.html.erb (1.7ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 78ms (Views: 74.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 19:01:08 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav.html.erb (1.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 70ms (Views: 67.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 19:01:13 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav.html.erb (1.1ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 66ms (Views: 62.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 19:02:11 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav.html.erb (1.2ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 77ms (Views: 73.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 184.45.37.242 at 2017-12-02 19:02:28 +0000
+Cannot render console from 184.45.37.242! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav.html.erb (2.4ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 77ms (Views: 72.8ms | ActiveRecord: 0.3ms)

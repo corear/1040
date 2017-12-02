@@ -4,14 +4,20 @@
 
 <center>
 
-<div class='raised' style="border-radius: 10px;background-color: #fff;padding: 50px;padding-left:50px;padding-right:50px;opacity:0.9;width:50%;">
+<div class='raised' style="border-radius: 10px;background-color: #fff;padding: 50px;padding-left:50px;padding-right:50px;opacity:0.9;width:60%;">
   <h1>Edit User</h1>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field" style="margin-top:40px;">
+  <div class="field row" style="margin-top:40px;">
     <h3>Avatar</h3>
+    <div class="col-md-6">
+      <img width="100%" src="<%= current_user.image.url(:medium) %>" class="raised rounded" style="margin:20px;margin-left:0px;"/>
+    </div>
+    <div class="col-md-6"><br><br><br>
+    <h3>Change your avatar:</h3>
     <%= f.file_field :image, :class => "inputField" %>
+    </div>
   </div>
   
   
