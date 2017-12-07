@@ -55,11 +55,11 @@
                                 <% end %>
                             </div>
                         </div>
-<iframe width="100%" height="550" style="border-radius:10px;margin-top:20px;" src="https://www.youtube-nocookie.com/embed/<%= @lesson.video %>?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="550" style="margin-top:20px;" src="https://www.youtube-nocookie.com/embed/<%= @lesson.video %>?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
             </center>
             
-<div class="panel">
+<div class="panel" style="border-radius:0;">
     <center><h1>DESCRIPTION</h1></center>
             
 <h3 style="margin:30px;margin-left:100px;margin-right:100px"><%= simple_format(@lesson.description, :style => "line-height:30px;") %></h3>
