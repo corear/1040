@@ -76,4 +76,16 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  
+  config.action_mailer.smtp_settings = {
+    address: "smtp.office365.com",
+    port: 587,
+    domain: "www.my1040academy.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV["info@my1040academy.com"],
+    password: ENV["XBNJ7BY4Gd!"],
+    :openssl_verify_mode  => 'none'
+  }
+  
 end

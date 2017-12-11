@@ -41,7 +41,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: "smtp.office365.com",
     port: 587,
-    domain: "my1040academy-com.mail.protection.outlook.com",
+    domain: "www.my1040academy.com",
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: ENV["info@my1040academy.com"],
