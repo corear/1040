@@ -12,5 +12,13 @@ class User < ActiveRecord::Base
   
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   
+  
+  after_create :welcome_send
+  
+  def welcome_send
+    UserMailer.signup_confirmation(self).deliver
+    
+  end
+
 end
 
