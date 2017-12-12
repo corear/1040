@@ -9,6 +9,7 @@ class UserMailer < ApplicationMailer
   def signup_confirmation(user)
     @greeting = "Hi"
     @user = user
-    mail to: user.email, subject: "hi"
+    attachments["512.png"] = File.read("#{Rails.root}/public/512.png")
+    mail(:to => "#{user.first_name} <#{user.email}>", :subject => "Registered")
   end
 end
