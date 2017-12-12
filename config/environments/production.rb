@@ -85,11 +85,11 @@ Rails.application.configure do
 
   config.action_mailer.smtp_settings = {
     :address        => 'smtp.office365.com',
-    :port           => '587',
+    :port           => 587,
     :authentication => :login,
-    :user_name      => ENV['my1040academy-com.mail.protection.outlook.com'],
+    :user_name      => ENV['info@my1040academy.com'],
     :password       => ENV['XBNJ7BY4Gd!'],
-    :domain         => 'my1040academy.com'
+    :domain         => 'my1040academy-com.mail.protection.outlook.com'
   }
   
   
