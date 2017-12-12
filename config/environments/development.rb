@@ -42,11 +42,9 @@ Rails.application.configure do
     :address        => 'smtp.office365.com',
     :port           => '587',
     :authentication => :login,
-    :user_name      => ENV['info@my1040academy.com'],
+    :user_name      => ENV['my1040academy-com.mail.protection.outlook.com'],
     :password       => ENV['XBNJ7BY4Gd!'],
-    :domain         => 'my1040academy-com.mail.protection.outlook.com',
-    :openssl_verify_mode => 'none',
-    :enable_starttls_auto => true
+    :domain         => 'my1040academy.com'
   }
   
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
