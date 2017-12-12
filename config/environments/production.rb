@@ -89,7 +89,7 @@ Rails.application.configure do
     :authentication => :login,
     :user_name      => ENV['info@my1040academy.com'],
     :password       => ENV['XBNJ7BY4Gd!'],
-    :domain         => 'my1040academy.com',
+    :domain         => 'my1040academy-com.mail.protection.outlook.com',
     :openssl_verify_mode => 'none',
     :enable_starttls_auto => true
   }
