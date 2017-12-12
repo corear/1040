@@ -7,7 +7,7 @@ Rails.application.initialize!
 
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.server_settings = {
-    :address        => 'email.secureserver.net',
+    :address        => 'smtpout.secureserver.net',
     :port           => '80',
     :authentication => :login,
     :user_name      => ENV['info@my1040academy.com'],

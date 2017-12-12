@@ -39,7 +39,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   
   config.action_mailer.smtp_settings = {
-    :address        => 'email.secureserver.net',
+    :address        => 'smtpout.secureserver.net',
     :port           => '80',
     :authentication => :login,
     :user_name      => ENV['info@my1040academy.com'],
