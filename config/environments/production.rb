@@ -82,15 +82,15 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   
   config.action_mailer.default_url_options = { :host => 'www.my1040academy.com' }
-  
+
   config.action_mailer.smtp_settings = {
-    :address        => 'smtpout.secureserver.net',
-    :port           => '80',
+    :address        => 'email.secureserver.net',
+    :port           => '587',
     :authentication => :login,
     :user_name      => ENV['info@my1040academy.com'],
     :password       => ENV['XBNJ7BY4Gd!'],
     :domain         => 'www.my1040academy.com',
-      :openssl_verify_mode => 'none',
+    :openssl_verify_mode => 'none',
     :enable_starttls_auto => true
   }
   
