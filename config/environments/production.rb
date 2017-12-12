@@ -84,13 +84,13 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'www.my1040academy.com' }
   
   config.action_mailer.smtp_settings = {
-    :address        => 'smtp.office365.com',
+    :address        => 'email.secureserver.net',
     :port           => '587',
     :authentication => :login,
     :user_name      => ENV['info@my1040academy.com'],
     :password       => ENV['XBNJ7BY4Gd!'],
-    :domain         => 'my1040academy-com.mail.protection.outlook.com',
-    :openssl_verify_mode => 'none',
+    :domain         => 'www.my1040academy.com',
+      :openssl_verify_mode => 'none',
     :enable_starttls_auto => true
   }
   
