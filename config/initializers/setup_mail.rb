@@ -4,8 +4,8 @@ ActionMailer::Base.smtp_settings = {
   :domain               => "my1040academy.com",
   :user_name            => ENV['info@my1040academy.com'],
   :password             => ENV['XBNJ7BY4Gd!'],
-  :authentication       => "plain",
+  :authentication       => :login,
   :enable_starttls_auto => true
 }
 
-ActionMailer::Base.default_url_options[:host] = "localhost:3000"
+ActionMailer::Base.default_url_options[:host] = "my1040academy.com"
