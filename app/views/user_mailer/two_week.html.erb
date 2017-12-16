@@ -1,0 +1,42 @@
+<style>
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+  body{
+    background-color:#f7f7f7;
+    font-family: "Roboto", sans-serif;
+    font-size:16px;
+    letter-spacing:.1px;
+  }
+  
+  .div{
+    width:50%;
+    margin-left:20%;
+    background-color:#fff;
+    padding:40px;
+  }
+  
+  p{
+    line-height:26px;
+  }
+</style>
+
+
+  <div class="div">
+    <center>
+    <%= image_tag '/512_Badge.png', :style => "height:100px;margin-bottom:10px;" %>
+    <h1>It's been two weeks!</h1><br>
+</center>
+<p>
+  Dear <%= @user.first_name %>,<br><br>I see that it has been two weeks since you have registered for this class. I hope you love us.
+</p>
+
+<p>
+    As a reminder, you signed up under this email (<%= @user.email %>). If any of your information listed below is incorrect, you can edit your profile <%= link_to 'here', "https://k1040-corear.c9users.io/users/edit" %>.
+</p>
+<br>
+
+<br>
+<p>
+  Happy Holidays noob!<br>Christopher O'Rear<br>Founder, CEO, 10/40 Entrepreneurship Academy
+</p>
+  </div>
+

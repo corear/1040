@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>10/40 Entrepreneurship Academy</title>
   <link rel=icon href="/512_Badge.png"/>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -8,6 +12,56 @@
   <%= csrf_meta_tags %>
 </head>
 <body style="background-color:#f7f7f7;">
+  
+  <style>
+  
+  #notice_wrapper{
+    position:absolute;
+    top:0;
+    width:100%;
+    z-index:2000;
+    background:rgba(173, 173, 173, 0.85);
+  }
+  
+  #notice_wrapper > p{
+    padding:2.5rem;
+    text-align:center;
+    margin:0;
+    font-size:1.5rem;
+    font-weight:700;
+    color:white;
+    letter-spacing:1px;
+  }
+  
+  #alert_wrapper{
+    position:absolute;
+    top:0;
+    width:100%;
+    z-index:2000;
+    background:rgba(228, 72, 72, 0.85);
+  }
+  
+  #alert_wrapper > p{
+    padding:2.5rem;
+    text-align:center;
+    margin:0;
+    font-size:1.5rem;
+    font-weight:700;
+    color:white;
+    letter-spacing:1px;
+  }
+  
+  </style>
+  
+  <% if notice %>
+    <div id="notice_wrapper">
+      <p class="notice"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;<%= notice %></p>
+    </div>
+  <% elsif alert %>
+    <div id="alert_wrapper">
+      <p class="alert"><span class="glyphicon glyphicon-warning-sign"></span>&nbsp;&nbsp;<%= alert %></p>
+    </div>
+  <% end %>
 
 <% if (request.original_fullpath != "/") and (request.original_fullpath != "/users/sign_up") and (request.original_fullpath != "/users/sign_in") and (request.original_fullpath != "/users/password/new") and (request.original_fullpath != "/users/password")  %>
   <% if !current_user %>
@@ -29,7 +83,23 @@
        
 <%= yield %>
 
-<span class="notice"><%= notice %></span>
-       <span class="alert"><%= alert %></span>
+<script>
+          $(document).ready(function() {
+           setTimeout(function(){
+             $('#notice_wrapper').fadeOut("slow", function(){
+               $(this).remove();
+             });
+           }, 4500);
+         });
+         
+         $(document).ready(function() {
+           setTimeout(function(){
+             $('#alert_wrapper').fadeOut("slow", function(){
+               $(this).remove();
+             });
+           }, 5000);
+         });
+</script>
+
 </body>
 </html>

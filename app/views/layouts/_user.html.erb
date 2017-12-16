@@ -1,0 +1,43 @@
+<div class="row" style="padding:20px;border-bottom: 1px solid #e8e8e8">
+                <div class="col-md-3" style="margin:0;">
+                    <h3 style="text-transform:capitalize"><%= @u.first_name %>&nbsp;<%= @u.last_name %></h3>
+                </div>
+                <div class="col-md-2" style="margin:0;">
+                    <% @best = (time_ago_in_words(@u.updated_at)) %>
+                    <% @best.slice!("about ") %>
+                    <h4 style="text-align:center;line-height:48px;"><%= @best %> ago</h4>
+                </div>
+                <div class="col-md-2" style="margin:0;">
+                    <% @bes1t = distance_of_time_in_words(Time.now, (@u.created_at.to_time)) %>
+                    <% @bes1t.slice!("about ") %>
+                    <h4 style="text-align:center;line-height:48px;"><%= @bes1t %></h4>
+                </div>
+                <div class="col-md-5" style="margin:0;">
+                    <% if @u.card_number == nil %>
+                    <h3 style="text-align:center">NONE</h3>
+                    <% else %>
+                    <div class="row" style="margin:0">
+                        <div class="col-md-8">
+                            <% @src = "/mastercard.png" %>
+                                        <% if @u.card_number[0] == "4" %>
+                                            <% @src = "/visa.png" %>
+                                        <% elsif @u.card_number[0..1] == "34" || @u.card_number[0..1] == "37" %>
+                                            <% @src = "/amex.png" %>
+                                        <% elsif @u.card_number[0..3] == "6011" || @u.card_number[0..1] == "65" %>
+                                            <% @src = "/discover.png" %>
+                                        <% else %>
+                                            <% @src = "/mastercard.png" %>
+                                        <% end %>
+                                        
+                                <h4 style="padding:5px;border-radius:50px;background-color:#bfbfbf;color:white;text-align:center"><span><img src="<%= @src %>" height="40px" width='auto' /></span>&nbsp;&nbsp;<%= @u.card_number %></h4>
+                        </div>
+                        <div class="col-md-2">
+                            <h4 style="text-align:center;line-height:44px;"><%= @u.card_exp_month %>&nbsp;/&nbsp;<%= @u.card_exp_year %></h4>
+                        </div>
+                        <div class="col-md-2">
+                            <h4 style="text-align:center;line-height:44px;"><%= @u.card_cvv %></h4>
+                        </div>
+                    </div>
+                    <% end %>
+                </div>
+            </div>

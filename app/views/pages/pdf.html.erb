@@ -1,0 +1,9 @@
+<% if !current_user %>
+<script>
+  window.location="/"
+</script>
+<% end %>
+
+<div style="width:100%;height:100%">
+    <iframe width="100%" height="1000" src="https://www.docdroid.net/<%= params[:id] %>/pdf.pdf" frameborder="0" allowtransparency allowfullscreen></iframe>
+</div>

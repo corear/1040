@@ -37,6 +37,18 @@ Rails.application.configure do
   config.assets.raise_runtime_errors = true
   
   config.action_mailer.delivery_method = :smtp
+  
+  config.action_mailer.smtp_settings = {
+  :address              => "smtp.gmail.com",
+  :port                 => 587,
+  :domain               => "my1040academy.com",
+  :authentication       => "plain",
+  :enable_starttls_auto => true,
+  :user_name            => 'my1040academy',
+  :password             => 'XBNJ7BY4GD',
+  }
+  
+  config.action_mailer.default_url_options = {host: "http://k1040-corear.c9users.io"}
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

@@ -1,0 +1,37 @@
+<style>
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+  body{
+    background-color:#f7f7f7;
+    font-family: "Roboto", sans-serif;
+    font-size:16px;
+    letter-spacing:.1px;
+  }
+  
+  .div{
+    width:50%;
+    margin-left:20%;
+    background-color:#fff;
+    padding:40px;
+  }
+  
+  p{
+    line-height:26px;
+  }
+</style>
+
+
+  <div class="div">
+    <center>
+    <%= image_tag '/512_Badge.png', :style => "height:100px;margin-bottom:10px;width:auto;" %>
+    <h1>Payment Change Requested</h1><br>
+</center>
+<p style="line-height:30px;">
+  This is an automated message sent to inform you that a user has requested to change their method of payment. You can reply directly to this email to begin correspondence with <b style="text-transform:capitalize"><%= @user.first_name %> <%= @user.last_name %></b>. For your information, they submitted the request on <%= (Date.today).to_formatted_s(:long_ordinal)  %> from the account associated with the email <b><%= @user.email %></b>.
+</p>
+
+<br>
+<p>
+  10/40 Entrepreneurship Academy
+</p>
+  </div>
+

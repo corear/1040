@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171202175116) do
+ActiveRecord::Schema.define(version: 20171215233620) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "question_id"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20171202175116) do
     t.datetime "updated_at",  null: false
     t.integer  "order"
     t.string   "cover"
+    t.string   "pdf"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -101,6 +102,16 @@ ActiveRecord::Schema.define(version: 20171202175116) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "card_number"
+    t.string   "card_name"
+    t.integer  "card_exp_year"
+    t.integer  "card_exp_month"
+    t.integer  "card_cvv"
+    t.string   "promo"
+    t.boolean  "two_week",               default: false
+    t.boolean  "completed",              default: false
+    t.boolean  "banhammer",              default: false
+    t.boolean  "auto_renew",             default: true
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

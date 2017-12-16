@@ -1,0 +1,61 @@
+<% if current_user %>
+<script>
+  window.location="/home"
+</script>
+<% end %>
+
+<style>
+  .navbar{
+    background:none;
+    width:90%;
+    margin-left:5%;
+    height:100px;
+    border-bottom:1px solid #e4e4e4;
+  }
+  
+  .container > .navbar-collapse{
+    background:none;
+  }
+  
+  .navbar-default .navbar-nav > li > a {
+    background:none;
+    margin-top:17px;
+    font-size:1.05em;
+    font-weight:900;
+    letter-spacing:2px;
+  }
+  
+  .navbar-right > li > a:hover {
+    margin-top:12px;
+    color:white;
+}
+
+li:hover{
+  color:white;
+}
+</style>
+
+
+<nav class="navbar navbar-default">
+      <a class="navbar-brand" href="/"><img src="/512_White.png" id="topImg" style="margin-top:-50px; height:150px;margin-left:-20px;" /></a>
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+   <ul class="nav navbar-nav navbar-left">
+        <li><a href="/users/sign_up" style="color:#949191;background:aliceblue;margin-left:20px;">REGISTER</a></li>
+        
+      </ul>
+      </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-top:-60px;">
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/contact">CONTACT</a></li>
+        <li><a href="/users/sign_in" style="color:#fff;border:1px solid white;background:none;margin-left:20px;margin-top:14px;">SIGN IN</a></li>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

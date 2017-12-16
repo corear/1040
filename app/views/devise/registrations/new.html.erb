@@ -1,44 +1,386 @@
 <style>
   body {
-        background: 
-        linear-gradient(
-        rgba(255,255,255,0.9),
-        rgba(255,255,255,0.9)
-        ), url("/header-4.jpg") no-repeat center center fixed;
+        background: linear-gradient(         rgba(236, 116, 116, 0.62),         rgba(179, 179, 179, 0.38)         ), url(https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?dpr=2&auto=format&fit=crop&w=568&h=379&q=60&cs=tinysrgb&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D) no-repeat center center fixed;
         
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
+        margin-bottom:50px;
     }
-</style>
 
-  <center>
-  <div class="row container">
-  <div class="col-md-4"></div>
-  <div class="col-md-4 raised" style="margin-top: 200px;margin-bottom: 200px;border-radius: 10px;background-color: #fff;padding: 50px;padding-left:20px;padding-right:20px;opacity:0.9;">
-    <h4>Register</h4>
-    <p>No credit card required.</p>
+  .row{
+    margin:0;
+    padding:0;
+  }
+  
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+}
+  
+  .col-md-4{
+    margin:0;
+    padding:10px;
+    background-color:rgba(200, 200, 200, 0.2);
+    color:#000;
+    transition: all 0.5s cubic-bezier(0.29, 1.42, 0.79, 1);
+  }
+  
+  .moving-tab{
+    position:relative;
+    box-shadow:0 16px 26px -10px rgba(244, 67, 54, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(244, 67, 54, 0.2);
+    text-align:center;
+    padding:12px;
+    text-transform:uppercase;
+    -webkit-font-smoothing:subpixel-antialiased;
+    background-color:#f44336;
+    top:-4px;
+    left:0;
+    border-radius:4px;
+    cursor:pointer;
+    color:#fff;
+    font-weight:500;
+  }
+  
+  .active{
+    background-color: #f55858;
+    color: white;
+    padding: 20px;
+    margin-top: -10px;
+    border-radius: 4px;
+    box-shadow:0 16px 26px -10px rgba(244, 67, 54, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(244, 67, 54, 0.2);
+  }
+  
+  .div_base{
+    transition:all 0.5s ease;
+    position:relative;
+    padding-left:100px;
+    padding-right:100px;
+  }
+  
+  .text_overlay{
+    transition: all 0.3s ease;
+    color:#a0a0a0;
+  }
+  
+.inputField2{
+    margin-top:10px;
+    border-radius:0;
+    border:none;
+    border-bottom:2px solid #bfbfbf;
+    color:#333;
+    background:none;
+    padding:13px;
+    font-size:1.2em;
+    font-weight:500;
+    width:100%;
+    transition: all 0.3s ease;
+    text-align:center;
+}
+
+input:focus + h4  {
+  position: relative;
+  top:-70px;
+  font-size:1em;
+}
+
+.inputField2:focus{
+  text-align:left;
+}
+
+.inputField2 + h4{
+  position:relative;
+  top:-37px;
+  left:10px;
+  display:inline;
+  text-align:left;
+}
+
+.glyphicon-lock{
+  top:2px;
+}
+
+.glyphicon-envelope{
+  top:2px;
+}
+
+.glyphicon-bullhorn{
+  top:2px;
+}
+
+.glyphicon-credit-card{
+  top:3px;
+}
+
+.card_input{
+  text-align:right;
+}
+  
+</style>
+        <%= render '/layouts/nav_guest' %>
+
+  <div class="container">
+  <div class="row">
+  <div class="col-xs-2">
+  </div>
+  <div class="col-xs-8 halfraised" style="margin-top: 200px;margin-bottom: 200px;border-radius: 5px;background-color: #fff;padding: 20px;overflow:hidden;">
+    
+    <center>
+      <img src="/512.png" style="height:150px;" />
+      <h2 style="font-weight:600;margin-bottom:20px;margin-top:-20px;">Begin Your Journey</h2>
+    <h4>Invest in realizing the dream of running your own small business.</h4>
+    </center>
+    <div class="row" style="margin:40px;margin-left:-20px;margin-right:-20px;">
+      <div class="col-md-4" id="account">
+        <center><a href="#account" onclick="yoyo('account')" data-toggle="tab" style="color:inherit;text-decoration:none;"><p style="line-height:30px;margin:0;">ACCOUNT</p></a></center>
+      </div>
+      <div class="col-md-4" id="info">
+        <center><a href="#info" onclick="yoyo('info')" data-toggle="tab" style="color:inherit;text-decoration:none;"><p style="line-height:30px;margin:0;">YOUR INFO</p></a></center>
+      </div>
+      <div class="col-md-4" id="payment">
+        <center><a href="#payment" onclick="yoyo('payment')" data-toggle="tab" style="color:inherit;text-decoration:none;"><p style="line-height:30px;margin:0;">PAYMENT</p></a></center>
+      </div>
+    </div>
+    
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+    <div class="div_base" id="step1">
+      <center><h4 style="margin-top:30px;margin-bottom:50px;">Let's start with the basic verification details.</h4></center>
+      <div>
+        <%= f.email_field :email, autofocus: true, :class => "inputField2", :pattern=>".{3,}" %>
+        <h4 class = "text_overlay"  ><span class="glyphicon glyphicon-envelope"></span> &nbsp;&nbsp;Your email</h4>
+      </div>
 
-    <%= f.email_field :email, autofocus: true, :class => "inputField", placeholder: "Email" %>
+    <div>
+      <%= f.password_field :password, autocomplete: "off", :class => "inputField2" %>
+        <h4 class = "text_overlay"  ><span class="glyphicon glyphicon-lock"></span> &nbsp;&nbsp;Your password</h4>
+    </div>
+        <div>
+    <%= f.password_field :password_confirmation, autocomplete: "off", :class => "inputField2" %>
+        <h4 class = "text_overlay"  ><span class="glyphicon glyphicon-lock"></span> &nbsp;&nbsp;Confirm your password</h4>
+        </div>
+        
+        
+      <center>
+        <a href="#info" onclick="yoyo('info')" class="btn btn-primary" data-toggle="tab" style="color:white;text-decoration:none;padding:12px;padding-left:40px;padding-right:40px;font-size:0.9em;margin-top:30px;margin-bottom:20px;margin-left:-20px;">NEXT &nbsp;<span class="glyphicon glyphicon-chevron-right"></span></a>
+ 
+      </center>
 
+    </div>
+    
+    
+    
+    
+    <div class="div_base" id="step2" style="left:120%;display:none;">
+            <center><h4 style="margin-top:30px;margin-bottom:50px;">Let's get to know more about each other.</h4></center>
+            
+            <div class="row">
+              <div class="col-md-6">
+                <div>
+                  <%= f.text_field :first_name, autofocus: true, :class => "inputField2" %>
+                  <h4 class = "text_overlay"  >First name</h4>
+                </div>
+              </div>
+              
+              <div class="col-md-6">
+                <div>
+                  <%= f.text_field :last_name, autocomplete: "off", :class => "inputField2" %>
+                  <h4 class = "text_overlay"  >Last name</h4>
+                </div>
+              </div>
+            </div>
+            
+            <div class="row" style="margin-top:30px;margin-bottom:30px;">
+              <div class="col-md-12" style="margin-bottom:30px;">
+                <div>
+                  <%= f.telephone_field :phone, autocomplete: "off", :class => "inputField2", :maxlength => "10", :onkeydown => "return isNumber(event);" %>
+                  <h4 class = "text_overlay">Phone</h4>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div>
+                  <%= f.text_field :street, autocomplete: "off", :class => "inputField2" %>
+                  <h4 class = "text_overlay">Street address</h4>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div>
+                  <%= f.text_field :city, autocomplete: "off", :class => "inputField2" %>
+                  <h4 class = "text_overlay">City</h4>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div>
+                  <%= f.text_field :state, autocomplete: "off", :class => "inputField2", :style => "text-align:right;text-transform:uppercase", :maxlength => "2" %>
+                  <h4 class = "text_overlay">State</h4>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div>
+                  <%= f.text_field :zip, autocomplete: "off", :class => "inputField2", :style => "text-align:right", :maxlength => "5", :onkeydown => "return isNumber(event);" %>
+                  <h4 class = "text_overlay">Zip</h4>
+                </div>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-md-12">
+                <div>
+                  <%= f.text_field :referral, autocomplete: "off", :class => "inputField2" %>
+                  <h4 class = "text_overlay">Referral</h4>
+                </div>
+              </div>
+            </div>
+              
+            
+            <div class="row">
+              <div class="col-md-12">
+                <div>
+                  <center>
+                    <h4 class = "text_overlay">Age Range</h4>
+                    <%= f.select :age, ['10-15','16-20','21+'], :class => "inputField2" %>
+                  </center>
+                </div>
+              </div>
+            </div>
+            
+<center>
+        <a href="#payment" onclick="yoyo('payment')" class="btn btn-primary" data-toggle="tab" style="color:white;text-decoration:none;padding:12px;padding-left:40px;padding-right:40px;font-size:0.9em;margin-top:30px;margin-bottom:20px;">NEXT &nbsp;<span class="glyphicon glyphicon-chevron-right"></span></a>
+    
+      </center>
 
-    <%= f.password_field :password, autocomplete: "off", :class => "inputField", placeholder: "Password" %>
+    </div>
+    <div class="div_base" id="step3" style="left:240%;display:none;">
+            <center><h4 style="margin-top:30px;margin-bottom:50px;">Your information is only accessed securely. We will never give this to anyone.</h4></center>
+              
+                    <div class="row">
+                      <div class="col-md-12">
+                        <%= f.text_field :promo, autocomplete: "off", :class => "inputField2" %>
+                        <h4 class = "text_overlay"><span class="glyphicon glyphicon-bullhorn"></span>&nbsp;&nbsp;Promo Code</h4>
+                      </div>
+                    </div>
+                    
+                    <div class="row">
+                      <div class="col-md-12">
+                        <%= f.text_field :card_name, autocomplete: "off", :class => "inputField2" %>
+                        <h4 class = "text_overlay"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Name on Card</h4>
+                      </div>
+                    </div>
+                    
+                    <div class="row">
+                      <div class="col-sm-8">
+                        <%= f.telephone_field :card_number, :id => "card_input", autocomplete: "off", :class => "inputField2 card_input", :maxlength => "19", :onkeydown => "return isNumber(event);" %>
+                        <h4 class = "text_overlay"><span class="glyphicon glyphicon-credit-card"></span>&nbsp;&nbsp;Card Number</h4>
+                      </div>
+                      <div class="col-sm-4" style="padding-top:19px;padding-bottom:19px;border-bottom:2px solid #bfbfbf;">
+                        <%= f.select :card_exp_month, ['Month','01','02','03','04','05','06','07','08','09','10','11','12'], :class => "inputField2" %><span>&nbsp;/&nbsp;</span>
+                        <%= f.select :card_exp_year, ['Year','18','19','20','21','22','23'], :class => "inputField2", :style => "display: inline" %>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-8">
+                                            <img src="/tran.png" id="hot_img" style="max-height:70px;height:100%;width:auto" />
+                      </div>
+                      <div class="col-sm-4" style="padding:0">
+                        <%= f.telephone_field :card_cvv, autocomplete: "off", :class => "inputField2", :style=>"text-align:right", :maxlength => "4", :onkeydown => "return isNumber(event);" %>
+                        <h4 class = "text_overlay"><span class="glyphicon glyphicon-lock"></span> &nbsp;CVV</h4>
+                      </div>
+                    </div>
 
+    <%= f.submit "Create account", :class => "btn-lg btn-primary", :style => "width:100%;margin-top:10px;margin-bottom:20px;" %>
+  </div>
+    </div>
 
-    <%= f.password_field :password_confirmation, autocomplete: "off", :class => "inputField", placeholder: "Confirm password" %>
+    
  
 
-  <div class="actions">
-    <%= f.submit "Create account", :class => "btn-lg btn-primary", :style => "width:100%;margin-top:10px;" %>
-  </div>
+  
 <% end %>
 
-<%= render "devise/shared/links" %>
+
 </div>
-<div class="col-md-4"></div>
+<div class="col-xs-2"></div>
+</div>
 </div>
 
-</center>
+<script>
+
+$('.card_input').on('keyup', function() {
+  var foo = $(this).val().split(" ").join(""); 
+  if (foo.length > 0) {
+    foo = foo.match(new RegExp('.{1,4}', 'g')).join(" ");
+  }
+  $(this).val(foo);
+});
+
+  function yoyo(id){
+    if (id == "account") {
+      document.getElementById('step1').style = "display:block;left:0;";
+      document.getElementById('step2').style = "display:none;left:120%;";
+      document.getElementById('step3').style = "display:none;left:240%;";
+    }
+    if (id == "info") {
+      document.getElementById('step1').style = "display:none;left:-120%;";
+      document.getElementById('step2').style = "display:block;left:0;";
+      document.getElementById('step3').style = "display:none;left:120%;";
+    }
+    if (id == "payment") {
+      document.getElementById('step1').style = "display:none;left:-240%;";
+      document.getElementById('step2').style = "display:none;left:-120%;";
+      document.getElementById('step3').style = "display:block:left:0;";
+    }
+  }
+  
+  $(document).ready(function () {
+    window.setTimeout( function(){document.getElementById("account").classList.add('active');}, 500);
+       });
+  
+  $(function() {
+    $("form input").keypress(function (e) {
+        if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
+            if ( document.getElementById("account").classList.contains('active') ){
+              document.getElementById("account").classList.remove('active');
+              document.getElementById("info").className += " active";
+              yoyo('info');
+            } else if ( document.getElementById("info").classList.contains('active') ){
+              document.getElementById("info").classList.remove('active');
+              document.getElementById("payment").className += " active";
+              yoyo('payment');
+            } else {
+            }
+            return false;
+        } else {
+            return true;
+        }
+    });
+});
+</script>
+
+<script>
+function isNumber(event) {
+  
+  var inp = document.getElementById("card_input").value;
+                                        
+  if (inp.substring(0,1) == "4") {
+    document.getElementById('hot_img').src="/visa.png";
+  } else if (inp.substring(0,2) == "34" || inp.substring(0,2) == "37") {
+    document.getElementById('hot_img').src="/amex.png";
+  } else if (inp.substring(0,4) == "6011" || inp.substring(0,2) == "65") {
+    document.getElementById('hot_img').src="/discover.png";
+  } else {
+    document.getElementById('hot_img').src="/mastercard.png";
+  }
+                                        
+                                        
+  if (event) {
+    var charCode = (event.which) ? event.which : event.keyCode;
+    if (charCode != 190 && charCode > 31 && 
+       (charCode < 48 || charCode > 57) && 
+       (charCode < 96 || charCode > 105) && 
+       (charCode < 37 || charCode > 40) && 
+        charCode != 110 && charCode != 8 && charCode != 46 )
+       return false;
+  }
+  return true;
+}
+</script>

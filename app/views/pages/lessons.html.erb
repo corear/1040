@@ -2,6 +2,19 @@
     p{
         margin-top:20px;
     }
+
+.frame{
+width: 100%;
+height:100%;
+}
+
+.bar{
+position:absolute;
+bottom:0;
+right:0;
+width:100%;
+height:40px;
+}
 </style>
 
 <%= render '/layouts/nav' %>
@@ -40,13 +53,13 @@
                     <ptag style="text-align:right;">Lesson <%= @lesson.order %></ptag>
                     <% if current_user.progress %>
                         <% if (current_user.progress >= @lesson.order) %>
-                    <div class="gtag"><h3 style="color:white;font-size:28px;line-height:1.9">✓</h3></div>
+                    <div class="gtag"><h3 style="color:white;font-size:22px;line-height:2.5"><span class="glyphicon glyphicon-ok"></span></h3></div>
                     <% end %>
                     <% end %>
                     
             <% if current_user.id == 1 %>
             <br>
-        <a class="btn-lg btn-secondary raised" style="width:100%;position:relative;top:30px;" href="/lessons/<%= @lesson.id %>/edit"><span class="glyphicon glyphicon-edit"></span>  EDIT THIS LESSON</a>
+        <a class="btn-lg btn-secondary raised" style="width:100%;position:relative;top:30px;z-index:100;" href="/lessons/<%= @lesson.id %>/edit"><span class="glyphicon glyphicon-edit"></span>  EDIT THIS LESSON</a>
             <% end %>
                             </div>
                             <div class="col-sm-2">
@@ -55,14 +68,22 @@
                                 <% end %>
                             </div>
                         </div>
-<iframe width="100%" height="550" style="margin-top:20px;" src="https://www.youtube-nocookie.com/embed/<%= @lesson.video %>?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-
+                            <div class="holder embed-responsive embed-responsive-16by9">
+                                 <iframe class="embed-responsive-item" style="margin-top:20px;" src="https://www.youtube-nocookie.com/embed/<%= @lesson.video %>?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                                 <div class="bar" id="bottom-layer">.</div>
+                            </div>
             </center>
             
 <div class="panel" style="border-radius:0;">
     <center><h1>DESCRIPTION</h1></center>
             
 <h3 style="margin:30px;margin-left:100px;margin-right:100px"><%= simple_format(@lesson.description, :style => "line-height:30px;") %></h3>
+
+<br><br>
+<% if @lesson.pdf && @lesson.pdf != "" %>
+
+<center><a href="/viewPDF/<%= @lesson.pdf %>" target="_blank" class="btn btn-primary"><span class="glyphicon glyphicon-file"></span>&nbsp;View Attached File</a></center>
+<% end %>
 </div>
     
     <center>

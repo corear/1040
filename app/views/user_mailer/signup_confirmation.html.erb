@@ -1,9 +1,48 @@
-<h1>UserMailer#signup_confirmation</h1>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+  body{
+    background-color:#f7f7f7;
+    font-family: "Roboto", sans-serif;
+    font-size:16px;
+    letter-spacing:.1px;
+  }
+  
+  .div{
+    width:50%;
+    margin-left:20%;
+    background-color:#fff;
+    padding:40px;
+  }
+  
+  p{
+    line-height:26px;
+  }
+</style>
 
+
+  <div class="div">
+    <center>
+    <%= image_tag '/512_Badge.png', :style => "height:100px;margin-bottom:10px;" %>
+    <h1>Congratulations!</h1><br>
+</center>
 <p>
-  <%= @greeting %>, find me in app/views/user_mailer/signup_confirmation.html.erb
+  Dear <%= @user.first_name %>,<br><br>I would like to personally congratulate you on taking the first step towards AWESOMENESS. LOL. YOU NO LONGER A NOOB ANYMORE. NOOB.
 </p>
 
 <p>
-    Welcome, <%= @user.email %>.
+    As a reminder, you signed up under this email (<%= @user.email %>). If any of your information listed below is incorrect, you can edit your profile <%= link_to 'here', "https://k1040-corear.c9users.io/users/edit" %>.
 </p>
+<br>
+<h4>Your information:</h4>
+<p style="text-transform:capitalize">
+  Name: <%= @user.first_name %>&nbsp;<%= @user.last_name %><br>
+  Phone: (<%= (@user.phone).slice!(0..2) %>) <%= (@user.phone).slice!(0..2) %>-<%= (@user.phone).slice!(0..3) %><br>
+  Address: <%= @user.street %><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @user.city %>,&nbsp;<%= @user.state %>&nbsp;&nbsp;<%= @user.zip %>
+</p>
+
+<br>
+<p>
+  Happy Holidays noob!<br>Christopher O'Rear<br>Founder, CEO, 10/40 Entrepreneurship Academy
+</p>
+  </div>
+

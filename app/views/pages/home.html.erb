@@ -5,7 +5,7 @@
 
 
             
-                <ul style="width:100%;border-bottom:1px solid #bfbfbf;padding:10px;">
+                <ul style="width:100%;border-bottom:1px solid #bfbfbf;padding:10px;display:none;">
                     <li class="hor"><a style="color:#4a4a4a;font-weight:800;" href="/home">My Dashboard</a></li>
                     <li class="hor" style="display:none"><a style="color:#9c9c9c;font-weight:800" href="">payment history</a></li>
                 </ul>
@@ -95,8 +95,8 @@
     <div class="col-sm-2"></div>
     <a href="/lesson/<%= @less.id %>">
     <div class="col-sm-8 halfraised bounce-hover" style="border-radius:5px;padding:0;overflow:hidden;">
-        <div style="background: linear-gradient(304.95deg, rgb(249, 68, 68), rgba(199, 128, 128, 0.7)), url(<%= @less.cover %>);background-size:cover;color:white;padding:30px;">
-            <h1 style="font-weight:600;"><%= n %>. <%= @less.title %></h1>
+        <div style="background: linear-gradient(304.95deg, rgba(199, 128, 128, 0.7), rgb(249, 68, 68)), url(<%= @less.cover %>);background-size:cover;color:white;padding:30px;">
+            <h1 style="font-weight:600;"><span style="font-size:0.7em;position:relative;top:-4px;padding:5px;padding-left:15px;padding-right:12px;display:inline;background-color:#fff;color:#f55a58;border-radius:20px;"><%= n %></span> &nbsp;<%= @less.title %></h1>
             <p style="color:white"><%= simple_format(@less.description, :style => "margin-left:50px; margin-right:50px; line-height: 30px;margin-top:30px;") %></p>
         </div>
         <div style="padding:20px;background-color:white;width:100%;">
@@ -124,8 +124,8 @@
     <div class="col-sm-2"></div>
     <a href="/lesson/<%= @less.id %>">
     <div class="col-sm-8 halfraised bounce-hover" style="border-radius:5px;padding:0;overflow:hidden;">
-        <div style="background: linear-gradient(304.95deg, rgb(249, 68, 68), rgba(199, 128, 128, 0.7)), url(<%= @less.cover %>);background-size:cover;color:white;padding:30px;">
-            <h1 style="font-weight:600;margin-bottom:20px;"><%= n %>. <%= @less.title %></h1>
+        <div style="background: linear-gradient(304.95deg, rgba(199, 128, 128, 0.7), rgb(249, 68, 68)), url(<%= @less.cover %>);background-size:cover;color:white;padding:30px;">
+            <h1 style="font-weight:600;margin-bottom:20px;"><span style="font-size:0.7em;position:relative;top:-4px;padding:5px;padding-left:15px;padding-right:12px;display:inline;background-color:#fff;color:#f55a58;border-radius:20px;"><%= n %></span>&nbsp; <%= @less.title %></h1>
             <p style="color:white"><%= simple_format(@less.description, :style => "margin-left:50px; margin-right:50px; line-height: 30px;margin-top:30px;") %></p>
         </div>
         <h3 style="background: #fff;color: #f55a58;padding: 30px;padding-right: 40px;margin: 0;text-align:right;">GO TO THE LESSON <span class="glyphicon glyphicon-chevron-right"></span></h3>

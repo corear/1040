@@ -1,15 +1,28 @@
 class UserMailer < ApplicationMailer
-  default :from => "info@my1040academy.com"
-
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.user_mailer.signup_confirmation.subject
-  #
+  default :from => "10/40 Entrepreneurship Academy <my1040academy@gmail.com>"
+  
   def signup_confirmation(user)
-    @greeting = "Hi"
     @user = user
-    attachments["512.png"] = File.read("#{Rails.root}/public/512.png")
-    mail(:to => "#{user.first_name} <#{user.email}>", :subject => "Registered")
+    mail(:to => "#{user.first_name} #{user.last_name} <#{user.email}>", :subject => "Welcome, #{user.first_name}!", :reply_to => "info@my1040academy.com")
+  end
+  
+  def signup_confirmation_admin(user)
+    @user = user
+    mail(:to => "Boss Man <info@my1040academy.com>", :subject => "🎉 New Registration from #{user.first_name} #{user.last_name}")
+  end
+  
+  def two_week(user)
+    @user = user
+    mail(:to => "#{user.first_name} #{user.last_name} <#{user.email}>", :subject => "Two Week Email", :reply_to => "info@my1040academy.com")
+  end
+  
+  def payment_change(user)
+    @user = user
+    mail(:to => "Boss Man <info@my1040academy.com>", :subject => "Request of Payment Change from #{user.first_name} #{user.last_name}", :reply_to => "#{user.email}")
+  end
+  
+  def completed(user)
+    @user = user
+    mail(:to => "#{user.first_name} #{user.last_name} <#{user.email}>", :subject => "🎉 You've Completed Our Course!", :reply_to => "info@my1040academy.com")
   end
 end

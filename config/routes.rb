@@ -8,13 +8,17 @@ Rails.application.routes.draw do
 
   get 'home' => "pages#home"
   get 'lesson/:id' => "pages#lessons"
-
+  get '/secure/payment_info' => "pages#payment"
   get 'admin' => "pages#admin"
-  
+  get :send_order_mail, to: 'pages#send_order_mail', as: :send_order_mail
+  get :send_two_week, to: 'pages#send_two_week', as: :send_two_week
+  get :forget_two_week, to: 'pages#forget_two_week', as: :forget_two_week
+  get :send_payment_change, to: 'pages#send_payment_change', as: :send_payment_change
   get '/quiz/:id' => "pages#quiz"
   get '/answers' => 'answers#check'
-  
+  get '/viewPDF/:id' => 'pages#pdf'
   get '/user/:id' => "pages#user"
+  get '/welcome' => 'pages#welcome'
   
 
   # The priority is based upon order of creation: first created -> highest priority.

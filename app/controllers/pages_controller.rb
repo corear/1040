@@ -1,5 +1,31 @@
 class PagesController < ApplicationController
+    
   def index
+  end
+  
+  def send_order_mail
+    UserMailer.signup_confirmation_admin(current_user).deliver
+    redirect_to "/admin"
+  end
+  
+  def send_payment_change
+    UserMailer.payment_change(current_user).deliver
+    redirect_to "/home", :notice => "An email has been sent to the administrator informing them of your wish to change payment."
+  end
+  
+  def send_two_week
+    user = Admin.find_chaps(User.all.where('two_week = ? OR two_week = ?', false, 'false'))
+    UserMailer.two_week(user).deliver
+    user.two_week = true
+    user.save!
+    redirect_to "/admin", :notice => "An email has been successfully sent to #{user.email}."
+  end
+  
+  def forget_two_week
+    user = Admin.find_chaps(User.all.where('two_week = ? OR two_week = ?', false, 'false'))
+    user.two_week = true
+    user.save!
+    redirect_to "/admin", :alert => "A two week email will never be sent to #{user.email}."
   end
 
   def home
@@ -13,9 +39,14 @@ class PagesController < ApplicationController
   end
 
   def admin
-    @users = User.all
+    require 'date'
+    @short_users = User.all.where('created_at > ? AND completed = ?', 6.months.ago, 'false')
+    @long_users = User.all.where('created_at < ? AND completed = ?', 6.months.ago, 'false')
+    @completed_users = User.all.where(completed: true)
+    @banned_users = User.all.where(banhammer: true)
     @newLesson = Lesson.new
     @lessons = Lesson.all.order("created_at DESC")
+    @poor = Admin.find_chaps(User.all.where('two_week = ? OR two_week = ?', false, 'false'))
   end
   
   def quiz

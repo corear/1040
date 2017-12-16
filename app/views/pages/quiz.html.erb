@@ -45,6 +45,14 @@
                    <% end %>
                <% end %>
            
+                <% if Lesson.find_by_order(current_user.progress + 1) %>
+                <% else %>
+                    <% if current_user.completed == false %>
+                        <% current_user.completed = true %>
+                        <% current_user.save %>
+                        <% UserMailer.completed(current_user).deliver %>
+                    <% end %>
+                <% end %>
            
                <center><qtag style="font-size:3em;color:#6d6d6d;background:none;position:relative;top:30px;margin-bottom:30px;">QUIZ <%= @lesson.order %> RESULTS</qtag></center>
                <div class="progress" style="position:relative;top:30px;">

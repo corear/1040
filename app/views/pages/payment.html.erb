@@ -1,0 +1,105 @@
+<style>
+    
+  
+.inputField2{
+    margin-top:10px;
+    border-radius:0;
+    border:none;
+    border-bottom:2px solid #bfbfbf;
+    color:#333;
+    background:none;
+    padding:13px;
+    font-size:1.2em;
+    font-weight:500;
+    width:100%;
+    transition: all 0.3s ease;
+    text-align:center;
+}
+
+input:focus + h4  {
+  position: relative;
+  top:-70px;
+  font-size:1em;
+}
+
+.inputField2:focus{
+  text-align:left;
+}
+
+.inputField2 + h4{
+  position:relative;
+  top:-37px;
+  left:10px;
+  display:inline;
+  text-align:left;
+}
+
+a{
+    color:white;
+}
+
+a:hover{
+    color:white;
+}
+</style>  
+
+
+
+<%= render '/layouts/nav' %>
+        <div class="wrapper">
+            <div class="container" style="margin-top:30px;">
+                <div>
+                    <% if !current_user.card_number %>
+                        <center>
+                            <h1>Beta testers do not use any payment!</h1>
+                        </center>
+                    <% else %>
+                    <center><h4 style="margin-top:30px;margin-bottom:50px;">Your information is only accessed securely. We will never give this to anyone.</h4></center>
+                    <center><h3>If you wish to change your payment method, send us an email and we will contact you shortly.</h3></center>
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6" style="margin-top:50px;background-color:#d6d6d6;border-radius:10px;padding-bottom:20px">
+                            <div class="row">
+                                <div class="row" style="margin-top:15px">
+                                    <div class="col-xs-6">
+                                        <% if current_user.card_number[0] == "4" %>
+                                            <img src="/visa.png" style="max-height:70px;height:100%;width:auto" />
+                                        <% elsif current_user.card_number[0..1] == "34" || current_user.card_number[0..1] == "37" %>
+                                            <img src="/amex.png" style="max-height:70px;height:100%;width:auto" />
+                                        <% elsif current_user.card_number[0..3] == "6011" || current_user.card_number[0..1] == "65" %>
+                                            <img src="/discover.png" style="max-height:70px;height:100%;width:auto" />
+                                        <% else %>
+                                            <img src="/mastercard.png" style="max-height:70px;height:100%;width:auto" />
+                                        <% end %>
+                                </div>
+                                <div class="col-xs-6">
+                                        <h2 style="text-align:right;font-size:20px"><span style="padding:5px;padding-left:10px;padding-right:10px;border-radius:10px;background-color:#bdbdbd;">CVV</span>&nbsp;<%= current_user.card_cvv %></h2>
+                                </div>
+                                </div>
+                                <div class="col-md-12" style="margin-top:15px;margin-bottom:25px;">
+                                    <center>
+                                        <h2><%= current_user.card_number %></h2>
+                                    </center>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                    <h2 style="font-size:24px;text-transform:uppercase"><%= current_user.card_name %></h2>
+                                </div>
+                                <div class="col-xs-6">
+                                    <h2 style="font-size:24px;text-align:right"><%= current_user.card_exp_month %>&nbsp;/&nbsp;<%= current_user.card_exp_year %></h2>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                        <div class="row" style="margin-top:50px;">
+                            <center>
+                                <h2>Things don't look right?</h2>
+                                <button class="btn-lg btn-primary" style="margin:20px;color:white"><%= link_to "REQUEST A CHANGE OF PAYMENT", :controller => "pages", :action => "send_payment_change" %></button>
+                            </center>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>

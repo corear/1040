@@ -78,7 +78,7 @@
   <% end %>
 
   <div class="field" style="margin-top:40px;">
-    <h3>Password</h3><i> (leave blank if you don't want to change it)</i></h3>
+    <h3>Change Password</h3><i> (leave blank if you don't want to change it)</i></h3>
     <%= f.password_field :password, autocomplete: "off", :class => "inputField" %>
     <% if @minimum_password_length %>
       <br />
@@ -87,7 +87,7 @@
   </div>
 
   <div class="field" style="margin-top:40px;">
-    <h3>Confirm Password</h3>
+    <h3>Confirm New Password</h3>
     <%= f.password_field :password_confirmation, autocomplete: "off", :class => "inputField" %>
   </div>
 

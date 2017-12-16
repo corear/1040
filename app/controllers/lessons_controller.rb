@@ -14,7 +14,7 @@ class LessonsController < ApplicationController
     def update
         @lesson = Lesson.find(params[:id])
         
-        if @lesson.update_attributes(params[:lesson].permit(:title, :description, :video, :order, :cover))
+        if @lesson.update_attributes(params[:lesson].permit(:title, :description, :video, :order, :cover, :pdf))
             redirect_to '/admin'
         end
     end
@@ -40,7 +40,7 @@ class LessonsController < ApplicationController
     
     private
     def post_params
-        params.require(:lesson).permit(:title, :description, :video, :order, :cover)
+        params.require(:lesson).permit(:title, :description, :video, :order, :cover, :pdf)
     end
     
 end
