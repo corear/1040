@@ -15,6 +15,16 @@
         display:inline;
     }
     
+    .countem{
+        padding:6px;
+        padding-left:10px;
+        padding-right:10px;
+        border-radius:20px;
+        background:white;
+        color:#f55a58;
+        margin-left:10px;
+    }
+    
 </style>
 
 <% if (current_user.id != 1) then %>
@@ -141,10 +151,10 @@
 <div class="row halfraised" style="background-color:white;margin:40px;padding:20px">
     <div class="col-md-12" style="margin:20px">
         <center>
-            <a href="#" data-toggle="tab" onclick="changeViews('shortTerm')" class="btn btn-primary" style="color:white;margin:10px;">LESS THAN 6 MONTHS</a>
-            <a href="#" data-toggle="tab" onclick="changeViews('longTerm')" class="btn btn-primary" style="color:white;margin:10px;">MORE THAN 6 MONTHS</a>
-            <a href="#" data-toggle="tab" onclick="changeViews('completed')" class="btn btn-primary" style="color:white;margin:10px;">COMPLETED</a>
-            <a href="#" data-toggle="tab" onclick="changeViews('banned')" class="btn btn-primary" style="color:white;margin:10px;">BANNED</a>
+            <a href="#" data-toggle="tab" onclick="changeViews('shortTerm')" class="btn btn-primary" style="color:white;margin:10px;">LESS THAN 6 MONTHS&nbsp;<span class="countem"><%= @short_users.count %></span></a>
+            <a href="#" data-toggle="tab" onclick="changeViews('longTerm')" class="btn btn-primary" style="color:white;margin:10px;">MORE THAN 6 MONTHS&nbsp;<span class="countem"><%= @long_users.count %></span></a>
+            <a href="#" data-toggle="tab" onclick="changeViews('completed')" class="btn btn-primary" style="color:white;margin:10px;">COMPLETED&nbsp;<span class="countem"><%= @completed_users.count %></span></a>
+            <a href="#" data-toggle="tab" onclick="changeViews('banned')" class="btn btn-primary" style="color:white;margin:10px;">BANNED&nbsp;<span class="countem"><%= @banned_users.count %></span></a>
         </center>
     </div>
     <div class="col-md-12" style="padding-bottom:20px;border-bottom:2px solid">

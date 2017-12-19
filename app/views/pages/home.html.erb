@@ -1,9 +1,13 @@
 
+    
+    
         <%= render '/layouts/nav' %>
         <div class="wrapper">
     <div class="container" style="margin-top:0px;">
 
-
+<% if (current_user.banhammer == true || current_user.banhammer == "true") %>
+    <%= render '/layouts/banhammer_notice' %>
+    <% else %>
             
                 <ul style="width:100%;border-bottom:1px solid #bfbfbf;padding:10px;display:none;">
                     <li class="hor"><a style="color:#4a4a4a;font-weight:800;" href="/home">My Dashboard</a></li>
@@ -137,7 +141,7 @@
     <% end %>
 
     
-
+<% end %>
 
     </div>
 </div>

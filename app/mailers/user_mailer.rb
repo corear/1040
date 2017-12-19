@@ -25,4 +25,15 @@ class UserMailer < ApplicationMailer
     @user = user
     mail(:to => "#{user.first_name} #{user.last_name} <#{user.email}>", :subject => "🎉 You've Completed Our Course!", :reply_to => "info@my1040academy.com")
   end
+  
+  def enact_banhammer(user)
+    @user = user
+    mail(:to => "#{user.first_name} #{user.last_name} <#{user.email}>", :subject => "Account Temporarily Banned", :reply_to => "info@my1040academy.com")
+  end
+  
+  def lift_banhammer(user)
+    @user = user
+    mail(:to => "#{user.first_name} #{user.last_name} <#{user.email}>", :subject => "Account Reinstated!", :reply_to => "info@my1040academy.com")
+  end
+  
 end

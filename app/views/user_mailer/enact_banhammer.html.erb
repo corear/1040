@@ -1,0 +1,45 @@
+<style>
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+  body{
+    background-color:#f7f7f7;
+    font-family: "Roboto", sans-serif;
+    font-size:16px;
+    letter-spacing:.1px;
+  }
+  
+  .div{
+    width:50%;
+    margin-left:20%;
+    background-color:#fff;
+    padding:40px;
+  }
+  
+  p{
+    line-height:26px;
+  }
+</style>
+
+
+  <div class="div">
+    <center>
+    <%= image_tag '/512_Badge.png', :style => "height:100px;margin-bottom:10px;" %>
+    <h1>Account Temporarily Disabled</h1><br>
+</center>
+<p>
+  Dear <%= @user.first_name %>,<br><br>Unfortunately, your account has been temporarily disabled by our moderators. More than likely, this is due to an error processing your payment. You can view your payment information <%= link_to 'here', "https://k1040-corear.c9users.io/secure/payment_info" %>.
+</p>
+
+<p>
+    If you find this information to be incorrect, please reply to this email to schedule a phone call where we can securely receive your new payment information.
+</p>
+<p>
+    If the listed credit card information is completely correct, then the issue did not arise while processing your payment. If this is the case, respond to this email to begin correspondence with me, and hopefully we can have your account reinstated soon.
+</p>
+<br>
+
+<br>
+<p>
+  I apologize for this inconvenience,<br>Christopher O'Rear<br>Founder, CEO, 10/40 Entrepreneurship Academy
+</p>
+  </div>
+

@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          
+         
   has_attached_file :image,
   :storage => :cloudinary,
   :path => ':id/:style/:filename',
@@ -17,6 +18,10 @@ class User < ActiveRecord::Base
   def welcome_send
     UserMailer.signup_confirmation(self).deliver
     UserMailer.signup_confirmation_admin(self).deliver
+  end
+  
+  def password_required?
+    false
   end
 
 end

@@ -1,11 +1,41 @@
 class PagesController < ApplicationController
+  
+  def change_card
+    @user = User.find(params[:id])
+    @user.update_attribute(:card_number, params[:card_number])
+    @user.update_attribute(:card_cvv, params[:card_cvv])
+    @user.update_attribute(:card_exp_month, params[:card_exp_month])
+    @user.update_attribute(:card_exp_year, params[:card_exp_year])
+    @user.update_attribute(:card_name, params[:card_name])
+    redirect_to "/user/#{@user.id}"
+  end
     
   def index
   end
   
+  def user
+    @user = User.find(params[:id])
+  end
+  
   def send_order_mail
     UserMailer.signup_confirmation_admin(current_user).deliver
-    redirect_to "/admin"
+    redirect_to "/home"
+  end
+  
+  def enact_banhammer
+    UserMailer.enact_banhammer(User.find(params[:id])).deliver
+    @u = User.find(params[:id])
+    @u.banhammer = true
+    @u.save
+    redirect_to "/admin", :notice => "🔨 The Banhammer has been dropped on #{@u.email}."
+  end
+  
+  def lift_banhammer
+    UserMailer.lift_banhammer(User.find(params[:id])).deliver
+    @u = User.find(params[:id])
+    @u.banhammer = false
+    @u.save
+    redirect_to "/admin", :notice => "🔨 The Banhammer has been lifted from #{@u.email}."
   end
   
   def send_payment_change
@@ -40,10 +70,10 @@ class PagesController < ApplicationController
 
   def admin
     require 'date'
-    @short_users = User.all.where('created_at > ? AND completed = ?', 6.months.ago, 'false')
-    @long_users = User.all.where('created_at < ? AND completed = ?', 6.months.ago, 'false')
-    @completed_users = User.all.where(completed: true)
-    @banned_users = User.all.where(banhammer: true)
+    @short_users = User.all.where('created_at > ? AND completed = ?', 6.months.ago, 'false').order("created_at ASC")
+    @long_users = User.all.where('created_at < ? AND completed = ?', 6.months.ago, 'false').order("created_at ASC")
+    @completed_users = User.all.where(completed: true).order("created_at ASC")
+    @banned_users = User.all.where(banhammer: true).order("created_at ASC")
     @newLesson = Lesson.new
     @lessons = Lesson.all.order("created_at DESC")
     @poor = Admin.find_chaps(User.all.where('two_week = ? OR two_week = ?', false, 'false'))

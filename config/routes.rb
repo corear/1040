@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   get :send_two_week, to: 'pages#send_two_week', as: :send_two_week
   get :forget_two_week, to: 'pages#forget_two_week', as: :forget_two_week
   get :send_payment_change, to: 'pages#send_payment_change', as: :send_payment_change
+  get :lift_banhammer, to: 'pages#lift_banhammer', as: :lift_banhammer
+  get :enact_banhammer, to: 'pages#enact_banhammer', as: :enact_banhammer
+  get :change_card, to: 'pages#change_card', as: :change_card
   get '/quiz/:id' => "pages#quiz"
   get '/answers' => 'answers#check'
   get '/viewPDF/:id' => 'pages#pdf'
