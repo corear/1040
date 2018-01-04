@@ -3,6 +3,12 @@ Rails.application.routes.draw do
   resources :questions
   resources :answers
   resources :responses
+  
+  devise_scope :user do
+    get "/secure/signin" => "devise/sessions#new" # custom path to login/sign_in
+    get "/secure/enroll" => "devise/registrations#new", as: "new_user_registration" # custom path to sign_up/registration
+  end
+  
   devise_for :users
   root 'pages#index'
 
@@ -22,6 +28,9 @@ Rails.application.routes.draw do
   get '/viewPDF/:id' => 'pages#pdf'
   get '/user/:id' => "pages#user"
   get '/welcome' => 'pages#welcome'
+  get '/faq' => 'pages#faq'
+  get '/terms' => 'pages#terms'
+  get '/privacy' => 'pages#privacy'
   
 
   # The priority is based upon order of creation: first created -> highest priority.

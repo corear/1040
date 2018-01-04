@@ -3,14 +3,14 @@
                     <h3 style="text-transform:capitalize"><%= @u.first_name %>&nbsp;<%= @u.last_name %></h3>
                 </div>
                 <div class="col-md-2" style="margin:0;">
-                    <% @best = (time_ago_in_words(@u.updated_at)) %>
-                    <% @best.slice!("about ") %>
-                    <h4 style="text-align:center;line-height:48px;"><%= @best %> ago</h4>
-                </div>
-                <div class="col-md-2" style="margin:0;">
                     <% @bes1t = distance_of_time_in_words(Time.now, (@u.created_at.to_time)) %>
                     <% @bes1t.slice!("about ") %>
                     <h4 style="text-align:center;line-height:48px;"><%= @bes1t %></h4>
+                </div>
+                <div class="col-md-2" style="margin:0;">
+                    <% @best = (time_ago_in_words(@u.updated_at)) %>
+                    <% @best.slice!("about ") %>
+                    <h4 style="text-align:center;line-height:48px;"><%= @best %> ago</h4>
                 </div>
                 <div class="col-md-5" style="margin:0;">
                     <% if @u.card_number == nil %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171215233620) do
+ActiveRecord::Schema.define(version: 20171228232104) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "question_id"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20171215233620) do
     t.integer  "order"
     t.string   "cover"
     t.string   "pdf"
+    t.string   "excel"
+    t.string   "doc"
   end
 
   create_table "questions", force: :cascade do |t|

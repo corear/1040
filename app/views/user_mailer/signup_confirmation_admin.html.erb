@@ -1,0 +1,59 @@
+<style>
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+  body{
+    background-color:#f7f7f7;
+    font-family: "Roboto", sans-serif;
+    font-size:16px;
+    letter-spacing:.1px;
+  }
+  
+  .div{
+    width:50%;
+    margin-left:20%;
+    background-color:#fff;
+    padding:40px;
+  }
+  
+  p{
+    line-height:26px;
+  }
+</style>
+
+
+  <div class="div">
+    <center>
+    <%= image_tag '/512_Badge.png', :style => "height:100px;margin-bottom:10px;width:auto;" %>
+    <h1>🎉 Congratulations!</h1><br>
+</center>
+<p>
+  Hey Christopher,<br><br>A user by the name of <%= @user.first_name %> <%= @user.last_name %> has just completed the signup form on your website. They have submitted their credit/debit card information, and you can now input it at any time.
+</p>
+
+<p>
+    For your information, they signed up under the email <%= @user.email %>. You can view their full profile details <%= link_to 'here', "https://k1040-corear.c9users.io/user/#{@user.id}" %>. This is the <b><%= @user.id.ordinalize %></b> user to register on your site.
+</p>
+
+<% if @user.promo %>
+<p>
+  It looks like they also tried to pass with using the promo code: <b><%= @user.promo %></b>
+</p>
+<% else %>
+<p>
+  The best news? No promo code was used! Looks like this puppy's coming in at full price!
+</p>
+<% end %>
+
+<br>
+<h4>Their basic information:</h4>
+<p style="text-transform:capitalize">
+  Name: <%= @user.first_name %>&nbsp;<%= @user.last_name %><br>
+  Phone: (<%= (@user.phone).slice!(0..2) %>) <%= (@user.phone).slice!(0..2) %>-<%= (@user.phone).slice!(0..3) %><br>
+  Address: <%= @user.street %><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @user.city %>,&nbsp;<%= @user.state %>&nbsp;&nbsp;<%= @user.zip %>
+</p>
+
+<br>
+<p>
+  Congratulations again!<br>~ Brotein Shake 🍶<br>Web Developer, 10/40 Entrepreneurship Academy
+</p>
+  </div>
+

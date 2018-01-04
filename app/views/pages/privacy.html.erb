@@ -1,0 +1,108 @@
+
+<style>
+  body {
+        background-position: center center;
+        backface-visibility:hidden;
+        background-repeat: no-repeat;
+        background: url('https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?dpr=2&auto=format&fit=crop&w=568&h=568&q=60&cs=tinysrgb') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    
+    body:before{
+        background-position: center center;
+        backface-visibility:hidden;
+        background-repeat: no-repeat;
+        content:"";
+        position:fixed;
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+        background-image:-webkit-linear-gradient(#de5b5b 12%,#afb8b9);
+        background-image:linear-gradient(#de5b5b 12%,#afb8b9);
+        opacity:0.8;
+        height:100%;
+    }
+    
+    h4{
+        line-height:30px;
+    }
+    
+    h2{
+        font-size:2em;
+    }
+</style>
+
+
+<%= render '/layouts/nav_guest' %>
+
+<div class="row" style="margin-top:100px;margin-bottom:100px;">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 raised" style="background-color:white;border-radius:5px;padding:50px;opacity:0.9;padding-left:200px;padding-right:200px;padding-bottom:100px;">
+        <h1 style="text-align:center;color:#f55858;margin-left:18%;margin-right:18%;border:1px solid #f55858;padding:10px;border-radius:5px;margin-bottom:50px">PRIVACY STATEMENT</h1>
+        
+        <h4>
+
+<h2>1. WHAT DO WE DO WITH YOUR INFORMATION?</h2>
+
+When you purchase something from our website, as part of the buying and selling process, we collect the personal information you give us such as your name, address and email address.
+<br>
+When you browse our website, we also automatically receive your computer’s internet protocol (IP) address in order to provide us with information that helps us learn about your browser and operating system.
+<br>
+We may send you emails about our website, new products and other updates.
+<br>
+<br>
+<h2>2. CONSENT</h2>
+
+When you provide us with personal information to complete a transaction, verify your credit card, or place an order, we imply that you consent to our collecting it and using it for that specific reason only.
+<br>
+If we ask for your personal information for a secondary reason, like marketing, we will either ask you directly for your expressed consent, or provide you with an opportunity to say no.
+<br>
+If after you opt-in, you change your mind, you may withdraw your consent for us to contact you, for the continued collection, use or disclosure of your information, at anytime, by contacting us at <a href="mailto:info@my1040academy.com">info@my1040academy.com</a>.
+
+<br><br>
+<h2>3. DISCLOSURE</h2>
+
+We may disclose your personal information if we are required by law to do so or if you violate our <a href="/terms" target="_blank">Terms of Service</a>.
+<br><br>
+
+<h2>4. PAYMENT</h2>
+
+Once you place an order on our website, we store your credit card information securely through an encrypted method. Your credit card information is never sold or given to outside parties.
+<br><br>
+<h2>5. LINKS</h2>
+
+When you click on links on our website, they may direct you away from our site. We are not responsible for the privacy practices of other sites and encourage you to read their privacy statements.
+<br><br>
+
+<h2>6. SECURITY</h2>
+
+To protect your personal information, we take reasonable precautions and follow industry best practices to make sure it is not inappropriately lost, misused, accessed, disclosed, altered or destroyed.
+<br>
+If you provide us with your credit card information, the information is encrypted using secure socket layer technology (SSL) and websited with a AES-256 encryption.
+<br><br>
+<h2>7. AGE OF CONSENT</h2>
+
+By using this site, you represent that you are at least the age of majority in your state or province of residence, or that you are a minor who has received consent from a guardian who is at least the age of majority in your state or province of residence.
+<br><br>
+<h2>8. CHANGES TO THE PRIVACY POLICY</h2>
+
+We reserve the right to modify this privacy policy at any time, so please review it frequently. Changes and clarifications will take effect immediately upon their posting on the website. If we make material changes to this policy, we will notify you here that it has been updated, so that you are aware of what information we collect, how we use it, and under what circumstances, if any, we use and/or disclose it.
+<br>
+If our website is acquired or merged with another company, your information may be transferred to the new owners so that we may continue to sell products to you.
+
+
+        </h4>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+<%= render "/layouts/footer" %>
+
+
+<script>
+    document.title="Privacy Policy | 10/40 Entrepreneurship Academy"
+</script>

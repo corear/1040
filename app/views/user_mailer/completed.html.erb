@@ -25,35 +25,38 @@
     <%= image_tag '/512_Badge.png', :style => "height:100px;margin-bottom:10px;width:auto;" %>
     <h1>🎉 Way to go!</h1><br>
 </center>
+
 <p>
-  Hey <%= @user.first_name %>,<br><br>A user by the name of <%= @user.first_name %> <%= @user.last_name %> has just completed the signup form on your website. They have submitted their credit/debit card information, and you can now input it at any time.
+  Hey <%= @user.first_name %>,<br><br>Congratulations on completing the lectures and quizzes for 10/40 Entrepreneurship Academy! We look forward to seeing how God will use your learning in your life as you seek to grow in Him and pursue the path He’s laid out for you.
 </p>
 
 <p>
-    For your information, they signed up under the email <%= @user.email %>. You can view their full profile details <%= link_to 'here', "https://k1040-corear.c9users.io/user/#{@user.id}" %>. This is the <b><%= @user.id.ordinalize %></b> user to register on your site.
+    Because you enrolled in 10/40, you are eligible for discounts with other tools that will help you as you continue down the path of entrepreneurship!
 </p>
 
-<% if @user.promo %>
 <p>
-  It looks like they also tried to pass with using the promo code: <b><%= @user.promo %></b>
-</p>
-<% else %>
-<p>
-  The best news? No promo code was used! Looks like this puppy's coming in at full price!
-</p>
-<% end %>
-
-<br>
-<h4>Their basic information:</h4>
-<p style="text-transform:capitalize">
-  Name: <%= @user.first_name %>&nbsp;<%= @user.last_name %><br>
-  Phone: (<%= (@user.phone).slice!(0..2) %>) <%= (@user.phone).slice!(0..2) %>-<%= (@user.phone).slice!(0..3) %><br>
-  Address: <%= @user.street %><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @user.city %>,&nbsp;<%= @user.state %>&nbsp;&nbsp;<%= @user.zip %>
+  <b>Venture Academy Online</b> is an online course that provides a deeper look at the various aspects of entrepreneurship. It is a library of over 190 short videos created by Wade Myers, one of the experts from our videos. If you enjoyed the content in 10/40 and are ready to progress further, this is an excellent resource! Visit <a href="www.ventureacademyonline.com">www.ventureacademyonline.com</a> and enter the code ****I’ll get back to you on the code, but go ahead and input email****** to get _____ off.
 </p>
 
-<br>
 <p>
-  Congratulations again!<br>~ Brotein Shake 🍶<br>Web Developer, 10/40 Entrepreneurship Academy
+  If you are interested in a more in-depth business planning tool to help you, go to <a href="www.startupfinancialmodel.com">www.startupfinancialmodel.com</a> and use the code ****I’ll get back to you on the code, but go ahead and input email****** to get _____ off. This app is used by hundreds of entrepreneurs in over 60 countries, and it will aid you in performing more detailed analysis of business opportunities and pitching it to investors.
+</p>
+
+<p>
+  Again, congratulations on reaching the end of this course. Continue to pursue the Lord in all aspects of your life, and He will show you where He wants you to be, as well as the good works He has for you to carry out!
+</p>
+<br><br>
+<center>
+  <p><b>
+    "But seek first the kingdom of God and His righteousness, and all these things shall be added to you.” — Matthew 6:33
+  </b></p>
+</center>
+<br><br>
+
+<p>
+In Christ,<br>
+Christopher O’Rear, CEO and Founder<br>
+10/40 Entrepreneurship Academy<br>
 </p>
   </div>
 

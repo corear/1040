@@ -25,13 +25,17 @@
     letter-spacing:2px;
   }
   
-  .navbar-right > li > a:hover {
-    margin-top:12px;
+  .navbar-default .navbar-right > li > a:hover, .navbar-default .navbar-right > li > a:focus{
     color:white;
-}
+    margin-top:12px;
+  }
 
 li:hover{
   color:white;
+}
+
+.navbar-right{
+  margin-top:-10px;
 }
 </style>
 
@@ -42,7 +46,7 @@ li:hover{
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
    <ul class="nav navbar-nav navbar-left">
-        <li><a href="/users/sign_up" style="color:#949191;background:aliceblue;margin-left:20px;">REGISTER</a></li>
+        <li><a href="/secure/enroll" style="color:#949191;background:aliceblue;margin-left:20px;font-size: 1.2em;/* height:  120%; */padding: 20px;margin-top: 10px;">ENROLL</a></li>
         
       </ul>
       </div>
@@ -52,8 +56,8 @@ li:hover{
       
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/faq">FAQ</a></li>
-        <li><a href="/contact">CONTACT</a></li>
-        <li><a href="/users/sign_in" style="color:#fff;border:1px solid white;background:none;margin-left:20px;margin-top:14px;">SIGN IN</a></li>
+        <li><a href="mailto:10/40 Entrepreneurship Academy <info@my1040academy.com>">CONTACT</a></li>
+        <li><a href="/secure/signin" style="color:#fff;border:1px solid white;background:none;margin-left:20px;margin-top:14px;">SIGN IN</a></li>
         
       </ul>
     </div><!-- /.navbar-collapse -->

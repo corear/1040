@@ -24,25 +24,29 @@
     <center>
     <%= image_tag '/512_Badge.png', :style => "height:100px;margin-bottom:10px;" %>
     <h1>Congratulations!</h1><br>
+
+
+
 </center>
 <p>
-  Dear <%= @user.first_name %>,<br><br>I would like to personally congratulate you on taking the first step towards AWESOMENESS. LOL. YOU NO LONGER A NOOB ANYMORE. NOOB.
+  Dear <%= @user.first_name %>,<br><br>Welcome to 10/40 Entrepreneurship Academy! We are so excited that you have chosen to learn more about the world of small business— you won’t regret it. 
 </p>
 
 <p>
-    As a reminder, you signed up under this email (<%= @user.email %>). If any of your information listed below is incorrect, you can edit your profile <%= link_to 'here', "https://k1040-corear.c9users.io/users/edit" %>.
+  <b>How to Use:</b><br>
+    This course has been designed to help you build the foundation of a small business. If circumstances prevent you from opening a business over the time you spend in this course, you will get the most from the learning if you still take an actual idea and do the corresponding action points we go through during the videos. The worksheets included are there to help guide you in taking notes. While the bulk of the lectures’ meat will be on the worksheets, I encourage you to take other notes as well— this will help you establish your own thinking on what stood out to you as you watched. To study for the quizzes, go over your notes and the worksheets. You can only take the quizzes once, so make sure you are prepared! 
+<br><br>
+Although the reading is optional, you will learn more if you keep up with it. There are many valuable points you will miss if you neglect this aspect of the course. Also, be aware that the books you’ll be reading may not have been written by Christians, and thus, might use words or represent worldviews that are not in line with the beliefs of 10/40 Entrepreneurship Academy. However, I believe these books to be important enough that you should still read through them if you can.
+<br><br>
+Finally, unless you received my expressed written consent, the material in this course is intended to only be viewed and used by the single person enrolled on your account. Having multiple users on one account is stealing, and I ask that you respect the effort, time, intellectual property, and finances I have invested in developing this course. It is also a blatant violation of the Terms of Service, which you agreed to upon signup.
+<br><br>
+If you need any assistance, email <a href="mailto:10/40 Entrepreneurship Academy <info@my1040academy.com>">info@my1040academy.com</a> and we will respond shortly.
 </p>
 <br>
-<h4>Your information:</h4>
-<p style="text-transform:capitalize">
-  Name: <%= @user.first_name %>&nbsp;<%= @user.last_name %><br>
-  Phone: (<%= (@user.phone).slice!(0..2) %>) <%= (@user.phone).slice!(0..2) %>-<%= (@user.phone).slice!(0..3) %><br>
-  Address: <%= @user.street %><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @user.city %>,&nbsp;<%= @user.state %>&nbsp;&nbsp;<%= @user.zip %>
-</p>
 
 <br>
 <p>
-  Happy Holidays noob!<br>Christopher O'Rear<br>Founder, CEO, 10/40 Entrepreneurship Academy
+  In Christ,<br>Christopher O'Rear, CEO and Founder<br>10/40 Entrepreneurship Academy
 </p>
   </div>
 

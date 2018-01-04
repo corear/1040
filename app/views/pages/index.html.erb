@@ -1,4 +1,18 @@
 <style>
+p > a{
+    border-radius:0;
+    border-bottom:2px solid crimson;
+    color:crimson;
+}
+
+p > a:hover{
+    background:#c563631f;
+    color:crimson;
+}
+
+h4 > a:hover{
+    background:rgba(255,255,255,0.2);
+}
 
 body{
     color:white;
@@ -72,7 +86,8 @@ body{
         width:100%;
         height:auto;
         padding-top:100px;
-        border-top:1px solid crimson;
+        padding-bottom:150px;
+        border-top:2px solid crimson;
     }
     
     .qualif:before{
@@ -82,13 +97,43 @@ body{
         right:0;
         bottom:0;
         left:0;
-        height:200px;
+        height:500px;
         width:100%;
-        background-image:-webkit-linear-gradient(top, rgba(108,206,236,0.15),rgba(255,255,255,0));
-        background-image:linear-gradient(to bottom,rgba(108,206,236,0.15),rgba(255,255,255,0));
+        background-image:-webkit-linear-gradient(to bottom,rgba(236, 108, 108, 0.15),rgba(255,255,255,0));
+        background-image:linear-gradient(to bottom,rgba(236, 108, 108, 0.15),rgba(255,255,255,0));
         background-color:transparent !important;
     }
     
+    .benefit{
+        background-color:#f18888;
+        position:relative;
+        width:100%;
+        height:auto;
+        padding-top:100px;
+        padding-bottom:180px;
+        border-top:2px solid crimson;
+    }
+    
+    .col-md-10 > h4 {
+        padding-left:20px;
+        padding-right:20px;
+        line-height:30px;
+    }
+    
+    .col-md-2 > h1{
+        margin-top:4px;
+    }
+    
+    .col-md-10 > h4 > b{
+        font-size:1.2em;
+    }
+    
+    .mobile-comp{
+        background:white;
+        border-top:2px solid crimson;
+        padding-bottom:100px;
+    }
+
 
     
 </style>
@@ -103,10 +148,13 @@ body{
                     <div class="top-title">
                         <h1>Introducing 10/40 Academy.</h1>
                         <h3>An affordable entrepreneurship course that can double as high school credit.</h3>
-                        <img src="/Man_iPhone_Desk.jpg" style="height:300px;margin:30px;border-radius:4px;" class="raised hidden-xs" /><br>
-                        <a href="/" class="halfraised btn btn-primary hidden-lg hidden-md hidden-sm" style="position:relative;margin:20px;margin-bottom:50px;border-radius:50px;font-size:1.3em">Watch Video&nbsp;&nbsp;<span class="glyphicon glyphicon-play-circle"></span></a>
-                        <a href="#showVideo" data-toggle="tab" onclick="showVideo('show')" class="halfraised btn btn-primary hidden-xs" style="display:inline;position:relative;top:-180px;border-radius:50px;font-size:1.3em">Watch Video&nbsp;&nbsp;<span class="glyphicon glyphicon-play-circle"></span></a>
-                        <h3 class="hidden-sm hidden-xs" style="letter-spacing:2px;margin-top:0px;">SCROLL DOWN</h3>
+                        <a href="/secure/enroll" target="_blank"><h2 class="raised" style="color:#f55858;margin: 50px;margin-right:  35%;padding: 20px;background: white;border-radius: 4px;margin-left: 35%;">$55/month</h2></a>
+                        <div style="display:none">
+                            <img src="/Man_iPhone_Desk.jpg" style="height:300px;margin:30px;border-radius:4px;" class="raised hidden-xs" /><br>
+                            <a href="/" class="halfraised btn btn-primary hidden-lg hidden-md hidden-sm" style="position:relative;margin:20px;margin-bottom:50px;border-radius:50px;font-size:1.3em">Watch Video&nbsp;&nbsp;<span class="glyphicon glyphicon-play-circle"></span></a>
+                            <a href="#showVideo" data-toggle="tab" onclick="showVideo('show')" class="halfraised btn btn-primary hidden-xs" style="display:inline;position:relative;top:-200px;border-radius:50px;font-size:1.3em">Watch Video&nbsp;&nbsp;<span class="glyphicon glyphicon-play-circle"></span></a>
+                        </div>
+                        <h3 class="hidden-sm hidden-xs" style="letter-spacing:2px;margin-top:10px;">SCROLL DOWN</h3>
                         <h1 class= "hidden-sm hidden-xs" style="font-weight:100;font-size:30px;margin-bottom:50px;"><span class="glyphicon glyphicon-chevron-down"></span></h1>
                     </div>
                 </div>
@@ -121,7 +169,7 @@ body{
                         <h2 style="color:#cc5757">Interested in small business?</h2>
                         <h2 style="color:#cc5757;margin-bottom:40px;">We're here to help.</h2>
                         <p>
-                            We've taken the time to carefully create an entrepreneurship course that is designed to fit into your school plan for the year or semester. This course was created by a homeschool graduate who saw the need for an affordable, high-quality entrepreneurship course that could count for school credit, an important part of the education process.
+                            &#8195;Designed by a homeschool graduate, 10/40 Entrepreneurship Academy is a 10-week, online entrepreneurship course constructed to fit into your school plan for the semester or year. We’ve taken our personal business experience and combined it with the knowledge of seasoned entrepreneurs (Wade Myers, David Bosch, Brian O’Rear, and Paul Spires) by traveling the country and interviewing them about various business aspects. These interviews are sprinkled throughout the lessons, giving you the opportunity to glean from the business wisdom of successful and varied entrepreneurs. 10/40 guides you through critical business topics, such as finding and evaluating a business idea, finances, marketing, the relationship between faith and business, and more. Each lecture is supplemented with worksheets, quizzes, and action steps, allowing for an immersive learning experience that fully equips and engages the student.
                         </p>
                     </div>
                     <div class="col-md-6">
@@ -136,15 +184,176 @@ body{
         <div class="qualif">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
-                        <h2 style="color:#cc5757">Interested in small business?</h2>
-                        <h2 style="color:#cc5757;margin-bottom:40px;">We're here to help.</h2>
-                        <p>
-                            We've taken the time to carefully create an entrepreneurship course that is designed to fit into your school plan for the year or semester. This course was created by a homeschool graduate who saw the need for an affordable, high-quality entrepreneurship course that could count for school credit, an important part of the education process.
-                        </p>
+                    <div class="col-md-12" style="margin-top:50px;">
+                        <h2 style="color:#cc5757;margin-bottom:40px;font-size:3em;text-align:center;">Why choose 10/40?</h2>
                     </div>
                     <div class="col-md-6">
-                        
+                        <img style="margin:0 auto;margin-top:100px;border: 2px solid crimson;border-radius: 50%;background: #fde9ea;width: 300px;height:  300px;padding-top: 40px;padding-bottom: 40px;" src="/icons_1.png" />
+                    </div>
+                    <div class="col-md-6" style="margin-top:80px;">
+                        <p style='margin-bottom:30px;'>
+                            &#8195;10/40 Entrepreneurship Academy offers a comprehensive study on the subject of business. Each lesson includes a video, quiz, and homework assignments for the student to complete. Attached files also give examples of what each respective lesson may be referring to, whether it be business plans or mission statements. We give you the power to learn at your own pace, and count the course for high school credit, if need be.
+                        </p>
+                        <p style='margin-bottom:30px;'>
+                            &#8195;10/40 features firsthand, exclusive interviews with leading Christian businessmen from a handful of varying industries and backgrounds. We sat down and asked them questions about marketing, financial management, and other startup topics so you could take their experience and apply it to your own business venture.This wealth of information creates a high-leverage learning program that will equip you to begin in business or grow your current business even more.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="benefit">
+            <div class="container">
+                <div class="row">
+                        <h1 style="font-size:50px;text-shadow:none;text-align:center">How will you benefit?</h1>
+                    <div class="col-md-4 hidden-md hidden-lg" style="margin-top:50px;">
+                        <h1 style="font-size:32px;text-shadow:none;text-align:center">Those Who Have Gone Before</h1>
+                        <div style="width:300px;height:300px;margin:0 auto; margin-top:50px; border: 2px solid crimson; border-radius:50%;background:#fde9ea;padding:70px;">
+                            <img style="margin:0 auto;width:100%;height:100%" src="/benefits_icon.png" />
+                        </div>
+                    </div>
+                    <div class="col-md-8" style="padding-top:50px">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <h1 class="hidden-xs hidden-sm" style="font-size:50px;text-shadow:none;text-align:center;padding-top:13px;background-color:rgba(255,255,255,0.5);border-radius:50%;width:70px;height:70px;border:1px solid white;font-size:3em;color:#d66766">1</h1>
+                            </div>
+                            <div class="col-md-10">
+                                <h4 style="color:white">
+                                    <b>Wade Myers, a Baker Scholar graduate of Harvard’s MBA program,&nbsp;</b>is an entrepreneur, advisor, investor, and speaker who has founded or co-founded, invested in, and been a director of over 25 companies and has completed over 55 financing and merger/acquisition transactions. He was the CEO in 5 of those ventures, including a global IT services company and an Inc. 5000 nationwide tech-enabled services company. Wade lives in Texas with his wife and family.
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <h1 class="hidden-xs hidden-sm" style="font-size:50px;text-shadow:none;text-align:center;padding-top:13px;background-color:rgba(255,255,255,0.5);border-radius:50%;width:70px;height:70px;border:1px solid white;font-size:3em;color:#d66766">2</h1>
+                            </div>
+                            <div class="col-md-10">
+                                <h4 style="color:white">
+                                    <b>Brian O’Rear, a graduate of the United States Air Force Academy,&nbsp;</b>spent over twenty years in the military before retiring as a decorated colonel. Following his retirement, and with no previous business experience, Brian bought a home inspection franchise in Louisville, KY. Before selling this startup, Brian’s business grew to be the largest home inspection company in Louisville en route to his claiming the national corporate Top Franchisee Award three years in a row. He lives in Louisville with his wife and family.
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <h1 class="hidden-xs hidden-sm" style="font-size:50px;text-shadow:none;text-align:center;padding-top:13px;background-color:rgba(255,255,255,0.5);border-radius:50%;width:70px;height:70px;border:1px solid white;font-size:3em;color:#d66766">3</h1>
+                            </div>
+                            <div class="col-md-10">
+                                <h4 style="color:white">
+                                    <b>David Bosch studied Accounting at the University of Kentucky and completed an MBA at the University of Notre Dame with a focus in Finance and International Business.&nbsp;</b>He spent six years living in Iraq where he started and managed two businesses, also working as a management consultant during his time there. Additionally, he spent time teaching management and accounting classes at the University of Dohuk, Iraq. David resides in Louisville, where he leads Boyce College’s business department, with his wife and daughters.
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <h1 class="hidden-xs hidden-sm" style="font-size:50px;text-shadow:none;text-align:center;padding-top:13px;background-color:rgba(255,255,255,0.5);border-radius:50%;width:70px;height:70px;border:1px solid white;font-size:3em;color:#d66766">4</h1>
+                            </div>
+                            <div class="col-md-10">
+                                <h4 style="color:white">
+                                    <b>Paul Spires started his first business at eighteen years old and never looked back.&nbsp;</b>He has since gone on to begin several other businesses. Paul currently serves as the CEO of multiple companies, and he has used his business experience to serve on the boards of multiple Christian ministries. Paul also has a passion for real estate investments, having bought several apartment properties. He currently lives in Ohio with his wife.
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 hidden-xs hidden-sm" style="margin-top:50px;">
+                        <h1 style="font-size:32px;text-shadow:none;text-align:center">Those Who Have Gone Before</h1>
+                        <div style="width:300px;height:300px;margin:0 auto; margin-top:50px; border: 2px solid crimson; border-radius:50%;background:#fde9ea;padding:70px;">
+                            <img style="margin:0 auto;width:100%;height:100%" src="/benefits_icon.png" />
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                    <div class="col-md-4">
+                        <div style="width:300px;height:300px;margin:0 auto; margin-top:70px; border: 2px solid crimson; border-radius:50%;background:#fde9ea;padding:70px;">
+                            <img style="margin:0 auto;width:100%;height:100%" src="/equipped.png" />
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <h1 style="font-size:42px;text-shadow:none;text-align:center;padding-top:70px">Consider Yourself Equipped</h1>
+                                <h4 style="color:white;line-height:  30px;font-weight:  700;padding-top:20px;padding-left:20px;">
+                                    10/40 Entrepreneurship Academy will equip you with the tools to start your own business. We do not guarantee the success of any business venture you undertake. But, we do hand you a toolbox with items that enable you to get started and learn more about the small business world. We cover topics such as business startup, the integration of faith and business, finances, marketing, budgeting, expansion, and more.
+                                </h4>
+                    </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="row">
+                    <div class="col-md-4 hidden-md hidden-lg">
+                        <div style="width:300px;height:300px;margin:0 auto; margin-top:70px; border: 2px solid crimson; border-radius:50%;background:#fde9ea;padding:70px;">
+                            <img style="margin:0 auto;width:100%;height:100%" src="/schedule.png" />
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <h1 style="font-size:42px;text-shadow:none;text-align:center;padding-top:70px">Fits Right In</h1>
+                                <h4 style="color:white;line-height:  30px;font-weight:  700;padding-top:20px">
+                                    10/40 fits into your school plan, creating flexibility and structure for the student and instructor. It is a self-paced course that allows you freedom in meeting deadlines. Each lesson includes a lecture, quiz, and action plans that all allow you to take what you have learned and put it into practice. Suggested reading will also be encouraged in order to broaden the opinions and business experience you tap into as you study through this course. Though it was created to be a part of your school curriculum, that is not a requirement! Adults looking to learn more about business, as well as youth on school break or not in high school, will benefit from this program. 
+                                </h4>
+                    </div>
+                    <div class="col-md-4 hidden-xs hidden-sm">
+                        <div style="width:300px;height:300px;margin:0 auto; margin-top:100px; border: 2px solid crimson; border-radius:50%;background:#fde9ea;padding:70px;">
+                            <img style="margin:0 auto;width:100%;height:100%" src="/schedule.png" />
+                        </div>
+                    </div>
+                    </div>
+                    
+                    
+                    <div class="row">
+                    <div class="col-md-4">
+                        <div style="width:300px;height:300px;margin:0 auto; margin-top:70px; border: 2px solid crimson; border-radius:50%;background:#fde9ea;padding:70px;">
+                            <img style="margin:0 auto;width:100%;height:100%" src="/handshake.png" />
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <h1 style="font-size:42px;text-shadow:none;text-align:center;padding-top:70px">Partnerships</h1>
+                                <h4 style="color:white;line-height:  30px;font-weight:  700;padding-top:20px;padding-left:20px;">
+                                    We’ve partnered with outside businesses to provide you with discounted tools that will help you as you begin down the path of entrepreneurship.
+                                </h4>
+                    </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="row">
+                    <div class="col-md-4 hidden-md hidden-lg">
+                        <div style="width:300px;height:300px;margin:0 auto; margin-top:70px; border: 2px solid crimson; border-radius:50%;background:#fde9ea;padding:70px;">
+                            <img style="margin:0 auto;width:100%;height:100%" src="/Affordable.png" />
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <h1 style="font-size:42px;text-shadow:none;text-align:center;padding-top:70px">Affordable</h1>
+                                <h4 style="color:white;line-height:  30px;font-weight:  700;padding-top:20px">
+                                    Our course is purposefully priced so that families can afford it. Courses with a similar aim as 10/40’s charge at or above $500/year for access to their material, but we believe that this prohibits many from learning about entrepreneurship. If you have a desire to learn more about business, we want you to have the opportunity to do that. This is why we only charge <b style="font-size:21px">$55/month</b> (original price), per user, for six months! With this price, you receive full access to all lectures, interview clips, quizzes, and other course material. If you have family interested in taking the course, we offer a 20% discount off the original price to additional family members who want to learn about business. If you are not able to finish the course within six months, we offer a 20% discount off the original price (unless you signed up with a group**) that applies for every month you continue taking the course. 
+                                <br><br>
+                                **see “Are Group Discounts Available?” under <a target="_blank" href="/faq" style="color:white;border-bottom:2px solid white;border-radius:0">FAQ</a> to learn more about your post 6-month subscription price if you signed up with a group
+                                </h4>
+                    </div>
+                    <div class="col-md-4 hidden-xs hidden-sm">
+                        <div style="width:300px;height:300px;margin:0 auto; margin-top:100px; border: 2px solid crimson; border-radius:50%;background:#fde9ea;padding:70px;">
+                            <img style="margin:0 auto;width:100%;height:100%" src="/Affordable.png" />
+                        </div>
+                    </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="mobile-comp">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12" style="margin-top:50px;text-align:center;">
+                        <h2 style="margin-bottom:20px;color:#cc5757">Ready to get started?</h2><
+                        <p>
+                            <a href="/secure/enroll" class="btn btn-primary" style="margin:7px;padding:10px">Click here</a> to begin the process! We are so excited to have you on board, and we can’t wait to see how you take what you learn and use it to make a difference.
+<br><br>Have a group of 10 or more who want to take the course? Email <a href="mailto:10/40 Entrepreneurship Academy <info@my1040academy.com>">info@my1040academy.com</a> to ask about the discounted prices available.
+                        </p><br><br>
+                        <div style="background-color:#a0a0a0;width:100%;height:1px"></div>
+                        <br><br>
+                        <h2 style="color:#cc5757;margin-bottom:40px;">Still have questions? Let's get in touch!</h2>
+                        <p>
+                            We'd love to answer any questions or address any concerns you may have about us. Try visiting our <a target="_blank" href="/faq">FAQ Section</a>. If you cannot find what you are looking for, <a href="mailto:10/40 Entrepreneurship Academy <info@my1040academy.com>">send us an email</a> and we'll be sure to get in touch with you.
+                        </p>
                     </div>
                 </div>
             </div>

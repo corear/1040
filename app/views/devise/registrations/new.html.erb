@@ -115,6 +115,22 @@ input:focus + h4  {
 .card_input{
   text-align:right;
 }
+
+select{
+  background:none;
+  border:none;
+  color:#a0a0a0;
+  letter-spacing:1px;
+}
+
+select:focus{
+  outline:none;
+}
+
+
+select:active{
+  outline:none;
+}
   
 </style>
         <%= render '/layouts/nav_guest' %>
@@ -171,7 +187,7 @@ input:focus + h4  {
     
     
     
-    <div class="div_base" id="step2" style="left:120%;display:none;">
+    <div class="div_base" id="step2" style="display:none">
             <center><h4 style="margin-top:30px;margin-bottom:50px;">Let's get to know more about each other.</h4></center>
             
             <div class="row">
@@ -250,7 +266,7 @@ input:focus + h4  {
       </center>
 
     </div>
-    <div class="div_base" id="step3" style="left:240%;display:none;">
+    <div class="div_base" id="step3" style="display:none;">
             <center><h4 style="margin-top:30px;margin-bottom:50px;">Your information is only accessed securely. We will never give this to anyone.</h4></center>
               
                     <div class="row">
@@ -286,8 +302,8 @@ input:focus + h4  {
                         <h4 class = "text_overlay"><span class="glyphicon glyphicon-lock"></span> &nbsp;CVV</h4>
                       </div>
                     </div>
-
-    <%= f.submit "Create account", :class => "btn-lg btn-primary", :style => "width:100%;margin-top:10px;margin-bottom:20px;" %>
+          <button class="btn-lg btn-primary" id="show_confirm" style="width:100%;margin-top:30px;margin-bottom:0px;">CREATE ACCOUNT</button>
+    
   </div>
     </div>
 
@@ -295,7 +311,7 @@ input:focus + h4  {
  
 
   
-<% end %>
+
 
 
 </div>
@@ -303,6 +319,17 @@ input:focus + h4  {
 </div>
 </div>
 
+<div class="row raised" id="confirm" onclick="(this).style.display='none';" style="display:none;position:fixed;width:100%;height:100%;z-index:2000;background-color:rgba(0,0,0,0.5);padding:0;top:0">
+  <div class="col-md-6 raised" style="background-color:white;overflow-y:scroll;height:auto;max-height:70%;width:40%;margin-top:8%;margin-left:30%;padding:50px;border-radius:5px;">
+    <h1 style="text-align:center;color:#f15e53;margin-bottom:60px;">Privacy and Terms</h1>
+    <h3 style="font-weight:100; color:#6b6b6b;font-size:17px;">By choosing "Agree & Create" below, you agree to 10/40 Entrepreneurship Academy's <a target="_blank" href="/terms">Terms of Service</a>.</h3>
+    <h3 style="font-weight:100; color:#6b6b6b;font-size:17px;">You also agree to our <a target="_blank" href="/privacy">Privacy Policy</a>.</h3>
+    <center>
+      <%= f.submit "AGREE & CREATE", :class => "btn-lg btn-primary", :style => "width:100%;margin-top:30px;margin-bottom:0px;" %>
+    </center>
+  </div>
+</div>
+<% end %>
 <script>
 
 $('.card_input').on('keyup', function() {
@@ -315,19 +342,19 @@ $('.card_input').on('keyup', function() {
 
   function yoyo(id){
     if (id == "account") {
-      document.getElementById('step1').style = "display:block;left:0;";
-      document.getElementById('step2').style = "display:none;left:120%;";
-      document.getElementById('step3').style = "display:none;left:240%;";
+      document.getElementById('step1').style.display = "block";
+      document.getElementById('step2').style.display = "none";
+      document.getElementById('step3').style.display = "none";
     }
     if (id == "info") {
-      document.getElementById('step1').style = "display:none;left:-120%;";
-      document.getElementById('step2').style = "display:block;left:0;";
-      document.getElementById('step3').style = "display:none;left:120%;";
+      document.getElementById('step1').style.display = "none";
+      document.getElementById('step2').style.display = "block";
+      document.getElementById('step3').style.display = "none";
     }
     if (id == "payment") {
-      document.getElementById('step1').style = "display:none;left:-240%;";
-      document.getElementById('step2').style = "display:none;left:-120%;";
-      document.getElementById('step3').style = "display:block:left:0;";
+      document.getElementById('step1').style.display = "none";
+      document.getElementById('step2').style.display = "none";
+      document.getElementById('step3').style.display = "block";
     }
   }
   
@@ -357,6 +384,14 @@ $('.card_input').on('keyup', function() {
 </script>
 
 <script>
+
+$(function () {
+    $("#show_confirm").click(function (e) {
+        e.preventDefault();
+  document.getElementById("confirm").style.display="block";
+    });
+});
+
 function isNumber(event) {
   
   var inp = document.getElementById("card_input").value;
