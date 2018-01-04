@@ -98,6 +98,17 @@ b::before{
 <% if @lesson.pdf && @lesson.pdf != "" %>
 
 <center><a href="/viewPDF/<%= @lesson.pdf %>" target="_blank" class="btn btn-primary"><span class="glyphicon glyphicon-file"></span>&nbsp;View Attached File</a></center>
+
+
+
+<% end %>
+
+<% if @lesson.order == 7 %>
+<center><a href="/lesson<%= @lesson.order %>.xlsx" class="btn btn-primary"><span class="glyphicon glyphicon-file"></span>&nbsp;View Excel/Numbers Spreadsheet</a></center>
+<% end %>
+
+<% if @lesson.order == 3 %>
+<center><a href="/lesson<%= @lesson.order %>.docx" class="btn btn-primary"><span class="glyphicon glyphicon-file"></span>&nbsp;View Word/Pages Document</a></center>
 <% end %>
 </div>
     
