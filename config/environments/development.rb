@@ -48,7 +48,7 @@ Rails.application.configure do
   :password             => 'XBNJ7BY4GD',
   }
   
-  config.action_mailer.default_url_options = {host: "http://k1040-corear.c9users.io"}
+  config.action_mailer.default_url_options = {host: "https://www.my1040academy.com"}
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

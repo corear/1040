@@ -268,7 +268,7 @@ select:active{
     </div>
     <div class="div_base" id="step3" style="display:none;">
             <center><h4 style="margin-top:30px;margin-bottom:50px;">Your information is only accessed securely. We will never give this to anyone.</h4></center>
-              
+              <div style="display:none">
                     <div class="row">
                       <div class="col-md-12">
                         <%= f.text_field :promo, autocomplete: "off", :class => "inputField2" %>
@@ -301,6 +301,7 @@ select:active{
                         <%= f.telephone_field :card_cvv, autocomplete: "off", :class => "inputField2", :style=>"text-align:right", :maxlength => "4", :onkeydown => "return isNumber(event);" %>
                         <h4 class = "text_overlay"><span class="glyphicon glyphicon-lock"></span> &nbsp;CVV</h4>
                       </div>
+                    </div>
                     </div>
           <button class="btn-lg btn-primary" id="show_confirm" style="width:100%;margin-top:30px;margin-bottom:0px;">CREATE ACCOUNT</button>
     
