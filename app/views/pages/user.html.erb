@@ -203,46 +203,6 @@ input:focus + h4  {
                     </center>
                     <% end %>
                     
-                    <%= form_for @user, url: { action: 'update', controller: 'devise/registrations'}, method: :put, :validate => false do |f| %>
-                    <div class="div_base">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <%= f.text_field :promo, autocomplete: "off", :class => "inputField2" %>
-                        <h4 class = "text_overlay"><span class="glyphicon glyphicon-bullhorn"></span>&nbsp;&nbsp;Promo Code</h4>
-                      </div>
-                    </div>
-                    
-                    <div class="row">
-                      <div class="col-md-12">
-                        <%= f.text_field :card_name, autocomplete: "off", :class => "inputField2" %>
-                        <h4 class = "text_overlay"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Name on Card</h4>
-                      </div>
-                    </div>
-                    
-                    <div class="row">
-                      <div class="col-sm-8">
-                        <%= f.telephone_field :card_number, :id => "card_input", autocomplete: "off", :class => "inputField2 card_input", :maxlength => "19", :onkeydown => "return isNumber(event);" %>
-                        <h4 class = "text_overlay"><span class="glyphicon glyphicon-credit-card"></span>&nbsp;&nbsp;Card Number</h4>
-                      </div>
-                      <div class="col-sm-4" style="padding-top:19px;padding-bottom:19px;border-bottom:2px solid #bfbfbf;">
-                        <%= f.select :card_exp_month, ['Month','01','02','03','04','05','06','07','08','09','10','11','12'], :class => "inputField2" %><span>&nbsp;/&nbsp;</span>
-                        <%= f.select :card_exp_year, ['Year','18','19','20','21','22','23'], :class => "inputField2", :style => "display: inline" %>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-8">
-                                            <img src="/tran.png" id="hot_img" style="max-height:70px;height:100%;width:auto" />
-                      </div>
-                      <div class="col-sm-4" style="padding:0">
-                        <%= f.telephone_field :card_cvv, autocomplete: "off", :class => "inputField2", :style=>"text-align:right", :maxlength => "4", :onkeydown => "return isNumber(event);" %>
-                        <h4 class = "text_overlay"><span class="glyphicon glyphicon-lock"></span> &nbsp;CVV</h4>
-                      </div>
-                    </div>
-
-                        <button class="btn btn-primary"><%= f.submit "Create account", :class => "btn-lg btn-primary", :id => "#{params[:id]}" %></button>
-                      </div>
-                    <% end %>
-                    
                     </center>
                 </div>
         </div>

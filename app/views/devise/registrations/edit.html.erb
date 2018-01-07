@@ -1,3 +1,38 @@
+<style>
+  .inputField2{
+    margin-top:10px;
+    border-radius:0;
+    border:none;
+    border-bottom:2px solid #bfbfbf;
+    color:#333;
+    background:none;
+    padding:13px;
+    font-size:1.2em;
+    font-weight:500;
+    width:100%;
+    transition: all 0.3s ease;
+    text-align:center;
+}
+
+input:focus + h4  {
+  position: relative;
+  top:-70px;
+  font-size:1em;
+}
+
+.inputField2:focus{
+  text-align:left;
+}
+
+.inputField2 + h4{
+  position:relative;
+  top:-37px;
+  left:10px;
+  display:inline;
+  text-align:left;
+}
+</style>
+
 <%= render '/layouts/nav' %>
         <div class="wrapper">
     <div class="container" style="margin-top:0px;">
@@ -90,6 +125,33 @@
     <h3>Confirm New Password</h3>
     <%= f.password_field :password_confirmation, autocomplete: "off", :class => "inputField" %>
   </div>
+  
+  <div class="field" style="margin-top:40px;">
+    <h3>Promo Code</h3>
+    <%= f.text_field :promo, :class => "inputField" %>
+  </div>
+  
+  <div class="field" style="margin-top:40px;">
+    <h3>Name on Card</h3>
+    <%= f.text_field :card_name, :class => "inputField" %>
+  </div>
+  
+  <div class="field" style="margin-top:40px;">
+    <h3>Card Number</h3>
+    <%= f.text_field :card_number, :class => "inputField card_input", :maxlength => "19" %>
+  </div>
+  
+    <div class="row" style="margin:-15px">
+      <div class="col-md-6" style="margin-top:20px">
+        <%= f.text_field :card_cvv, autofocus: true, :class => "inputField", :placeholder => "CVV", :maxlength => '4' %>
+      </div>
+      <div class="col-md-6" style="margin-top:45px">
+                        <%= f.select :card_exp_month, ['Month','01','02','03','04','05','06','07','08','09','10','11','12'], :class => "inputField2" %><span>&nbsp;/&nbsp;</span>
+                        <%= f.select :card_exp_year, ['Year','18','19','20','21','22','23','24','25','26'], :class => "inputField2", :style => "display: inline" %>
+      </div>
+    </div>
+  
+  
 
   <div class="field" style="margin-top:40px;border-top:1px solid #f55858">
     <h3>Current Password</h3><i> (we need your current password to confirm your changes)</i></h3>
@@ -110,3 +172,14 @@
 
     </div>
 </div>
+
+
+<script>
+  $('.card_input').on('keyup', function() {
+  var foo = $(this).val().split(" ").join(""); 
+  if (foo.length > 0) {
+    foo = foo.match(new RegExp('.{1,4}', 'g')).join(" ");
+  }
+  $(this).val(foo);
+});
+</script>

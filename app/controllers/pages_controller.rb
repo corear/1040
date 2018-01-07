@@ -70,8 +70,8 @@ class PagesController < ApplicationController
 
   def admin
     require 'date'
-    @short_users = User.all.where('created_at > ? AND completed = ?', 6.months.ago, 'false').order("created_at ASC")
-    @long_users = User.all.where('created_at < ? AND completed = ?', 6.months.ago, 'false').order("created_at ASC")
+    @short_users = User.all.where('created_at > ? AND completed = ? AND id != ?', 6.months.ago, 'false', 1).order("created_at ASC")
+    @long_users = User.all.where('created_at < ? AND completed = ? AND id != ?', 6.months.ago, 'false', 1).order("created_at ASC")
     @completed_users = User.all.where(completed: true).order("created_at ASC")
     @banned_users = User.all.where(banhammer: true).order("created_at ASC")
     @newLesson = Lesson.new

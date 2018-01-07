@@ -55,7 +55,7 @@ a:hover{
                         </center>
                     <% else %>
                     <center><h4 style="margin-top:30px;margin-bottom:50px;">Your information is only accessed securely. We will never give this to anyone.</h4></center>
-                    <center><h3>If you wish to change your payment method, send us an email and we will contact you shortly.</h3></center>
+                    
                     <div class="row">
                         <div class="col-md-3"></div>
                         <div class="col-md-6" style="margin-top:50px;background-color:#d6d6d6;border-radius:10px;padding-bottom:20px">
@@ -93,13 +93,10 @@ a:hover{
                         </div>
                         <div class="col-md-3"></div>
                     </div>
-                        <div class="row" style="margin-top:50px;">
-                            <center>
-                                <h2>Things don't look right?</h2>
-                                <button class="btn-lg btn-primary" style="margin:20px;color:white"><%= link_to "REQUEST A CHANGE OF PAYMENT", :controller => "pages", :action => "send_payment_change" %></button>
-                            </center>
-                        </div>
+                    
                     <% end %>
                 </div>
             </div>
         </div>
+        
+        

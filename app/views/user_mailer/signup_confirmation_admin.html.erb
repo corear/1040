@@ -30,7 +30,7 @@
 </p>
 
 <p>
-    For your information, they signed up under the email <%= @user.email %>. You can view their full profile details <%= link_to 'here', "https://www.my1040academy.com/user/#{@user.id}" %>. This is the <b><%= @user.id.ordinalize %></b> user to register on your site.
+    For your information, they signed up under the email <%= @user.email %>. You can view their full profile details <%= link_to 'here', "https://www.my1040academy.com/user/#{@user.id}" %>. This is the <b><%= (@user.id - 21).ordinalize %></b> user to register on your site.
 </p>
 
 <% if @user.promo %>
