@@ -85,20 +85,46 @@
     </div>
   <% end %>
 
-<% if (request.original_fullpath != "/") and (request.original_fullpath != "/users/sign_up") and (request.original_fullpath != "/users/sign_in") and (request.original_fullpath != "/users/password/new") and (request.original_fullpath != "/users/password") and (request.original_fullpath != "/faq") and (request.original_fullpath != "/terms") and (request.original_fullpath != "/privacy") and (request.original_fullpath != "/secure/enroll") and (request.original_fullpath != "/secure/signin")  %>
+<% if (request.original_fullpath != "/") and (request.original_fullpath != "/users/sign_up") and (request.original_fullpath != "/users/sign_in") and (request.original_fullpath != "/users/password/new") and (request.original_fullpath != "/users/password") and (request.original_fullpath != "/faq") and (request.original_fullpath != "/terms") and (request.original_fullpath != "/privacy") and (request.original_fullpath != "/secure/enroll") and (request.original_fullpath != "/secure/signin") then  %>
   <% if !current_user %>
     <script>
       window.location = "/"
     </script>
   <% end %>
   
+  <% if current_user %>
+    <% if (current_user.subscribed == nil) and (request.original_fullpath != "/secure/payment") and (current_user.created_at > Date.parse('2018-01-24')) then %>
+      <script>
+        window.location = "/secure/payment"
+      </script>
+    <% end %>
+    <% if (current_user.enrolled == false) && (request.original_fullpath != "/overview") && (current_user.created_at > Date.parse('2018-01-24')) then %>
+      <script>
+        window.location = "/overview"
+      </script>
+    <% end %>
+  <% end %>
+  
   <% else %>
   
   <% if current_user %>
-    <script>
-      window.location = "/home"
-    </script>
+    <% if (current_user.subscribed == nil) and (request.original_fullpath != "/secure/payment") %>
+      <script>
+        window.location = "/secure/payment"
+      </script>
+      <% else %>
+      <script>
+        window.location = "/home"
+      </script>
+    <% end %>
+    <% if (current_user.enrolled == false) and (request.original_fullpath != "/overview") and (current_user.created_at > Date.parse('2018-01-24')) %>
+      <script>
+        window.location = "/overview"
+      </script>
+    <% end %>
   <% end %>
+  
+  
 <% end %>
 
 <!-- <div class="cover" style="background-color:#cacaca; width:100%;height:100%;z-index:2000;position:fixed">

@@ -3,15 +3,20 @@ Rails.application.routes.draw do
   resources :questions
   resources :answers
   resources :responses
+  resources :subscribers
   
   devise_scope :user do
     get "/secure/signin" => "devise/sessions#new" # custom path to login/sign_in
     get "/secure/enroll" => "devise/registrations#new", as: "new_user_registration" # custom path to sign_up/registration
+    get '/secure/password_update' => "devise/passwords#edit"
   end
   
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
   root 'pages#index'
 
+  get '/user/terminate/gateway' => 'pages#gateway'
+  get '/user/terminate' => 'pages#terminate'
+  get 'secure/payment' => "pages#addPayment"
   get 'home' => "pages#home"
   get 'lesson/:id' => "pages#lessons"
   get '/secure/payment_info' => "pages#payment"
@@ -23,6 +28,7 @@ Rails.application.routes.draw do
   get :lift_banhammer, to: 'pages#lift_banhammer', as: :lift_banhammer
   get :enact_banhammer, to: 'pages#enact_banhammer', as: :enact_banhammer
   get :change_card, to: 'pages#change_card', as: :change_card
+  get :remove, to: 'subscribers#remove', as: :remove
   get '/quiz/:id' => "pages#quiz"
   get '/answers' => 'answers#check'
   get '/viewPDF/:id' => 'pages#pdf'
@@ -31,6 +37,7 @@ Rails.application.routes.draw do
   get '/faq' => 'pages#faq'
   get '/terms' => 'pages#terms'
   get '/privacy' => 'pages#privacy'
+  get '/overview' => 'pages#goodbye'
   
 
   # The priority is based upon order of creation: first created -> highest priority.

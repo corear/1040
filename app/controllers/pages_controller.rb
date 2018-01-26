@@ -15,6 +15,11 @@ class PagesController < ApplicationController
   
   def user
     @user = User.find(params[:id])
+    @possibleAnswers = Response.all.where('user_id = ?', params[:id])
+  end
+  
+  def goodbye
+    @possibleAnswers = Response.all.where('user_id = ?', params[:id])
   end
   
   def send_order_mail

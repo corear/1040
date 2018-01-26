@@ -152,6 +152,7 @@
     <div class="col-md-12" style="margin:20px">
         <center>
             <a href="#" data-toggle="tab" onclick="changeViews('shortTerm')" class="btn btn-primary" style="color:white;margin:10px;">LESS THAN 6 MONTHS&nbsp;<span class="countem"><%= @short_users.count %></span></a>
+            <a href="#" data-toggle="tab" onclick="changeViews('longTerm')" class="btn btn-primary" style="color:white;margin:10px;">BETWEEN 6 & 7 MONTHS&nbsp;<span class="countem"><%= @long_users.count %></span></a>
             <a href="#" data-toggle="tab" onclick="changeViews('longTerm')" class="btn btn-primary" style="color:white;margin:10px;">MORE THAN 6 MONTHS&nbsp;<span class="countem"><%= @long_users.count %></span></a>
             <a href="#" data-toggle="tab" onclick="changeViews('completed')" class="btn btn-primary" style="color:white;margin:10px;">COMPLETED&nbsp;<span class="countem"><%= @completed_users.count %></span></a>
             <a href="#" data-toggle="tab" onclick="changeViews('banned')" class="btn btn-primary" style="color:white;margin:10px;">BANNED&nbsp;<span class="countem"><%= @banned_users.count %></span></a>

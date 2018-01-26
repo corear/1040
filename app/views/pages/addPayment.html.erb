@@ -1,0 +1,44 @@
+<style>
+
+    
+    .btn-primary{
+        border-radius:5px;
+    }
+    
+    body {
+        background: url(https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?dpr=2&auto=format&fit=crop&w=568&h=379&q=60&cs=tinysrgb&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D) no-repeat center center fixed;
+        
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        margin-bottom:0px;
+    }
+    
+    h1{
+        margin:40px;
+    }
+    
+    h4{
+        margin:40px;
+    }
+</style>
+
+<div style="background-color:#f55858;width:100%;padding:-95px;">
+    <center>
+    <img src="/512_White.png" style="width:120px;height:auto;margin:auto 0">
+    </center>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 panel panel-default" style="padding:50px;padding-top:100px;padding-bottom:100px;margin-top:100px;margin-bottom:100px;">
+            <div class="panel-body">
+                <center><h1>Final Signup Step</h1></center>
+                <center><h4>Before you can start using our site, you must submit your payment method. Your payment is accessed securely and never stored on our site.</h4></center>
+                <%= render '/layouts/form' %>
+                <center style="margin-top:40px"><%= link_to('Sign Out', destroy_user_session_path, :method => :delete) %></center>
+            </div>
+        </div>
+    </div>
+</div>

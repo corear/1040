@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180106221400) do
+ActiveRecord::Schema.define(version: 20180126021704) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "question_id"
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 20180106221400) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
-    t.boolean  "enrolled",               default: false
+    t.boolean  "enrolled",               default: true
     t.integer  "progress",               default: 0
     t.string   "first_name"
     t.string   "last_name"
@@ -115,6 +115,9 @@ ActiveRecord::Schema.define(version: 20180106221400) do
     t.boolean  "completed",              default: false
     t.boolean  "banhammer",              default: false
     t.boolean  "auto_renew",             default: true
+    t.boolean  "subscribed"
+    t.string   "stripeid"
+    t.string   "subsriptionId"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

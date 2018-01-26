@@ -13,6 +13,8 @@ gem "mail", "2.7.0"
 #gem 'sqlite3'
 gem 'pg'
 
+gem 'stripe'
+
 gem 'rails_12factor', group: :production
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

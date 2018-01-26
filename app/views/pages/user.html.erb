@@ -128,22 +128,53 @@ input:focus + h4  {
                     <div class="gtag" style="margin:30px;background-color:#f55a58"><h3 style="color:white;font-size:22px;line-height:2.5">🔨</h3></div>
                     <% end %>
                     <% end %>
+                    <% if current_user.progress>0 %>
+                <% @total=0 %>
+                <% @conte=0 %>
+                <% for @q in Question.all do %>
+                    <% if @possibleAnswers.find_by_question_id(@q.id) %>
+                    <% @total+=1 %>
+                    <% if @possibleAnswers.find_by_question_id(@q.id).content == @q.correct %>
+                    <% @conte+=1 %>
+                    <% end %>
+                    <% end %>
+                <% end %>
+                <% end %>
+                <div class="row">
+                    <div class="col-md-6">
                         <img src="<%= @user.image.url(:medium) %>" class="raised rounded" style="width:150px;margin:20px;height:auto;" />
-                        <h1><%= @user.first_name %>&nbsp;<%= @user.last_name %>&nbsp;&nbsp;(<%= @user.age %>)</h1>
+                        <h2><%= @user.first_name %>&nbsp;<%= @user.last_name %>&nbsp;&nbsp;(<%= @user.age %>)</h2>
                         <h3><%= @user.email %></h3>
-                        <div style="margin:40px;">
+                         <h3 style="margin-bottom:20px">(<%= @user.phone[0..2] %>)&nbsp;<%= @user.phone[3..5] %>-<%= @user.phone[6..9] %></h3>
+                        <div style="display:none">
+                            <h4><%= @user.street %></h4>
+                        <h4><%= @user.city %>,&nbsp;<span style="text-transform: uppercase"><%= @user.state %></span>&nbsp;&nbsp;<%= @user.zip %></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div style="margin:20px;">
+                    <qtag style="background:#f55858;position:relative;left:6px;">Grade</qtag>
+                            <h1 style="background:#f55858;width:101px;-webkit-background-clip: text;-webkit-text-fill-color: transparent;"><%= ((@conte.to_f / @total.to_f)*100).round %>%</h1>
+                        <div style="height:8px;width:100%;background-color:#eaeaea;border-radius:4px;overflow:hidden;margin-bottom:50px;">
+                            <div style="background:#f55858;width:<%= (@conte.to_f / @total.to_f)*100 %>%;height:100%;float:left;border-radius:4px;">
+                    
+                            </div>
+                        </div>
+                        
+                    <qtag style="background:#6d6d6d;left:6px;margin-top:50px;">Progress</qtag>
                         <h1 style="background:#6d6d6d;width:101px;-webkit-background-clip: text;-webkit-text-fill-color: transparent;"><%= ((@user.progress.to_f / Lesson.all.count.to_f)*100).round %>%</h1>
-                        <div style="height:8px;width:60%;background-color:#eaeaea;border-radius:4px;overflow:hidden;">
+                        <div style="height:8px;width:100%;background-color:#eaeaea;border-radius:4px;overflow:hidden;">
                             <div style="background:#bfbfbf;width:<%= ((@user.progress.to_f / Lesson.all.count.to_f)*100) %>%;height:100%;float:left;border-radius:4px;">
                     
                             </div>
                         </div>
                         </div>
-                        <h3 style="margin-bottom:20px">(<%= @user.phone[0..2] %>)&nbsp;<%= @user.phone[3..5] %>-<%= @user.phone[6..9] %></h3>
-                        <h4><%= @user.street %></h4>
-                        <h4><%= @user.city %>,&nbsp;<span style="text-transform: uppercase"><%= @user.state %></span>&nbsp;&nbsp;<%= @user.zip %></h4>
+                    </div>
+                </div>
+                        
+                       
                         <% if @user.referral != "" %>
-                            <h3>Referred by: <%= @user.referral %></h3>
+                            <h2>Referred by: <%= @user.referral %></h2>
                         <% end %>
                         
                         
@@ -158,38 +189,28 @@ input:focus + h4  {
                     <% end %>
                     <% end %>
                         
-                        <% if @user.card_number && @user.card_number != "" %>
+                        <% if @user.stripeid != nil %>
                         <div class="row">
                         <div class="col-md-3"></div>
-                        <div class="col-md-6" style="margin-top:0px;background-color:#d6d6d6;border-radius:10px;padding-bottom:20px">
+                        <div class="col-md-6" style="margin-top:20px;background-color:#d6d6d6;border-radius:10px;padding-bottom:20px;margin-bottom:20px">
                             <div class="row">
                                 <div class="row" style="margin-top:15px">
                                     <div class="col-xs-6">
-                                        <% if @user.card_number[0] == "4" %>
-                                            <img src="/visa.png" style="max-height:70px;height:100%;width:auto" />
-                                        <% elsif @user.card_number[0..1] == "34" || @user.card_number[0..1] == "37" %>
-                                            <img src="/amex.png" style="max-height:70px;height:100%;width:auto" />
-                                        <% elsif @user.card_number[0..3] == "6011" || @user.card_number[0..1] == "65" %>
-                                            <img src="/discover.png" style="max-height:70px;height:100%;width:auto" />
-                                        <% else %>
-                                            <img src="/mastercard.png" style="max-height:70px;height:100%;width:auto" />
-                                        <% end %>
                                 </div>
                                 <div class="col-xs-6">
-                                        <h2 style="text-align:right;font-size:20px"><span style="padding:5px;padding-left:10px;padding-right:10px;border-radius:10px;background-color:#bdbdbd;">CVV</span>&nbsp;<%= @user.card_cvv %></h2>
                                 </div>
                                 </div>
                                 <div class="col-md-12" style="margin-top:15px;margin-bottom:25px;">
                                     <center>
-                                        <h2><%= @user.card_number %></h2>
+                                        <h2>•••• •••• •••• <%= Stripe::Customer.retrieve(@user.stripeid).sources['data'][0].last4 %></h2>
                                     </center>
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-6">
-                                    <h2 style="font-size:24px;text-transform:uppercase"><%= @user.card_name %></h2>
+                                        <img src="/<%= Stripe::Customer.retrieve(@user.stripeid).sources['data'][0].brand %>.png" style="max-height:70px;height:100%;width:auto;margin-left:-100px" />
                                 </div>
                                 <div class="col-xs-6">
-                                    <h2 style="font-size:24px;text-align:right"><%= @user.card_exp_month %>&nbsp;/&nbsp;<%= @user.card_exp_year %></h2>
+                                    <h2 style="font-size:24px;text-align:right"><%= Stripe::Customer.retrieve(@user.stripeid).sources['data'][0].exp_month %>&nbsp;/&nbsp;<%= Stripe::Customer.retrieve(@user.stripeid).sources['data'][0].exp_year %></h2>
                                 </div>
                                 </div>
                             </div>

@@ -48,6 +48,8 @@ Rails.application.configure do
   :password             => 'XBNJ7BY4GD',
   }
   
+  config.action_mailer.perform_deliveries = true
+  
   config.action_mailer.default_url_options = {host: "https://www.my1040academy.com"}
 
   # Raises error for missing translations

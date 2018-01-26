@@ -1,0 +1,19 @@
+<%= form_tag subscriber_path(1), method: :put do %>
+
+<script src='https://checkout.stripe.com/checkout.js' class="stripe-button"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-image="/512_Badge.png"
+    data-email="<%= current_user.email %>"
+    data-name="<%= current_user.first_name %> <%= current_user.last_name %>"
+    data-description="Monthly subscription to 10/40."
+    data-panel-label="Begin Subscription">
+</script>
+<script>
+        // Hide default stripe button, be careful there if you
+        // have more than 1 button of that class
+        document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
+    </script>
+    <center>
+        <button type="submit" class="btn-primary" style="border:0;padding:15px;padding-left:30px;padding-right:30px;font-size:20px;">SUBMIT PAYMENT</button>
+</center>
+<% end %>
