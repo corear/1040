@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   get :enact_banhammer, to: 'pages#enact_banhammer', as: :enact_banhammer
   get :change_card, to: 'pages#change_card', as: :change_card
   get :remove, to: 'subscribers#remove', as: :remove
+  get :changePlan, to: 'subscribers#changePlan', as: :changePlan
   get '/quiz/:id' => "pages#quiz"
   get '/answers' => 'answers#check'
   get '/viewPDF/:id' => 'pages#pdf'

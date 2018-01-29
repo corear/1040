@@ -6,12 +6,46 @@ class SubscribersController < ApplicationController
         
     end
     
+    def changePlan
+        require 'date'
+        Stripe.api_key = "sk_test_tz9QhDauFW71FtTOzKN99Q6c"
+        user = User.find(params[:user])
+        
+        if (user.subsriptionId) then
+            if (Stripe::Subscription.retrieve("#{user.subsriptionId}")) then
+                sub = Stripe::Subscription.retrieve("#{user.subsriptionId}")
+                sub.delete
+            end
+        end
+        
+        subs = Stripe::Subscription.create(
+          :customer => "#{user.stripeid}",
+          :trial_end => "#{Time.at(user.created_at + 7.months).to_i}",
+          :items => [
+            {
+              :plan => "1020",
+            },
+          ]
+        )
+        
+        
+        user.subsriptionId = subs.id
+        user.auto_renew = false
+        user.save
+        
+        redirect_to "/admin"
+    end
+    
     def remove
         Stripe.api_key = "sk_test_tz9QhDauFW71FtTOzKN99Q6c"
 
-        sub = Stripe::Subscription.retrieve("#{current_user.subsriptionId}")
-        sub.delete
-        
+        if (current_user.subsriptionId) then
+            if (Stripe::Subscription.retrieve("#{current_user.subsriptionId}")) then
+                sub = Stripe::Subscription.retrieve("#{current_user.subsriptionId}")
+                sub.delete
+            end
+        end
+    
         current_user.enrolled=false
         current_user.save
         
@@ -22,28 +56,32 @@ class SubscribersController < ApplicationController
         
         
         token = params[:stripeToken]
-        
-        if (current_user.stripeid != nil) then
-            customer = Stripe::Customer.create(
-            card: token,
-            email: current_user.email
-        )
-        
-    else
+            
         customer = Stripe::Customer.create(
-            card: token,
-            email: current_user.email
+            :card => token,
+            :email => current_user.email
         )
         
-        subs = Stripe::Subscription.create(
-  :customer => "#{customer.id}",
-  :items => [
-    {
-      :plan => "9001",
-    },
-  ]
-)
+        if (current_user.promo.downcase == "1040onthehouse") then
+            subs = Stripe::Subscription.create(
+                :customer => "#{customer.id}",
+                :items => [
+                    {
+                        :plan => "1040oth"
+                    }
+                ]
+            )
+            
+        else
         
+            subs = Stripe::Subscription.create(
+                :customer => "#{customer.id}",
+                :items => [
+                    {
+                        :plan => "9001"
+                    }
+                ]
+            )
         end
         
         

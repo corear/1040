@@ -196,13 +196,13 @@ input:focus + h4  {
                         <% end %>
                         
                         
-                    <% if @user.auto_renew %>
-                        <% if (@user.auto_renew == "true" || @user.auto_renew == true) %>
+                    <% if @user.enrolled %>
+                        <% if (@user.enrolled == "true" || @user.enrolled == true) %>
                     <div class="gtag" style="margin:50px;margin-bottom:20px"><h3 style="color:white;font-size:22px;line-height:2.5"><span class="glyphicon glyphicon-repeat"></span></h3></div>
                     <% end %>
                     <% end %>
-                    <% if @user.auto_renew %>
-                        <% if (@user.auto_renew == "false" || @user.auto_renew == false) %>
+                    <% if @user.enrolled %>
+                        <% if (@user.enrolled == "false" || @user.enrolled == false) %>
                     <div class="gtag" style="margin:50px;margin-bottom:20px;background-color:#f55a58"><h3 style="color:white;font-size:22px;line-height:2.5"><span class="glyphicon glyphicon-repeat"></span></h3></div>
                     <% end %>
                     <% end %>

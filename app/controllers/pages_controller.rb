@@ -15,11 +15,11 @@ class PagesController < ApplicationController
   
   def user
     @user = User.find(params[:id])
-    @possibleAnswers = Response.all.where('user_id = ?', params[:id])
+    @possibleAnswers = Response.all.where("user_id = ?", params[:id])
   end
   
   def goodbye
-    @possibleAnswers = Response.all.where('user_id = ?', params[:id])
+    @possibleAnswers = Response.all.where("user_id = ?", params[:id])
   end
   
   def send_order_mail
@@ -49,7 +49,7 @@ class PagesController < ApplicationController
   end
   
   def send_two_week
-    user = Admin.find_chaps(User.all.where('two_week = ? OR two_week = ?', false, 'false'))
+    user = Admin.find_chaps(User.all.where("two_week = ? OR two_week = ?", false, "false"))
     UserMailer.two_week(user).deliver
     user.two_week = true
     user.save!
@@ -57,7 +57,7 @@ class PagesController < ApplicationController
   end
   
   def forget_two_week
-    user = Admin.find_chaps(User.all.where('two_week = ? OR two_week = ?', false, 'false'))
+    user = Admin.find_chaps(User.all.where("two_week = ? OR two_week = ?", false, "false"))
     user.two_week = true
     user.save!
     redirect_to "/admin", :alert => "A two week email will never be sent to #{user.email}."
@@ -66,7 +66,7 @@ class PagesController < ApplicationController
   def home
     @perc = ((current_user.progress.to_f/Lesson.count)*100).round
     @lessons = Lesson.all
-    @possibleAnswers = Response.all.where('user_id = ?', current_user.id)
+    @possibleAnswers = Response.all.where("user_id = ?", current_user.id)
   end
 
   def lessons
@@ -74,27 +74,29 @@ class PagesController < ApplicationController
   end
 
   def admin
-    require 'date'
-    @short_users = User.all.where('created_at > ? AND completed = ? AND id != ?', 6.months.ago, 'false', 1).order("created_at ASC")
-    @long_users = User.all.where('created_at < ? AND completed = ? AND id != ?', 6.months.ago, 'false', 1).order("created_at ASC")
+    require "date"
+    @short_users = User.all.where("created_at > ? AND completed = ? AND id != ? AND enrolled = ?", "#{6.months.ago}", "false", "1", "true").order("created_at ASC")
+    @midTerm_users = User.all.where.not(id:1).where.not("lower(promo) = ?","1040onthehouse").where(created_at:7.months.ago..6.months.ago, completed: "false", auto_renew: false, enrolled: "true").order(:created_at)
+    @long_users = User.all.where("created_at < ? AND completed = ? AND id != ? AND auto_renew = ? AND enrolled = ?", 6.months.ago, "false", 1, "false", "true").order("created_at ASC")
     @completed_users = User.all.where(completed: true).order("created_at ASC")
     @banned_users = User.all.where(banhammer: true).order("created_at ASC")
+    @inactive_users = User.all.where("completed = ? AND enrolled = ?", "false", "false").order("created_at ASC")
     @newLesson = Lesson.new
     @lessons = Lesson.all.order("created_at DESC")
-    @poor = Admin.find_chaps(User.all.where('two_week = ? OR two_week = ?', false, 'false'))
+    @poor = Admin.find_chaps(User.all.where("two_week = ? OR two_week = ?", false, "false"))
   end
   
   def quiz
-    @questions = Question.all.where('quiz_id = ?', params[:id])
+    @questions = Question.all.where("quiz_id = ?", params[:id])
     @lesson = Lesson.find(params[:id])
-    @possibleAnswers = Response.all.where('user_id = ?', current_user.id)
+    @possibleAnswers = Response.all.where("user_id = ?", current_user.id)
     @respond = Response.new
     @completed = "true"
     @corr = 0
     
     params[:num] = @questions.count
     for @q in @questions do
-      for @ans in Answer.all.where('question_id =?', @q.id) do
+      for @ans in Answer.all.where("question_id =?", @q.id) do
         if (@ans.correct == true)
           params["correct#{@q.id}"] = @ans.content
         end

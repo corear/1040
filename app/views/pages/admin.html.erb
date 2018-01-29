@@ -152,10 +152,11 @@
     <div class="col-md-12" style="margin:20px">
         <center>
             <a href="#" data-toggle="tab" onclick="changeViews('shortTerm')" class="btn btn-primary" style="color:white;margin:10px;">LESS THAN 6 MONTHS&nbsp;<span class="countem"><%= @short_users.count %></span></a>
-            <a href="#" data-toggle="tab" onclick="changeViews('longTerm')" class="btn btn-primary" style="color:white;margin:10px;">BETWEEN 6 & 7 MONTHS&nbsp;<span class="countem"><%= @long_users.count %></span></a>
+            <a href="#" data-toggle="tab" onclick="changeViews('midTerm')" class="btn btn-primary" style="color:white;margin:10px;">BETWEEN 6 & 7 MONTHS&nbsp;<span class="countem"><%= @midTerm_users.count %></span></a>
             <a href="#" data-toggle="tab" onclick="changeViews('longTerm')" class="btn btn-primary" style="color:white;margin:10px;">MORE THAN 6 MONTHS&nbsp;<span class="countem"><%= @long_users.count %></span></a>
             <a href="#" data-toggle="tab" onclick="changeViews('completed')" class="btn btn-primary" style="color:white;margin:10px;">COMPLETED&nbsp;<span class="countem"><%= @completed_users.count %></span></a>
             <a href="#" data-toggle="tab" onclick="changeViews('banned')" class="btn btn-primary" style="color:white;margin:10px;">BANNED&nbsp;<span class="countem"><%= @banned_users.count %></span></a>
+            <a href="#" data-toggle="tab" onclick="changeViews('inactive')" class="btn btn-primary" style="color:white;margin:10px;">INACTIVE&nbsp;<span class="countem"><%= @inactive_users.count %></span></a>
         </center>
     </div>
     <div class="col-md-12" style="padding-bottom:20px;border-bottom:2px solid">
@@ -209,6 +210,46 @@
             </a>
         <% end %>
     </div>
+    <div class="col-md-12" id="midTerm" style="display:none">
+        <% if @midTerm_users.length == 0 %>
+            <center><h2 style="margin:50px;">No users to display!</h2></center>
+        <% end %>
+        <% for @u in @midTerm_users %>
+            <a href="/user/<%= @u.id %>" style="color:black" target="_blank" >
+                
+                
+<div class="row" style="padding:20px;border-bottom: 1px solid #e8e8e8">
+                <div class="col-md-3" style="margin:0;">
+                    <h3 style="text-transform:capitalize"><%= @u.first_name %>&nbsp;<%= @u.last_name %></h3>
+                </div>
+                <div class="col-md-2" style="margin:0;">
+                    <% @bes1t = distance_of_time_in_words(Time.now, (@u.created_at.to_time)) %>
+                    <% @bes1t.slice!("about ") %>
+                    <h4 style="text-align:center;line-height:48px;"><%= @bes1t %></h4>
+                </div>
+                <div class="col-md-2" style="margin:0;">
+                    <% @best = (time_ago_in_words(@u.updated_at)) %>
+                    <% @best.slice!("about ") %>
+                    <h4 style="text-align:center;line-height:48px;"><%= @best %> ago</h4>
+                </div>
+                <div class="col-md-5" style="margin:0;">
+                    <center><%= link_to "UPDATE PAYMENT", { :controller => :subscribers, :action => :changePlan, :user => @u.id}, :style => "position:relative; top:20px;", :class => "btn-lg btn-primary" %></center>
+                </div>
+            </div>
+                
+            </a>
+        <% end %>
+    </div>
+    <div class="col-md-12" id="inactive" style="display:none">
+        <% if @inactive_users.length == 0 %>
+            <center><h2 style="margin:50px;">No users to display!</h2></center>
+        <% end %>
+        <% for @u in @inactive_users %>
+            <a href="/user/<%= @u.id %>" style="color:black" target="_blank" >
+                <%= render '/layouts/user' %>
+            </a>
+        <% end %>
+    </div>
 </div>
 
 </div>
@@ -230,21 +271,44 @@
             document.getElementById('long_term').style.display = "none";
             document.getElementById('completed').style.display = "none";
             document.getElementById('banned').style.display = "none";
+            document.getElementById('midTerm').style.display = "none";
+            document.getElementById('inactive').style.display = "none";
         } else if (view == "longTerm"){
             document.getElementById('short_term').style.display = "none";
             document.getElementById('long_term').style.display = "block";
             document.getElementById('completed').style.display = "none";
             document.getElementById('banned').style.display = "none";
+            document.getElementById('midTerm').style.display = "none";
+            document.getElementById('inactive').style.display = "none";
         } else if (view == "completed"){
             document.getElementById('short_term').style.display = "none";
             document.getElementById('long_term').style.display = "none";
             document.getElementById('completed').style.display = "block";
             document.getElementById('banned').style.display = "none";
+            document.getElementById('midTerm').style.display = "none";
+            document.getElementById('inactive').style.display = "none";
+        } else if (view == "midTerm") {
+            document.getElementById('short_term').style.display = "none";
+            document.getElementById('long_term').style.display = "none";
+            document.getElementById('completed').style.display = "none";
+            document.getElementById('banned').style.display = "none";
+            document.getElementById('midTerm').style.display = "block";
+            document.getElementById('inactive').style.display = "none";
+        } else if (view == "inactive") {
+            document.getElementById('short_term').style.display = "none";
+            document.getElementById('long_term').style.display = "none";
+            document.getElementById('completed').style.display = "none";
+            document.getElementById('banned').style.display = "none";
+            document.getElementById('midTerm').style.display = "none";
+            document.getElementById('inactive').style.display = "block";
+            
         } else {
             document.getElementById('short_term').style.display = "none";
             document.getElementById('long_term').style.display = "none";
             document.getElementById('completed').style.display = "none";
             document.getElementById('banned').style.display = "block";
+            document.getElementById('midTerm').style.display = "none";
+            document.getElementById('inactive').style.display = "none";
         }
     }
     

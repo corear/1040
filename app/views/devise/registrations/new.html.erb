@@ -163,7 +163,7 @@ select:active{
     <div class="div_base" id="step1">
       <center><h4 style="margin-top:30px;margin-bottom:50px;">Let's start with the basic verification details.</h4></center>
       <div>
-        <%= f.email_field :email, autofocus: true, :class => "inputField2", :pattern=>".{3,}" %>
+        <%= f.email_field :email, autofocus: true, :class => "inputField2", :pattern=>".{3,}", :onkeydown => "return isUnique(event);", :id => "email" %>
         <h4 class = "text_overlay"  ><span class="glyphicon glyphicon-envelope"></span> &nbsp;&nbsp;Your email</h4>
       </div>
 
@@ -367,6 +367,13 @@ $(function () {
   document.getElementById("confirm").style.display="block";
     });
 });
+
+function isUnique(event) {
+  
+  
+  
+  
+}
 
 function isNumber(event) {
   
