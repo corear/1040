@@ -33,7 +33,7 @@
     For your information, they signed up under the email <%= @user.email %>. You can view their full profile details <%= link_to 'here', "https://www.my1040academy.com/user/#{@user.id}" %>. This is the <b><%= (@user.id - 21).ordinalize %></b> user to register on your site.
 </p>
 
-<% if @user.promo %>
+<% if @user.promo != "" %>
 <p>
   It looks like they also tried to pass with using the promo code: <b><%= @user.promo %></b>
 </p>
@@ -47,8 +47,8 @@
 <h4>Their basic information:</h4>
 <p style="text-transform:capitalize">
   Name: <%= @user.first_name %>&nbsp;<%= @user.last_name %><br>
-  Phone: (<%= (@user.phone).slice!(0..2) %>) <%= (@user.phone).slice!(0..2) %>-<%= (@user.phone).slice!(0..3) %><br>
-  Address: <%= @user.street %><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @user.city %>,&nbsp;<%= @user.state %>&nbsp;&nbsp;<%= @user.zip %>
+  Phone: <%= (@user.phone) %><br>
+  Address: <%= @user.street %>, <br><%= @user.city %>,&nbsp;<%= @user.state %>&nbsp;&nbsp;<%= @user.zip %>
 </p>
 
 <br>

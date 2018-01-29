@@ -145,7 +145,7 @@ input:focus + h4  {
                         <img src="<%= @user.image.url(:medium) %>" class="raised rounded" style="width:150px;margin:20px;height:auto;" />
                         <h2><%= @user.first_name %>&nbsp;<%= @user.last_name %>&nbsp;&nbsp;(<%= @user.age %>)</h2>
                         <h3><%= @user.email %></h3>
-                         <h3 style="margin-bottom:20px">(<%= @user.phone[0..2] %>)&nbsp;<%= @user.phone[3..5] %>-<%= @user.phone[6..9] %></h3>
+                         <h3 style="margin-bottom:20px"><%= @user.phone %></h3>
                         <div style="display:none">
                             <h4><%= @user.street %></h4>
                         <h4><%= @user.city %>,&nbsp;<span style="text-transform: uppercase"><%= @user.state %></span>&nbsp;&nbsp;<%= @user.zip %></h4>

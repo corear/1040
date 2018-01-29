@@ -76,11 +76,11 @@ class PagesController < ApplicationController
   def admin
     require "date"
     @short_users = User.all.where("created_at > ? AND completed = ? AND id != ? AND enrolled = ?", "#{6.months.ago}", "false", "1", "true").order("created_at ASC")
-    @midTerm_users = User.all.where.not(id:1).where.not("lower(promo) = ?","1040onthehouse").where(created_at:7.months.ago..6.months.ago, completed: "false", auto_renew: false, enrolled: "true").order(:created_at)
+    @midTerm_users = User.all.where.not(id:1).where.not("lower(promo) = ?","1040onthehouse").where(created_at:7.months.ago..6.months.ago, completed: [false, "false"], auto_renew: [false, "false"], enrolled: [true, "true"]).order(:created_at)
     @long_users = User.all.where("created_at < ? AND completed = ? AND id != ? AND auto_renew = ? AND enrolled = ?", 6.months.ago, "false", 1, "false", "true").order("created_at ASC")
     @completed_users = User.all.where(completed: true).order("created_at ASC")
     @banned_users = User.all.where(banhammer: true).order("created_at ASC")
-    @inactive_users = User.all.where("completed = ? AND enrolled = ?", "false", "false").order("created_at ASC")
+    @inactive_users = User.all.where(completed: [false, "false"], enrolled: [false, "false"]).order("created_at ASC")
     @newLesson = Lesson.new
     @lessons = Lesson.all.order("created_at DESC")
     @poor = Admin.find_chaps(User.all.where("two_week = ? OR two_week = ?", false, "false"))

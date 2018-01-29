@@ -97,12 +97,12 @@
            <% else %>
                                        <center><qtag style="background:none;color:#333;font-size:3em;position:relative;top:50px;">QUIZ <%= @lesson.order %></qtag></center>
                         <div class="row" style="margin-top:100px;">
-                          <div class="col-md-2"></div>
+                          <div class="col-md-1 col-lg-2 hidden-sm hidden-xs"></div>
                                 
-                          <div class="col-md-8 panel halfraised" style="border-left:5px solid rgb(245, 88, 88)">
+                          <div class="col-md-10 panel halfraised col-sm-12 col-xs-12 col-lg-8" style="border-left:5px solid rgb(245, 88, 88)">
                             <% for @q in @questions %>
                                 <% if @possibleAnswers.find_by_question_id(@q.id) == nil %>
-                                    <h2 style="padding-left:40px;padding-right:40px;padding-bottom:30px;line-height:1.4;letter-spacing:2px;"><%= @q.content %></h2>
+                                    <h2 style="padding-left:40px;padding-right:40px;padding-bottom:30px;line-height:1.4;letter-spacing:2px;font-size:25px;"><%= @q.content %></h2>
                                       <div style="margin:30px;width:80%;margin-left:10%;">
                                                 
                                                  
@@ -125,7 +125,7 @@
                                 <% end %>
                                 
                                 </div>
-                        <div class="col-md-2"></div>
+                        <div class="col-md-1 col-lg-2 hidden-sm hidden-xs"></div>
                         </div>
            <% end %>
            
