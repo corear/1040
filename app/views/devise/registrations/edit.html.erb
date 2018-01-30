@@ -102,6 +102,11 @@ input:focus + h4  {
   </div>
   
   <div class="field" style="margin-top:40px;">
+    <h3>Promo Code</h3>
+    <%= f.text_field :promo, :class => "inputField" %>
+  </div>
+  
+  <div class="field" style="margin-top:40px;">
     <h3>How did you hear of us? (Name of referral, if possible)</h3>
     <%= f.text_field :referral, :class => "inputField" %>
   </div>
@@ -124,13 +129,6 @@ input:focus + h4  {
   <div class="field" style="margin-top:40px;">
     <h3>Confirm New Password</h3>
     <%= f.password_field :password_confirmation, autocomplete: "off", :class => "inputField" %>
-  </div>
-  
-  
-
-  <div class="field" style="margin-top:40px;border-top:1px solid #f55858">
-    <h3>Current Password</h3><i> (we need your current password to confirm your changes)</i></h3>
-    <%= f.password_field :current_password, autocomplete: "off", :class => "inputField" %>
   </div>
 
   <div class="actions">

@@ -128,18 +128,7 @@ input:focus + h4  {
                     <div class="gtag" style="margin:30px;background-color:#f55a58"><h3 style="color:white;font-size:22px;line-height:2.5">🔨</h3></div>
                     <% end %>
                     <% end %>
-                    <% if current_user.progress>0 %>
-                <% @total=0 %>
-                <% @conte=0 %>
-                <% for @q in Question.all do %>
-                    <% if @possibleAnswers.find_by_question_id(@q.id) %>
-                    <% @total+=1 %>
-                    <% if @possibleAnswers.find_by_question_id(@q.id).content == @q.correct %>
-                    <% @conte+=1 %>
-                    <% end %>
-                    <% end %>
-                <% end %>
-                <% end %>
+                    
                 <div class="row">
                     <div class="col-md-6">
                         <img src="<%= @user.image.url(:medium) %>" class="raised rounded" style="width:150px;margin:20px;height:auto;" />
@@ -154,21 +143,13 @@ input:focus + h4  {
                     <div class="col-md-6">
                         <div style="margin:20px;">
                     <qtag style="background:#f55858;position:relative;left:6px;">Grade</qtag>
-                    <% if (@conte.to_f) > 0 then %>
-                            <h1 style="background:#f55858;width:101px;-webkit-background-clip: text;-webkit-text-fill-color: transparent;"><%= ((@conte.to_f / @total.to_f)*100).round %>%</h1>
+                    
+                            <h1 style="background:#f55858;width:101px;-webkit-background-clip: text;-webkit-text-fill-color: transparent;"><%= @user.score %>%</h1>
                         <div style="height:8px;width:100%;background-color:#eaeaea;border-radius:4px;overflow:hidden;margin-bottom:50px;">
-                            <div style="background:#f55858;width:<%= (@conte.to_f / @total.to_f)*100 %>%;height:100%;float:left;border-radius:4px;">
+                            <div style="background:#f55858;width:<%= @user.score %>%;height:100%;float:left;border-radius:4px;">
                     
                             </div>
                         </div>
-                    <% else %>
-                            <h1 style="background:#f55858;width:101px;-webkit-background-clip: text;-webkit-text-fill-color: transparent;">0%</h1>
-                        <div style="height:8px;width:100%;background-color:#eaeaea;border-radius:4px;overflow:hidden;margin-bottom:50px;">
-                            <div style="background:#f55858;width:0%;height:100%;float:left;border-radius:4px;">
-                    
-                            </div>
-                        </div>
-                    <% end %>
                     <qtag style="background:#6d6d6d;left:6px;margin-top:50px;">Progress</qtag>
                     
                     <% if @user.progress.to_f > 0 then %>

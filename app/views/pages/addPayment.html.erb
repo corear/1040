@@ -32,11 +32,21 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2 panel panel-default" style="padding:50px;padding-top:100px;padding-bottom:100px;margin-top:100px;margin-bottom:100px;">
+        <div class="col-md-8 col-md-offset-2 panel panel-default" style="padding:50px;padding-top:50px;padding-bottom:100px;margin-top:100px;margin-bottom:100px;">
             <div class="panel-body">
                 <center><h1>Final Signup Step</h1></center>
                 <center><h4>Before you can start using our site, you must submit your payment method. Your payment is accessed securely and never stored on our site.</h4></center>
                 <%= render '/layouts/form' %>
+                
+                <%= form_for current_user, :url => { :controller => :registrations, :action => :update } do |f| %>
+            <h2 style="color:#f55958;text-align:center;margin-top:50px;">Change Promo Code</h2>
+            <center><%= f.text_field :promo, autofocus: true, :class => "inputField", :style => "text-align:center;background:none;font-weight:800;font-size:1.52em;color:#f55a58" %></center>
+                    <div class="actions">
+                        <center>
+                            <%= f.submit "Update", :class => "btn-primary btn-lg", :style=>"margin-top:40px" %>
+                        </center>
+                    </div>
+                <% end %>
                 <center style="margin-top:40px"><%= link_to('Sign Out', destroy_user_session_path, :method => :delete) %></center>
             </div>
         </div>

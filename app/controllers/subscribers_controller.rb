@@ -62,17 +62,41 @@ class SubscribersController < ApplicationController
             :email => current_user.email
         )
         
-        if (current_user.promo.downcase == "1040onthehouse") then
-            subs = Stripe::Subscription.create(
+        if (Promo.pluck(:code).include? current_user.promo.downcase) then
+            
+            if (Promo.find_by_code(current_user.promo.downcase).used >= Promo.find_by_code(current_user.promo.downcase).maximum) then
+            
+                redirect_to "/secure/payment", alert: "This code has been used the maximum number of times! Change or remove your promo code below."
+            
+            else
+                
+                subs = Stripe::Subscription.create(
                 :customer => "#{customer.id}",
                 :items => [
                     {
-                        :plan => "1040oth"
+                        :plan => "#{current_user.promo.downcase}"
                     }
                 ]
             )
             
-        else
+            
+            current_user.subscribed = true
+            current_user.stripeid = customer.id
+            current_user.subsriptionId = subs.id
+            current_user.save
+            
+            @promo = Promo.find_by_code(current_user.promo.downcase)
+            @promo.used = Promo.find_by_code(current_user.promo.downcase).used + 1
+            @promo.save
+            
+            redirect_to "/home"
+            
+                
+            end
+            
+            
+            
+        elsif (current_user.promo == "") then
         
             subs = Stripe::Subscription.create(
                 :customer => "#{customer.id}",
@@ -82,15 +106,19 @@ class SubscribersController < ApplicationController
                     }
                 ]
             )
-        end
-        
-        
-        
-        current_user.subscribed = true
+            
+            current_user.subscribed = true
         current_user.stripeid = customer.id
         current_user.subsriptionId = subs.id
         current_user.save
         
-        redirect_to "/home"
+        else
+        
+        redirect_to "/secure/payment", alert: "No such promo code found! Change or remove your code below."
+        end
+        
+        
+        
+        
     end
 end

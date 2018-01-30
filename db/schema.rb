@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180126021704) do
+ActiveRecord::Schema.define(version: 20180130020939) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "question_id"
@@ -34,6 +34,14 @@ ActiveRecord::Schema.define(version: 20180126021704) do
     t.string   "excel"
     t.string   "doc"
     t.string   "shortDesc"
+  end
+
+  create_table "promos", force: :cascade do |t|
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "maximum",    default: 0
+    t.string   "code"
+    t.integer  "used",       default: 0
   end
 
   create_table "questions", force: :cascade do |t|
@@ -118,6 +126,7 @@ ActiveRecord::Schema.define(version: 20180126021704) do
     t.boolean  "subscribed"
     t.string   "stripeid"
     t.string   "subsriptionId"
+    t.integer  "score",                  default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

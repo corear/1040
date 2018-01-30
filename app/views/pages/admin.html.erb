@@ -42,6 +42,7 @@
         <center>
                 <a href="#" data-toggle="tab" onclick="changeMainViews('users')" class="btn-lg btn-primary" style="color:white;margin:10px;">USERS</a>
                 <a href="#" data-toggle="tab" onclick="changeMainViews('lessons')" class="btn-lg btn-primary" style="color:white;margin:10px;">LESSONS</a>
+                <a href="#" data-toggle="tab" onclick="changeMainViews('promos')" class="btn-lg btn-primary" style="color:white;margin:10px;">PROMOS</a>
         </center>
     </div>
     </div>
@@ -105,6 +106,107 @@
 <% end %>
 
 </div>
+
+
+
+
+
+
+
+    <div id ="promos_base" class="container" style="display:none;">
+<center><button class="btn-lg btn-primary" onclick="if (document.getElementById('addPromo').style.display=='block') { document.getElementById('addPromo').style.display='none' } else {document.getElementById('addPromo').style.display='block'}" style="margin-top:60px;">Add New Code</button></center>
+<div class="row" id="addPromo" style="display:none">
+  <div class="col-md-2"></div>
+  <div class="col-md-8 raised" style="border-radius: 10px;background-color: #fff;padding: 0px;padding-left:20px;padding-right:20px;opacity:1;">
+    <%= form_for @newPromo do |f| %>
+            <h4>Promo Code (Plan ID on Stripe)</h4>
+            <%= f.text_field :code, autofocus: true, :class => "inputField" %>
+            <h4>Maximum Number of Uses</h4>
+            <%= f.telephone_field :maximum, autofocus: true, :class => "inputField" %>
+            
+            <div class="actions">
+    <%= f.submit "Add Promo Code", :class => "btn-lg btn-primary", :style => "width:100%;margin-top:20px;margin-bottom:20px;" %>
+  </div>
+            
+        <% end %>
+        
+        </div>
+<div class="col-md-2"></div>
+</div>
+
+
+
+<center>
+
+<h1 style="max-width:300px;border-radius:10px;color:white;background-color:rgb(245, 88, 88);padding:10px;margin-top:50px;margin-bottom:30px;font-size:2em;letter-spacing:1px;">PROMO CODES</h1>
+</center>
+
+<% for @lesson in Promo.all %>
+    <a href="/promo/<%= @lesson.id %>">
+        <div class="panel panel-default raised" style="padding:0;overflow:hidden;">
+        <div class="row" style="background:none;margin:0;height:90px;">
+            <div class="col-sm-4">
+                <center>
+                    <h2 style="
+                    color:  #f55a58;
+                    margin-top: 29px;
+                    margin-left: 30px;
+                "><%= @lesson.code %></h2>
+                </center>
+                
+            </div>
+            <div class="col-sm-5">
+                <center>
+                    <% if @lesson.maximum == 0 then %>
+                        <qtag style="border-radius:30px;top:0;background-color:#eaeaea;padding:10px;top:32px;padding-left:20px;padding-right:20px;color:#f55a58;z-index:999">No Maximum</qtag>
+                    <% else %>
+                        <qtag style="border-radius:30px;top:0;background-color:#eaeaea;padding:10px;top:32px;padding-left:20px;padding-right:20px;color:#f55a58;z-index:999"><%= @lesson.used %> / <%= @lesson.maximum %></qtag>
+                    <% end %>
+                </center>
+                    
+            </div>
+            <div class="col-sm-3">
+              <%= link_to "", {:controller=>:promos,:action=>:destroy, :id=>@lesson}, :method=>:delete, :class =>"glyphicon glyphicon-trash btn btn-primary", :style => "color:#f55a58;margin:20px;margin-right:0;border-radius: 50%;width: 50px;height: 50px;padding: 10px;line-height: 2;background-color:whitesmoke;position:relative;z-index:999;" %>
+              <%= link_to "", edit_promo_path(@lesson), :class =>"glyphicon glyphicon-edit btn btn-primary", :style => "color:#f55a58;margin:20px;border-radius: 50%;width: 50px;height: 50px;padding: 10px;line-height: 2;background-color:whitesmoke;position:relative;z-index:999;" %>
+            </div>
+            
+            <% if @lesson.maximum == 0 then %>
+            <div style="height:91px;left:0;width:100%;background-color:#f55a58;position:relative;">
+                <div style="width:100%;height:100%;overflow:hidden;width:100%;height:100%;overflow:hidden;top: -81px;position:  relative;">
+                    <h2 style="
+                    color:  white;
+                    left: 143px;
+                    position:relative;
+                
+                "><%= @lesson.code %></h2>
+                </div>
+            <% elsif @lesson.used == 0 then %>
+                
+                <div style="height:91px;left:0;width:0%;background-color:#f55a58;position:relative;">
+                
+                
+            <% else %>
+            
+            <div style="height:91px;left:0;width:<%= ((@lesson.used.to_f/@lesson.maximum.to_f)*100).round %>%;background-color:#f55a58;position:relative;">
+                <div style="width:100%;height:100%;overflow:hidden;width:100%;height:100%;overflow:hidden;top: -81px;position:  relative;">
+                    <h2 style="
+                    color:  white;
+                    left: 143px;
+                    position:relative;
+                
+                "><%= @lesson.code %></h2>
+                </div>
+                
+            <% end %>
+            </div>
+        </div>
+    </div>
+    
+    </a>
+<% end %>
+
+</div>
+
 
 
 
@@ -316,9 +418,15 @@
         if (view == "users"){
             document.getElementById('users_base').style.display = "block";
             document.getElementById('lessons_base').style.display = "none";
-        } else {
+            document.getElementById('promos_base').style.display = "none";
+        } else if (view == "lessons") {
             document.getElementById('users_base').style.display = "none";
             document.getElementById('lessons_base').style.display = "block";
+            document.getElementById('promos_base').style.display = "none";
+        } else {
+            document.getElementById('users_base').style.display = "none";
+            document.getElementById('lessons_base').style.display = "none";
+            document.getElementById('promos_base').style.display = "block";
         }
     }
 </script>

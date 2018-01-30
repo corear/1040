@@ -37,6 +37,8 @@
                     <qtag style="background:#6d6d6d;position:relative;left:6px;">Cumulative Grade</qtag>
                     <% if current_user.progress>0 %>
                     <% if @conte.to_f > 0 %>
+                    <% current_user.score = ((@conte.to_f / @total.to_f)*100).round %>
+                    <% current_user.save %>
                         <h1 style="background:#6d6d6d;width:101px;-webkit-background-clip: text;-webkit-text-fill-color: transparent;"><%= ((@conte.to_f / @total.to_f)*100).round %>%</h1>
                         <div style="height:8px;width:100%;background-color:#eaeaea;border-radius:4px;overflow:hidden;">
                             <div style="background:#6d6d6d;width:<%= (@conte.to_f / @total.to_f)*100 %>%;height:100%;float:left;border-radius:4px;">
@@ -45,6 +47,8 @@
                         </div>
                         <h4 style="padding:10px;"><%=@conte%>/<%=@total%> Questions Correct</h4>
                     <% else %>
+                    <% current_user.score = 0 %>
+                    <% current_user.save %>
                         <h1 style="background:#6d6d6d;width:101px;-webkit-background-clip: text;-webkit-text-fill-color: transparent;">0%</h1>
                         <div style="height:8px;width:100%;background-color:#eaeaea;border-radius:4px;overflow:hidden;">
                             <div style="background:#6d6d6d;width:0%;height:100%;float:left;border-radius:4px;">

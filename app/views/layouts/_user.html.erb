@@ -1,7 +1,7 @@
 
 <div class="row" style="padding:20px;border-bottom: 1px solid #e8e8e8">
                 <div class="col-md-3" style="margin:0;">
-                    <h3 style="text-transform:capitalize"><%= @u.first_name %>&nbsp;<%= @u.last_name %></h3>
+                    <h3 style="text-transform:capitalize"><qtag style="top:0;border-radius:30px;"><%= @u.score %>%</qtag><%= @u.first_name %>&nbsp;<%= @u.last_name %></h3>
                 </div>
                 <div class="col-md-2" style="margin:0;">
                     <% @bes1t = distance_of_time_in_words(Time.now, (@u.created_at.to_time)) %>

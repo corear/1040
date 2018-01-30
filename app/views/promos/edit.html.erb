@@ -1,0 +1,73 @@
+<style>
+    h4{
+        margin-top:20px;
+        margin-bottom:0px;
+    }
+    
+    	 input[type=radio]:checked + label, input[type=checkbox]:checked + label{
+		   background-color:white;
+		border:2px solid rgb(245, 88, 88);
+			color:rgb(245, 88, 88);
+	}
+	
+	
+</style>
+
+<%= render '/layouts/nav' %>
+        <div class="wrapper">
+    <div class="container">
+        <% if (current_user.id != 1) %>
+            <center>
+                <div class="panel" style="padding:50px;padding-bottom:75px;margin-top:50px;">
+            <h1>Uh oh!</h1>
+           <h2 style="margin-bottom:50px;">You're not allowed in here!</h2>
+    </div>
+            </center>
+            
+        <% else %>
+        
+        <center>
+          <qtag style="position:relative;top:60px;font-size:2.4em">Edit Promo Code</qtag><br><br>
+        <div class="row" style="margin-top:50px;">
+  <div class="col-md-2"></div>
+  <div class="col-md-8 raised" style="margin-top: 60px;margin-bottom: 100px;border-radius: 10px;background-color: #fff;padding: 0px;padding-left:20px;padding-right:20px;opacity:1;">
+    <%= form_for @promo do |f| %>
+            <%= f.text_field :code, autofocus: true, :class => "inputField", :style =>"background:none; font-size:3em; color:#f55958;margin-top:30px;text-align:center" %>
+            <h2 style="color:#f55958;text-align:center;margin-top:50px;">Maximum Uses</h2>
+            <center><%= f.text_field :maximum, autofocus: true, :class => "inputField", :style => "width:70px;text-align:center;background:none;font-weight:800;font-size:1.52em;color:#f55a58" %></center>
+            
+            <div class="actions">
+    <%= f.submit "Update", :class => "btn-lg btn-primary", :style => "width:100%;margin-top:20px;margin-bottom:20px;" %>
+  </div>
+            
+        <% end %>
+        
+        </div>
+<div class="col-md-2"></div>
+</div>
+
+<div class="row" style="margin-top:0px">
+    <% for @u in User.all.where("lower(promo) = ?","#{@promo.code}").where(subscribed: [true, "true"]).order("created_at ASC") do %>
+        <a href="/user/<%= @u.id %>">
+            <div class="row panel panel-body raised" style="margin-top:20px;">
+            <div class="col-md-12">
+                        <center>
+                            
+                        <h2 style="color:#f55a58"><span><img src="<%= @u.image.url(:thumb) %>" class="raised rounded" style="width:50px;height:auto;margin: auto 0;margin-top:-9px" /></span>&nbsp;&nbsp;<%= @u.first_name %> <%= @u.last_name %></h2>
+                        </center>
+            </div>
+        </div>
+        </a>
+    <% end %>
+</div>
+
+
+        <% end %>
+</div>
+        </div>
+        
+        
+        
+
+<%= render '/components/footer' %>
+nub c:

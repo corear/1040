@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :answers
   resources :responses
   resources :subscribers
+  resources :promos
   
   devise_scope :user do
     get "/secure/signin" => "devise/sessions#new" # custom path to login/sign_in
