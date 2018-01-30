@@ -92,6 +92,6 @@ Rails.application.configure do
   :password             => 'XBNJ7BY4GD',
   }
   
-  config.action_mailer.default_url_options = {host: "http://www.my1040academy.com"}
+  config.action_mailer.default_url_options = {host: "www.my1040academy.com"}
   
 end

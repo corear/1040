@@ -142,13 +142,13 @@
 </center>
 
 <% for @lesson in Promo.all %>
-    <a href="/promo/<%= @lesson.id %>">
+    <a href="/promos/<%= @lesson.id %>/edit">
         <div class="panel panel-default raised" style="padding:0;overflow:hidden;">
         <div class="row" style="background:none;margin:0;height:90px;">
             <div class="col-sm-4">
                 <center>
                     <h2 style="
-                    color:  #f55a58;
+                    color:  #f55a58;text-align:left;
                     margin-top: 29px;
                     margin-left: 30px;
                 "><%= @lesson.code %></h2>
@@ -174,8 +174,8 @@
             <div style="height:91px;left:0;width:100%;background-color:#f55a58;position:relative;">
                 <div style="width:100%;height:100%;overflow:hidden;width:100%;height:100%;overflow:hidden;top: -81px;position:  relative;">
                     <h2 style="
-                    color:  white;
-                    left: 143px;
+                    color:  white;text-align:left;
+                    left: 154px;
                     position:relative;
                 
                 "><%= @lesson.code %></h2>

@@ -54,12 +54,14 @@ a:hover{
                             <h1>Beta testers do not use any payment!</h1>
                         </center>
                     <% else %>
+                    <% require 'date' %>
+                    <% if current_user.created_at < 6.months.ago then %>
                     <center>
                         <h2>Important Information!</h2>
                     <h4>It has been over 6 months since your account was created, meaning that you can choose to close your account and cancel any future payments at this time.</h4>
                     <a class="btn btn-primary" href="/user/terminate/gateway">I want to close my account</a>
                     </center>
-                    
+                    <% end %>
                     <center><h4 style="margin-top:30px;margin-bottom:50px;">Your information is only accessed securely. We will never give this to anyone.</h4></center>
                     
                     <div class="row">
@@ -98,8 +100,10 @@ a:hover{
                         <div class="col-md-3"></div>
                     </div>
                     
-                    <%= render "/layouts/form1" %>
                     
+                    <% if current_user.created_at < 6.months.ago then %>
+                    <%= render "/layouts/form1" %>
+                    <% end %>
                     
                     <% end %>
                 </div>
