@@ -93,7 +93,7 @@
   <% end %>
   
   <% if current_user %>
-    <% if (current_user.subscribed == nil) and (request.original_fullpath != "/secure/payment") and (current_user.created_at > Date.parse('2018-01-24')) then %>
+    <% if (current_user.subscribed == nil) and (request.original_fullpath != "/secure/payment") and (request.original_fullpath != "/users/password/edit") and (current_user.created_at > Date.parse('2018-01-24')) then %>
       <script>
         window.location = "/secure/payment"
       </script>
@@ -108,7 +108,7 @@
   <% else %>
   
   <% if current_user %>
-    <% if (current_user.subscribed == nil) and (request.original_fullpath != "/secure/payment") and (current_user.created_at > Date.parse('2018-01-24')) %>
+    <% if (current_user.subscribed == nil) and (request.original_fullpath != "/secure/payment") and (request.original_fullpath != "/users/password/edit") and (current_user.created_at > Date.parse('2018-01-24')) %>
       <script>
         window.location = "/secure/payment"
       </script>
