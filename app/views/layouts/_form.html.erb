@@ -6,20 +6,22 @@
     data-email="<%= current_user.email %>"
     data-name="<%= current_user.first_name %> <%= current_user.last_name %>"
     <% if current_user.promo != "" then %>
-    data-description="Promo Code: <%= current_user.promo %>"
-    <% @x = Stripe::Plan.retrieve("#{current_user.promo}") %>
-    <% unless @x %>
-    data-panel-label="Promo Doesn't Exist!">
+        data-description="Promo Code: <%= current_user.promo %>"
+        <% begin %>
+            <% Stripe::Plan.retrieve("#{current_user.promo}") %>
+        <% rescue %>
+            data-panel-label="Promo Doesn't Exist!"
+        <% else %>
+            <% @x = Stripe::Plan.retrieve("#{current_user.promo}") %>
+            <% if @x.amount.to_i > 0 then %>
+                data-panel-label="$<%= @x.amount.to_f/100 %>0/month">
+            <% else %>
+                data-panel-label="FREE">
+            <% end %>
+        <% end %>
     <% else %>
-    <% if @x.amount.to_i > 0 then %>
-    data-panel-label="$<%= @x.amount.to_f/100 %>0/month">
-    <% else %>
-    data-panel-label="FREE">
-    <% end %>
-    <% end %>
-    <% else %>
-    data-description="No Promo Code"
-    data-panel-label="$55.00/month">
+        data-description="No Promo Code"
+        data-panel-label="$55.00/month">
     <% end %>
 </script>
 <script>
