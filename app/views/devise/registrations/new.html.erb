@@ -335,6 +335,10 @@ $('.card_input').on('keyup', function() {
   }
   
   $(document).ready(function () {
+    if (location.protocol != 'http:')
+{
+ location.href = 'http:' + window.location.href.substring(window.location.protocol.length);
+}
     window.setTimeout( function(){document.getElementById("account").classList.add('active');}, 500);
        });
   
@@ -367,13 +371,6 @@ $(function () {
   document.getElementById("confirm").style.display="block";
     });
 });
-
-function isUnique(event) {
-  
-  
-  
-  
-}
 
 function isNumber(event) {
   
