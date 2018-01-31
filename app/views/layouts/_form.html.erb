@@ -7,10 +7,16 @@
     data-name="<%= current_user.first_name %> <%= current_user.last_name %>"
     <% if current_user.promo != "" then %>
     data-description="Promo Code: <%= current_user.promo %>"
+    <% @x = Stripe::Plan.retrieve("#{current_user.promo}") %>
+    <% unless @x %>
+    data-panel-label="Promo Doesn't Exist!">
+    <% else %>
+    data-panel-label="$<%= @x.amount.to_f/100 %>/month">
+    <% end %>
     <% else %>
     data-description="No Promo Code"
+    data-panel-label="$55.00/month">
     <% end %>
-    data-panel-label="Begin Subscription">
 </script>
 <script>
         // Hide default stripe button, be careful there if you
