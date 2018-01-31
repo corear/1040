@@ -48,7 +48,7 @@ class SubscribersController < ApplicationController
                 )
                 
                 user.subsriptionId = subs.id
-            
+            end
             end
         end
         
