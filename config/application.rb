@@ -32,4 +32,5 @@ module K1040
   end if File.exists?(env_file)
 end
   end
+    Devise::SessionsController.ssl_required :new, :create
 end
