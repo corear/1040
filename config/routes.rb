@@ -12,7 +12,6 @@ Rails.application.routes.draw do
     get '/secure/password_update' => "devise/passwords#edit"
   end
   
-  constraints :protocol => "https" do
   devise_for :users, controllers: { registrations: "registrations" }
   root 'pages#index'
 
@@ -41,7 +40,7 @@ Rails.application.routes.draw do
   get '/terms' => 'pages#terms'
   get '/privacy' => 'pages#privacy'
   get '/overview' => 'pages#goodbye'
-end
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
