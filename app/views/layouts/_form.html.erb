@@ -11,7 +11,11 @@
     <% unless @x %>
     data-panel-label="Promo Doesn't Exist!">
     <% else %>
-    data-panel-label="$<%= @x.amount.to_f/100 %>/month">
+    <% if @x.amount.to_i > 0 then %>
+    data-panel-label="$<%= @x.amount.to_f/100 %>0/month">
+    <% else %>
+    data-panel-label="FREE">
+    <% end %>
     <% end %>
     <% else %>
     data-description="No Promo Code"
