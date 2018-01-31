@@ -55,12 +55,7 @@ class SubscribersController < ApplicationController
     def update
         
         
-        token = params[:stripeToken]
-            
-        customer = Stripe::Customer.create(
-            :card => token,
-            :email => current_user.email
-        )
+        
         
         if (Promo.pluck(:code).include? current_user.promo.downcase) then
             
@@ -69,6 +64,13 @@ class SubscribersController < ApplicationController
                 redirect_to "/secure/payment", alert: "This code has been used the maximum number of times! Change or remove your promo code below."
             
             else
+                
+                token = params[:stripeToken]
+            
+        customer = Stripe::Customer.create(
+            :card => token,
+            :email => current_user.email
+        )
                 
                 subs = Stripe::Subscription.create(
                 :customer => "#{customer.id}",
@@ -98,6 +100,13 @@ class SubscribersController < ApplicationController
             
         elsif (current_user.promo == "") then
         
+        token = params[:stripeToken]
+            
+        customer = Stripe::Customer.create(
+            :card => token,
+            :email => current_user.email
+        )
+        
             subs = Stripe::Subscription.create(
                 :customer => "#{customer.id}",
                 :items => [
@@ -111,6 +120,8 @@ class SubscribersController < ApplicationController
         current_user.stripeid = customer.id
         current_user.subsriptionId = subs.id
         current_user.save
+        
+        redirect_to "/home"
         
         else
         
