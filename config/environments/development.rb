@@ -45,7 +45,7 @@ Rails.application.configure do
   :authentication       => "plain",
   :enable_starttls_auto => true,
   :user_name            => 'my1040academy',
-  :password             => 'XBNJ7BY4GD',
+  :password             => ENV["EMAIL_PASSWORD"],
   }
   
   config.action_mailer.perform_deliveries = true

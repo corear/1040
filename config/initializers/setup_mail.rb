@@ -6,4 +6,4 @@ ActionMailer::Base.smtp_settings = {
   :authentication       => "plain",
   :enable_starttls_auto => true,
   :user_name            => 'my1040academy',
-  :password             => 'XBNJ7BY4GD' }
+  :password             => ENV["EMAIL_PASSWORD"] }

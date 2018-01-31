@@ -8,7 +8,7 @@ class SubscribersController < ApplicationController
     
     def changePlan
         require 'date'
-        Stripe.api_key = "sk_live_fz5MdsT6GolOPhgeEuvTYw5i"
+        Stripe.api_key = ENV["SK_KEY"]
         user = User.find(params[:user])
         
         if (user.subsriptionId) then
@@ -37,7 +37,7 @@ class SubscribersController < ApplicationController
     end
     
     def remove
-        Stripe.api_key = "sk_live_fz5MdsT6GolOPhgeEuvTYw5i"
+        Stripe.api_key = ENV["SK_KEY"]
 
         if (current_user.subsriptionId) then
             if (Stripe::Subscription.retrieve("#{current_user.subsriptionId}")) then
