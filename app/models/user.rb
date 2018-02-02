@@ -5,9 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
          
+         
   has_attached_file :image,
   :storage => :cloudinary,
-  :secure => true,
   :path => ':id/:style/:filename',
   :default_url => "/blank_profile.jpg",
   :styles => { medium: "256x256#", thumb: "50x50#"}

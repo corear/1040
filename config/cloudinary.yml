@@ -5,15 +5,24 @@ development:
   api_secret: K6CTHtdk81May6fLBS5cp_8WOjg
   enhance_image_tag: true
   static_image_support: false
+  secure: true
 production:
   cloud_name: corear
   api_key: '155538283789758'
   api_secret: K6CTHtdk81May6fLBS5cp_8WOjg
   enhance_image_tag: true
   static_image_support: true
+  secure: true
 test:
   cloud_name: corear
   api_key: '155538283789758'
   api_secret: K6CTHtdk81May6fLBS5cp_8WOjg
   enhance_image_tag: true
   static_image_support: false
+  secure: true
+
+auth = {
+  cloud_name: "corear",
+  api_key:    "155538283789758",
+  api_secret: "K6CTHtdk81May6fLBS5cp_8WOjg"
+}
