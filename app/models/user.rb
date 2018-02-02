@@ -9,8 +9,7 @@ class User < ActiveRecord::Base
   :storage => :cloudinary,
   :path => ':id/:style/:filename',
   :default_url => "/blank_profile.jpg",
-  :styles => { medium: "256x256#", thumb: "50x50#"},
-  :secure => true
+  :styles => { medium: "256x256#", thumb: "50x50#"}
   
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   
