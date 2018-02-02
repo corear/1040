@@ -174,7 +174,7 @@ body{
                 <div class="row">
                     <div class="top-title">
                         <h1>Introducing 10/40 Academy.</h1>
-                        <h3>An affordable entrepreneurship course that fits into your high school curriculum.</h3>
+                        <h3>An affordable entrepreneurship course that fits into your high school curriculum</h3>
                         <a href="/secure/enroll" target="_blank"><h2 class="raised" style="color:#f55858;margin: 50px;margin-right:  35%;padding: 20px;background: white;border-radius: 4px;margin-left: 35%;">$55/month</h2></a>
                         <div style="display:none">
                             <img src="/Man_iPhone_Desk.jpg" style="height:300px;margin:30px;border-radius:4px;" class="raised hidden-xs" /><br>
@@ -412,4 +412,12 @@ body{
         }
     }
     
+    
+    $(document).ready(function () {
+    if (location.protocol != 'https:')
+{
+ location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+}
+       });
+       
 </script>

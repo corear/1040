@@ -10,7 +10,7 @@
         <% begin %>
             <% Stripe::Plan.retrieve("#{current_user.promo}") %>
         <% rescue %>
-            data-panel-label="Promo Doesn't Exist!"
+            data-panel-label="Promo Code Invalid!"
         <% else %>
             <% @x = Stripe::Plan.retrieve("#{current_user.promo}") %>
             <% if @x.amount.to_i > 0 then %>
@@ -28,7 +28,7 @@
         // Hide default stripe button, be careful there if you
         // have more than 1 button of that class
         document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
-    </script>
+</script>
     <center>
         <button type="submit" class="btn-primary" style="border:0;padding:15px;padding-left:30px;padding-right:30px;font-size:20px;">SUBMIT PAYMENT</button>
 </center>

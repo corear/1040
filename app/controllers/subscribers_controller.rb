@@ -8,13 +8,13 @@ class SubscribersController < ApplicationController
     
     def changePlan
         require 'date'
-        Stripe.api_key = ENV["SK_TEST"]
+        Stripe.api_key = ENV["SK_KEY"]
         user = User.find(params[:user])
         @newPlan = ""
         
         
         
-        if (user.subsriptionId) then
+        if (user.subsriptionId != "") then
             if (Stripe::Subscription.retrieve("#{user.subsriptionId}")) then
                 sub = Stripe::Subscription.retrieve("#{user.subsriptionId}")
                 if (sub.plan.amount == 5500) then
@@ -34,6 +34,22 @@ class SubscribersController < ApplicationController
                 user.subsriptionId = subs.id
                 
                 
+            elsif (sub.plan.amount == 4400) then
+            
+            sub.delete
+                
+                subs = Stripe::Subscription.create(
+                    :customer => "#{user.stripeid}",
+                    :trial_end => "#{Time.at(user.created_at + 7.months).to_i}",
+                    :items => [
+                    {
+                      :plan => "44_deduction",
+                    },
+                  ]
+                )
+                
+                user.subsriptionId = subs.id
+            
             elsif (sub.plan.amount == 3850 || sub.plan.amount == 3300) then
                 sub.delete
                 
@@ -62,7 +78,7 @@ class SubscribersController < ApplicationController
     end
     
     def remove
-        Stripe.api_key = ENV["SK_TEST"]
+        Stripe.api_key = ENV["SK_KEY"]
 
         if (current_user.subsriptionId) then
             if (Stripe::Subscription.retrieve("#{current_user.subsriptionId}")) then
