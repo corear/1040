@@ -36,19 +36,6 @@ h3 > a:hover{
             <div class="row panel panel-body raised" style="margin-top:50px;padding:0px;overflow:hidden;">
                 <h1 style="margin-bottom:30px;width:100%;background-color:#f55858;margin-top:0;padding:20px;color:white;">OVERVIEW</h1>
                 
-                    <% if current_user.progress>0 %>
-                <% @total=0 %>
-                <% @conte=0 %>
-                <% for @q in Question.all do %>
-                    <% if @possibleAnswers.find_by_question_id(@q.id) %>
-                    <% @total+=1 %>
-                    <% if @possibleAnswers.find_by_question_id(@q.id).content == @q.correct %>
-                    <% @conte+=1 %>
-                    <% end %>
-                    <% end %>
-                <% end %>
-                <% end %>
-                
                 
                 
                 <div class="col-md-6">
@@ -59,10 +46,10 @@ h3 > a:hover{
                 <div class="col-md-6">
                         <div style="margin:20px;padding-bottom:40px">
                     <qtag style="background:#f55858;position:relative;left:6px;">Grade</qtag>
-                    <% if (@conte.to_f > 0) then %>
-                            <h1 style="background:#f55858;width:101px;-webkit-background-clip: text;-webkit-text-fill-color: transparent;"><%= ((@conte.to_f / @total.to_f)*100).round %>%</h1>
+                    <% if (current_user.score > 0) then %>
+                            <h1 style="background:#f55858;width:101px;-webkit-background-clip: text;-webkit-text-fill-color: transparent;"><%= current_user.score %>%</h1>
                         <div style="height:8px;width:100%;background-color:#eaeaea;border-radius:4px;overflow:hidden;margin-bottom:50px;">
-                            <div style="background:#f55858;width:<%= (@conte.to_f / @total.to_f)*100 %>%;height:100%;float:left;border-radius:4px;">
+                            <div style="background:#f55858;width:<%= current_user.score %>%;height:100%;float:left;border-radius:4px;">
                     
                             </div>
                         </div>
