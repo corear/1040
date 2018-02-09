@@ -98,7 +98,7 @@
         window.location = "/secure/payment"
       </script>
     <% end %>
-    <% if (current_user.enrolled == false) && (request.original_fullpath != "/overview") && (current_user.created_at > Date.parse('2018-01-24')) then %>
+    <% if (current_user.enrolled == false) && (request.original_fullpath != "/overview") && (current_user.created_at < Date.parse('2018-01-24')) then %>
       <script>
         window.location = "/overview"
       </script>
