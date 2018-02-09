@@ -76,6 +76,8 @@
     width:100%;
     transition: all 0.3s ease;
     text-align:center;
+    position:relative;
+    z-index:501;
 }
 
 input:focus + h4  {
@@ -94,6 +96,7 @@ input:focus + h4  {
   left:10px;
   display:inline;
   text-align:left;
+  z-index:500;
 }
 
 .glyphicon-lock{
@@ -263,7 +266,7 @@ select:active{
                 <div>
                   <center>
                     <h4 class = "text_overlay">Age Range</h4>
-                    <%= f.select :age, ['10-15','16-20','21+'], :class => "inputField2" %>
+                    <%= f.select :age, ['10-15','16-20','21-39','40-60','61+'], :class => "inputField2" %>
                   </center>
                 </div>
               </div>
@@ -276,7 +279,7 @@ select:active{
 
     </div>
     <div class="div_base" id="step3" style="display:none;">
-            <center><h4 style="margin-top:50px;margin-bottom:40px;">Ready to get started? Submit your information and create your account by clicking on the button below. If it processes correctly, you will then be redirected to submit a form of payment.</h4></center>
+            <center><h4 style="margin-top:50px;margin-bottom:40px;">Ready to get started? Submit your information and create your account by clicking on the button below. You will then be redirected to submit a form of payment.</h4></center>
              
           <button class="btn-lg btn-primary" id="show_confirm" style="width:100%;margin-top:30px;margin-bottom:0px;">CREATE ACCOUNT</button>
     

@@ -99,8 +99,7 @@ class SubscribersController < ApplicationController
         
         
         if (Promo.pluck(:code).include? current_user.promo.downcase) then
-            
-            if (Promo.find_by_code(current_user.promo.downcase).used >= Promo.find_by_code(current_user.promo.downcase).maximum) then
+            if (Promo.find_by_code(current_user.promo.downcase).used >= Promo.find_by_code(current_user.promo.downcase).maximum) && (Promo.find_by_code(current_user.promo.downcase).maximum != 0) then
             
                 redirect_to "/secure/payment", alert: "This code has been used the maximum number of times! Change or remove your promo code below."
             

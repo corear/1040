@@ -61,7 +61,7 @@
            
                <center><qtag style="font-size:3em;color:#6d6d6d;background:none;position:relative;top:30px;margin-bottom:30px;">QUIZ <%= @lesson.order %> RESULTS</qtag></center>
                <div class="progress" style="position:relative;top:30px;">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="min-width: 5em; width:<%= (@corr.to_f / @questions.count.to_f)*100 %>%">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="min-width: 20%; width:<%= (@corr.to_f / @questions.count.to_f)*100 %>%">
                     <h3 style="color:white;line-height:0;margin-top:15px;font-size:2em"><%= ((@corr.to_f / @questions.count.to_f)*100).ceil %>% Correct</h3>
                   </div>
                 </div>
