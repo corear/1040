@@ -36,7 +36,45 @@ end
   protected
 
   def after_sign_up_path_for(resource)
-    '/secure/payment'
+    begin
+      Stripe::Plan.retrieve("#{resource.promo}")
+    rescue
+      '/secure/payment'
+    else
+    @x = Stripe::Plan.retrieve("#{resource.promo}")
+      if @x.amount.to_i > 0 then
+        '/secure/payment'
+      else
+        if (Promo.find_by_code(resource.promo.downcase).used >= Promo.find_by_code(resource.promo.downcase).maximum) && (Promo.find_by_code(resource.promo.downcase).maximum != 0) then
+           '/secure/payment'
+            else
+        
+        customer = Stripe::Customer.create(
+            :email => resource.email
+        )
+                
+                subs = Stripe::Subscription.create(
+                :customer => "#{customer.id}",
+                :items => [
+                    {
+                        :plan => "#{resource.promo.downcase}"
+                    }
+                ]
+            )
+        resource.subscribed = true
+            resource.stripeid = customer.id
+            resource.subsriptionId = subs.id
+        resource.save
+        
+        @promo = Promo.find_by_code(resource.promo.downcase)
+            @promo.used = Promo.find_by_code(resource.promo.downcase).used + 1
+            @promo.save
+            
+        '/home'
+      
+      end
+      end
+    end
   end
   
   def update_resource(resource, params)

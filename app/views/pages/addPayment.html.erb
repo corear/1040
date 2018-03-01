@@ -60,4 +60,8 @@
  location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
 }
        });
+       
+       <% if current_user.subscribed == true %>
+       window.location = "/home"
+       <% end %>
 </script>
