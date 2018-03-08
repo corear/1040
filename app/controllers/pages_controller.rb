@@ -87,6 +87,46 @@ class PagesController < ApplicationController
     @poor = Admin.find_chaps(User.all.where("two_week = ? OR two_week = ?", false, "false"))
   end
   
+  def addPayment
+    begin
+      Stripe::Plan.retrieve("#{resource.promo.downcase}")
+    rescue
+      redirect_to "/secure/payment", :alert => "That code does not exist!"
+    else
+    @x = Stripe::Plan.retrieve("#{resource.promo.downcase}")
+        if @x.amount.to_i == 0 && (Promo.find_by_code(resource.promo.downcase).used < Promo.find_by_code(resource.promo.downcase).maximum) then
+           
+        
+        customer = Stripe::Customer.create(
+            :email => resource.email
+        )
+                
+                subs = Stripe::Subscription.create(
+                :customer => "#{customer.id}",
+                :items => [
+                    {
+                        :plan => "#{resource.promo.downcase}"
+                    }
+                ]
+            )
+        resource.subscribed = true
+            resource.stripeid = customer.id
+            resource.subsriptionId = subs.id
+        resource.save
+        
+        @promo = Promo.find_by_code(resource.promo.downcase)
+            @promo.used = Promo.find_by_code(resource.promo.downcase).used + 1
+            @promo.save
+            
+        redirect_to '/home'
+      
+            else
+              
+              redirect_to '/secure/payment', :alert => "That code has been used the maximum number of times!"
+      end
+    end
+  end
+  
   def quiz
     @questions = Question.all.where("quiz_id = ?", params[:id])
     @lesson = Lesson.find(params[:id])

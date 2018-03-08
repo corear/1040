@@ -45,7 +45,7 @@ end
       if @x.amount.to_i > 0 then
         '/secure/payment'
       else
-        if (Promo.find_by_code(resource.promo.downcase).used >= Promo.find_by_code(resource.promo.downcase).maximum) && (Promo.find_by_code(resource.promo.downcase).maximum != 0) then
+        if (Promo.find_by_code(resource.promo.downcase).used >= Promo.find_by_code(resource.promo.downcase).maximum) then
            '/secure/payment'
             else
         
