@@ -188,34 +188,6 @@ input:focus + h4  {
                     <% end %>
                     <% end %>
                         
-                        <% if @user.stripeid != nil %>
-                        <div class="row">
-                        <div class="col-md-3"></div>
-                        <div class="col-md-6" style="margin-top:20px;background-color:#d6d6d6;border-radius:10px;padding-bottom:20px;margin-bottom:20px">
-                            <div class="row">
-                                <div class="row" style="margin-top:15px">
-                                    <div class="col-xs-6">
-                                </div>
-                                <div class="col-xs-6">
-                                </div>
-                                </div>
-                                <div class="col-md-12" style="margin-top:15px;margin-bottom:25px;">
-                                    <center>
-                                        <h2>•••• •••• •••• <%= Stripe::Customer.retrieve(@user.stripeid).sources['data'][0].last4 %></h2>
-                                    </center>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-6">
-                                        <img src="/<%= Stripe::Customer.retrieve(@user.stripeid).sources['data'][0].brand %>.png" style="max-height:70px;height:100%;width:auto;margin-left:-100px" />
-                                </div>
-                                <div class="col-xs-6">
-                                    <h2 style="font-size:24px;text-align:right"><%= Stripe::Customer.retrieve(@user.stripeid).sources['data'][0].exp_month %>&nbsp;/&nbsp;<%= Stripe::Customer.retrieve(@user.stripeid).sources['data'][0].exp_year %></h2>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3"></div>
-                    </div>
                     <center>
                         <% if @user.promo != "" %>
                             <h2>Promo Code: <b><%= @user.promo %></b></h2>

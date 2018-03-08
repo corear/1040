@@ -14,19 +14,5 @@
                     <h4 style="text-align:center;line-height:48px;"><%= @best %> ago</h4>
                 </div>
                 <div class="col-md-5" style="margin:0;">
-                    <% if @u.stripeid == nil %>
-                    
-                    <h3 style="text-align:center">NONE</h3>
-                    <% else %>
-                    <div class="row" style="margin:0">
-                        <div class="col-md-9">
-                                        
-                                <h4 style="padding:5px;border-radius:50px;background-color:#bfbfbf;color:white;text-align:center"><span><img style="height:40px;width:auto;" src="/<%= Stripe::Customer.retrieve(@u.stripeid).sources['data'][0].brand %>.png" style="max-height:70px;height:100%;width:auto" /></span>&nbsp;&nbsp;•••• •••• •••• <%= Stripe::Customer.retrieve(@u.stripeid).sources['data'][0].last4 %></h4>
-                        </div>
-                        <div class="col-md-3">
-                            <h4 style="text-align:center;line-height:44px;"><%= Stripe::Customer.retrieve(@u.stripeid).sources['data'][0].exp_month %>&nbsp;/&nbsp;<%= Stripe::Customer.retrieve(@u.stripeid).sources['data'][0].exp_year %></h4>
-                        </div>
-                    </div>
-                    <% end %>
                 </div>
             </div>
