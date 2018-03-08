@@ -91,7 +91,6 @@ class PagesController < ApplicationController
     begin
       Stripe::Plan.retrieve("#{resource.promo.downcase}")
     rescue
-      redirect_to "/secure/payment", :alert => "That code does not exist!"
     else
     @x = Stripe::Plan.retrieve("#{resource.promo.downcase}")
         if @x.amount.to_i == 0 && (Promo.find_by_code(resource.promo.downcase).used < Promo.find_by_code(resource.promo.downcase).maximum) then
@@ -121,8 +120,6 @@ class PagesController < ApplicationController
         redirect_to '/home'
       
             else
-              
-              redirect_to '/secure/payment', :alert => "That code has been used the maximum number of times!"
       end
     end
   end
