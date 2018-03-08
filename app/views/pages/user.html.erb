@@ -188,6 +188,7 @@ input:focus + h4  {
                     <% end %>
                     <% end %>
                         
+                        <% if @user.stripeid != nil %>
                     <center>
                         <% if @user.promo != "" %>
                             <h2>Promo Code: <b><%= @user.promo %></b></h2>
