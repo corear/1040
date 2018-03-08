@@ -89,32 +89,32 @@ class PagesController < ApplicationController
   
   def addPayment
     begin
-      Stripe::Plan.retrieve("#{resource.promo.downcase}")
+      Stripe::Plan.retrieve("#{current_user.promo.downcase}")
     rescue
     else
-    @x = Stripe::Plan.retrieve("#{resource.promo.downcase}")
-        if @x.amount.to_i == 0 && (Promo.find_by_code(resource.promo.downcase).used < Promo.find_by_code(resource.promo.downcase).maximum) then
+    @x = Stripe::Plan.retrieve("#{current_user.promo.downcase}")
+        if @x.amount.to_i == 0 && (Promo.find_by_code(current_user.promo.downcase).used < Promo.find_by_code(current_user.promo.downcase).maximum) then
            
         
         customer = Stripe::Customer.create(
-            :email => resource.email
+            :email => current_user.email
         )
                 
                 subs = Stripe::Subscription.create(
                 :customer => "#{customer.id}",
                 :items => [
                     {
-                        :plan => "#{resource.promo.downcase}"
+                        :plan => "#{current_user.promo.downcase}"
                     }
                 ]
             )
-        resource.subscribed = true
-            resource.stripeid = customer.id
-            resource.subsriptionId = subs.id
-        resource.save
+        current_user.subscribed = true
+            current_user.stripeid = customer.id
+            current_user.subsriptionId = subs.id
+        current_user.save
         
-        @promo = Promo.find_by_code(resource.promo.downcase)
-            @promo.used = Promo.find_by_code(resource.promo.downcase).used + 1
+        @promo = Promo.find_by_code(current_user.promo.downcase)
+            @promo.used = Promo.find_by_code(current_user.promo.downcase).used + 1
             @promo.save
             
         redirect_to '/home'
