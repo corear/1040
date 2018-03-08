@@ -8,11 +8,11 @@
     <% if current_user.promo != "" then %>
         data-description="Promo Code: <%= current_user.promo %>"
         <% begin %>
-            <% Stripe::Plan.retrieve("#{current_user.promo}") %>
+            <% Stripe::Plan.retrieve("#{current_user.promo.downcase}") %>
         <% rescue %>
             data-panel-label="Promo Code Invalid!"
         <% else %>
-            <% @x = Stripe::Plan.retrieve("#{current_user.promo}") %>
+            <% @x = Stripe::Plan.retrieve("#{current_user.promo.downcase}") %>
             <% if @x.amount.to_i > 0 then %>
                 data-panel-label="$<%= @x.amount.to_f/100 %>0/month">
             <% else %>

@@ -64,4 +64,32 @@
        <% if current_user.subscribed == true %>
        window.location = "/home"
        <% end %>
+       
+       <% begin %>
+      <% Stripe::Plan.retrieve("#{resource.promo.downcase}") %>
+        <% rescue %>
+    <% else %>
+    <% @x = Stripe::Plan.retrieve("#{resource.promo.downcase}") %>
+      <% if @x.amount.to_i = 0 then %>
+      <% customer = Stripe::Customer.create( %>
+            <% :email => current_user.email %>
+        <% ) %>
+                
+              <%  subs = Stripe::Subscription.create( %>
+              <%  :customer => "#{customer.id}", %>
+               <% :items => [ %>
+                   <% { :plan => "#{current_user.promo.downcase}"} %>
+             <%   ] %>
+           <% ) %>
+       <% current_user.subscribed = true %>
+        <%    current_user.stripeid = customer.id %>
+        <%    current_user.subsriptionId = subs.id %>
+      <%  current_user.save %>
+        
+      <%  @promo = Promo.find_by_code(resource.promo.downcase) %>
+       <%     @promo.used = Promo.find_by_code(resource.promo.downcase).used + 1 %>
+        <%    @promo.save %>
+            
+      <% redirect_to '/home' %>
+        <% end %>
 </script>

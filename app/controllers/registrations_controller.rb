@@ -37,11 +37,11 @@ end
 
   def after_sign_up_path_for(resource)
     begin
-      Stripe::Plan.retrieve("#{resource.promo}")
+      Stripe::Plan.retrieve("#{resource.promo.downcase}")
     rescue
       '/secure/payment'
     else
-    @x = Stripe::Plan.retrieve("#{resource.promo}")
+    @x = Stripe::Plan.retrieve("#{resource.promo.downcase}")
       if @x.amount.to_i > 0 then
         '/secure/payment'
       else
