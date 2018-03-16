@@ -11,7 +11,7 @@ gem 'rails', '4.2.5'
 
 gem "mail", "2.7.0"
 #gem 'sqlite3'
-  gem 'pg'
+gem 'pg', '~> 0.21.0'
 
 gem 'stripe'
 
