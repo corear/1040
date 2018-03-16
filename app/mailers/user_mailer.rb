@@ -1,6 +1,6 @@
 class UserMailer < ActionMailer::Base
   include Devise::Mailers::Helpers
-  default :from => "10/40 Entrepreneurship Academy <my1040academy@gmail.com>"
+  default :from => "1-2-3 Entrepreneur! <my1040academy@gmail.com>"
   
   def reset_password_instructions(record, token, opts={})
   @token = token
