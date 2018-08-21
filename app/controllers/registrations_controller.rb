@@ -79,6 +79,10 @@ end
   
   def update_resource(resource, params)
     params.delete :current_password
+    if params[:password]
+      resource.password = params[:password]
+      resource.password_confirmation = params[:password_confirmation]
+    end
     resource.update_without_password(params)
   end
 end
