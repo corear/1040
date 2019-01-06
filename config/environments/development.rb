@@ -41,11 +41,10 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
   :address              => "smtp.gmail.com",
   :port                 => 587,
-  :domain               => "my1040academy.com",
+  :domain               => "gmail.com",
   :authentication       => "plain",
-  :enable_starttls_auto => true,
   :user_name            => 'my1040academy',
-  :password             => ENV["EMAIL_PASSWORD"],
+  :password             => ENV["EMAIL_PASSWORD"]
   }
   
   config.action_mailer.perform_deliveries = true
