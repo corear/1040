@@ -146,15 +146,13 @@ class SubscribersController < ApplicationController
             :card => token,
             :email => current_user.email
         )
-        
-            subs = Stripe::Subscription.create(
-                :customer => "#{customer.id}",
-                :items => [
-                    {
-                        :plan => "9001"
-                    }
-                ]
-            )
+            
+        subs = Stripe::Charge.create({
+          amount: 10000,
+          currency: 'usd',
+          source: token, # obtained with Stripe.js
+          description: "One-time full-access charge for #{current_user.email}",
+        })
             
             current_user.subscribed = true
         current_user.stripeid = customer.id
