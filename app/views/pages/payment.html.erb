@@ -70,14 +70,14 @@ a:hover{
                             <div class="row">
                                 <div class="row" style="margin-top:15px">
                                     <div class="col-xs-6">
-                                            <img src="/<%= Stripe::Customer.retrieve(current_user.stripeid).sources['data'][0].brand %>.png" style="max-height:70px;height:100%;width:auto" />
+                                            <img src="/<%= Stripe::Charge.retrieve(current_user.subsriptionId).sources['data'][0].brand %>.png" style="max-height:70px;height:100%;width:auto" />
                                 </div>
                                 <div class="col-xs-6">
                                 </div>
                                 </div>
                                 <div class="col-md-12" style="margin-top:15px;margin-bottom:25px;">
                                     <center>
-                                        <h2>•••• •••• •••• <%= Stripe::Customer.retrieve(current_user.stripeid).sources['data'][0].last4 %></h2>
+                                        <h2>•••• •••• •••• <%= Stripe::Charge.retrieve(current_user.subsriptionId).sources['data'][0].last4 %></h2>
                                     </center>
                                 </div>
                                 <div class="row">
@@ -86,13 +86,13 @@ a:hover{
                                 </div>
                                 <div class="col-xs-6">
                                     <h2 style="font-size:24px;text-align:right"><%= 
-                                    if Stripe::Customer.retrieve(current_user.stripeid).sources['data'][0].exp_month < 10
+                                    if Stripe::Charge.retrieve(current_user.subsriptionId).sources['data'][0].exp_month < 10
                                         str='0'
-                                        str + (Stripe::Customer.retrieve(current_user.stripeid).sources['data'][0].exp_month).to_s
+                                        str + (Stripe::Charge.retrieve(current_user.subsriptionId).sources['data'][0].exp_month).to_s
                                     else
-                                        Stripe::Customer.retrieve(current_user.stripeid).sources['data'][0].exp_month
+                                        Stripe::Charge.retrieve(current_user.subsriptionId).sources['data'][0].exp_month
                                     end
-                                    %>&nbsp;/&nbsp;<%= Stripe::Customer.retrieve(current_user.stripeid).sources['data'][0].exp_year %></h2>
+                                    %>&nbsp;/&nbsp;<%= Stripe::Charge.retrieve(current_user.subsriptionId).sources['data'][0].exp_year %></h2>
                                 </div>
                                 </div>
                             </div>
